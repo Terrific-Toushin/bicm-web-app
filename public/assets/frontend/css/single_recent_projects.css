@@ -1,0 +1,481 @@
+@import 'common.css';
+
+/* Css started for single_second */
+
+#single_second {}
+
+.img_container {
+    position: relative;
+}
+
+#single_recent_project #service {
+    margin-top: 160px;
+}
+
+.heading_and_desc h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 65px;
+    text-align: center;
+    color: #000000;
+}
+
+.heading_and_desc {
+    max-width: 465px;
+    width: 100%;
+    margin: auto;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #000;
+}
+
+.m-phon .phone {
+    color: #000 !important;
+}
+
+.m-phon .phone path {
+    fill: #000;
+}
+
+.heading_and_desc p {
+    margin-top: 25px;
+    margin-bottom: 50px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    /* or 187% */
+    text-align: center;
+    color: #666666;
+}
+
+.img-container {
+    margin-top: 100px;
+}
+
+.img-container img {
+    position: absolute;
+}
+
+.img_container .img-responsive {
+    width: 100%;
+}
+
+.tech_images {
+    max-width: 442px;
+    width: 100%;
+    margin: auto;
+    margin-top: 65px;
+}
+
+#service .img_container {
+    padding-top: 180px;
+}
+
+.tech_images span {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+}
+
+.tech_images span p {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+    padding-top: 20px;
+}
+
+
+/* css ended for single_second */
+
+
+/* Css code started for product_challange */
+
+#product_challenge {
+    margin-top: 100px;
+}
+
+#music_app .music_app_texts .rignt-side {
+    text-align: right;
+    padding: 0;
+}
+
+#music_app .music_app_texts .links_ {
+    text-align: left;
+}
+
+#product_challenge h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 65px;
+    margin-bottom: 25px;
+    color: #000000;
+}
+
+#product_challenge p {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    max-width: 513px;
+    width: 100%;
+    color: #666666;
+}
+
+#product_challenge img {
+    margin-top: 98px;
+}
+
+.tags ul li {
+    list-style: none;
+    float: left;
+    margin-right: 20px;
+}
+
+.tags {
+    padding-top: 55px;
+}
+
+.tags ul {
+    padding: 0px;
+}
+
+.tags ul:last-child {}
+
+.tags ul li a {
+    color: #000000;
+    text-decoration: none;
+    position: relative;
+    padding: 0 32px;
+    font-size: 16px;
+}
+
+.tags ul li a:before {
+    position: absolute;
+    content: ' ';
+    width: 21px;
+    height: 1px;
+    background: #4F81BD;
+    left: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/* Css code ended for prosuct_challamge  */
+
+.back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    display: none;
+    z-index: 99;
+}
+
+
+/* Css code for more_service started  */
+
+#more_service {
+    padding: 100px 0px;
+    padding-bottom: 125px;
+}
+
+#more_service h2 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 50px;
+    color: #DDDDDD;
+}
+
+.next_recent {
+    margin-top: 25px;
+}
+
+#single_recent_project .next_recent a {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.next span {
+    margin-left: 8px;
+}
+
+.back-to-top i {
+    height: 40px;
+    width: 40px;
+    background: #4F8AD0;
+    text-align: center;
+    color: #fff;
+    line-height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+
+/* css code for more_service ended  */
+
+#service .container {
+    max-width: 1380px;
+}
+
+
+/* Code for music_app started from here  */
+
+#music_app {}
+
+.music_app_texts h2 {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 65px;
+    /* or 162% */
+    max-width: 473px;
+    ;
+    width: 100%;
+    color: #000000;
+}
+
+#music_app .links_ {
+    display: inline-block;
+}
+
+#music_app .all_links_ {
+    margin-top: 50px;
+}
+
+#music_app .links_ li {
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+#music_app .links_ li a {
+    color: #000000;
+    margin-right: 15px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-decoration: none;
+}
+
+.music_app_images {
+    margin-bottom: 100px;
+    margin-top: 30px;
+}
+
+#music_app .links_ li a.gray {
+    color: #999999;
+}
+
+.image_container {
+    margin-bottom: 30px;
+}
+
+
+/* Code for music_app ended from here  */
+
+
+/* ====================================================== RASEL MEDIA PART START ====================================================== */
+
+
+/* Large devices (desktops, 1200px and up) */
+
+@media (min-width: 992px) and (max-width: 1440px) {
+    #single_recent_project .container {
+        max-width: 1200px;
+        padding: 0;
+    }
+    #product_challenge h4 {
+        margin-bottom: 10px;
+    }
+}
+
+
+/*  Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .navbar-toggler i {
+        color: #000 !important;
+    }
+    #single_recent_project #service {
+        margin-top: 130px;
+    }
+    .music_app_texts h2 {
+        font-size: 22px;
+    }
+    #music_app .all_links_ {
+        margin-top: 25px;
+    }
+    #music_app .links_ li a {
+        font-size: 16px;
+    }
+    #music_app .music_app_texts .rignt-side {
+        text-align: left;
+        padding: 0 15px;
+    }
+    .music_app_images {
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+    .music_app_images .image_container .img-fluid {
+        width: 100%;
+        object-fit: cover;
+    }
+    .heading_and_desc h2 {
+        font-size: 22px;
+    }
+    .heading_and_desc p {
+        max-width: 325px;
+        margin: auto;
+    }
+    #service .img_container {
+        padding-top: 150px;
+    }
+    .tech_images span p {
+        font-size: 16px;
+    }
+    #product_challenge {
+        margin-top: 40px;
+    }
+    #product_challenge h4 {
+        font-size: 22px;
+        margin-bottom: 0px;
+        padding-top: 20px;
+    }
+    #product_challenge p {
+        max-width: 325px;
+    }
+    #product_challenge img {
+        margin-top: 45px;
+    }
+    .tags ul li {
+        float: inherit;
+        padding-bottom: 15px;
+    }
+    #more_service {
+        padding: 40px 0px;
+        padding-bottom: 70px;
+    }
+    .text-right {
+        text-align: left!important;
+    }
+    .next_recent {
+        margin-top: 10px;
+    }
+    #more_service h2 {
+        font-size: 18px;
+    }
+    #single_recent_project #music_app .music_app_texts ul {
+        padding-left: 0;
+    }
+    .navbar-toggler i {
+        color: #000 !important;
+    }
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 320px) and (max-width: 767.98px) {
+    #single_recent_project #service {
+        margin-top: 130px;
+    }
+    .music_app_texts h2 {
+        font-size: 22px;
+    }
+    #music_app .all_links_ {
+        margin-top: 25px;
+    }
+    #music_app .links_ li a {
+        font-size: 16px;
+    }
+    #music_app .music_app_texts .rignt-side {
+        text-align: left;
+        padding: 0 15px;
+    }
+    .music_app_images {
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+    .music_app_images .image_container .img-fluid {
+        width: 100%;
+        object-fit: cover;
+    }
+    .heading_and_desc h2 {
+        font-size: 22px;
+    }
+    .heading_and_desc p {
+        max-width: 325px;
+        margin: auto;
+    }
+    #service .img_container {
+        padding-top: 125px;
+    }
+    .tech_images {
+        margin-top: 40px;
+    }
+    .tech_images span p {
+        font-size: 16px;
+    }
+    #product_challenge {
+        margin-top: 0;
+    }
+    #product_challenge h4 {
+        font-size: 22px;
+        margin-bottom: 0px;
+        padding-top: 20px;
+    }
+    #product_challenge p {
+        max-width: 325px;
+    }
+    #product_challenge img {
+        margin-top: 30px;
+    }
+    .tags {
+        padding-top: 35px;
+    }
+    #single_recent_project #more_service {
+        margin: 20px 0px;
+        padding: 0;
+    }
+    #single_recent_project .text-right {
+        padding: 0;
+    }
+    #single_recent_project .next_recent {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+    .tags ul li {
+        float: inherit;
+        padding-bottom: 15px;
+    }
+    .text-right {
+        text-align: left!important;
+    }
+    .next_recent {
+        margin-top: 10px;
+    }
+    #more_service h2 {
+        font-size: 18px;
+    }
+    #single_recent_project #music_app .music_app_texts ul {
+        padding-left: 0;
+    }
+    .navbar-toggler i {
+        color: #000 !important;
+    }
+}

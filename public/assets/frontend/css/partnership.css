@@ -1,0 +1,334 @@
+.row.R_engement_align.partner_lets_share {
+    display: flex;
+    align-items: center;
+}
+
+.lets_p{
+    margin-top: 25px;
+}
+
+#enegment-p.positions_lets{
+    position: relative;
+}
+
+#enegment-p.positions_lets .lets_overlay{
+    position: absolute;
+    top: 120px;
+    left: 0;
+    z-index: -1;
+}
+
+
+/* ================= Partnership makes some “wowing” experiences for your client. START =================== */
+
+#result_make_you_smile{
+    position: relative;
+}
+
+#result_make_you_smile .lets_overlay{
+    position: absolute;
+    right: -250px;
+    top: 130px;
+    z-index: -1;
+}
+
+#partnership_works{
+    background: #F7F7F7;
+    padding: 127px 0;
+}
+
+#partnership_works .partnership_works_text h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 65px;
+    color: #000000;
+    position: relative;
+}
+
+#partnership_works .partnership_works_text h1::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    background: #D5D5D5;
+    height: 300px;
+    width: 2px;
+}
+
+#partnership_works .get_in_touch .btn{
+    width: 175px;
+} 
+
+#partnership_works .partnership_works_text p{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #666666;
+}
+
+.display_works{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+/* =========================== Process of Work PART START =========================== */
+
+.partnership .hiring-text h3 {
+    padding-bottom: 0px;
+    max-width: 350px;
+}
+
+.process_of_work_content{
+    margin-top: 60px;
+}
+
+.process_of_work_content .list-group-item {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 27px;
+    color: #000000;
+    border: none;
+    background: no-repeat;
+}
+
+.process_of_work_content h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 42px;
+    color: #000000;
+}
+
+.process_of_work_content .scrollspy-example.Communication{
+    margin-top: 28px;
+}
+
+.process_of_work_content .scrollspy-example.Communication .communication_argument h4{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    margin-top: 35px;
+}
+
+.process_of_work_content .scrollspy-example.Communication .communication_argument{
+    margin-bottom: 80px;
+}
+
+.process_of_work_content .scrollspy-example.Communication .communication_argument:last-child{
+    margin-bottom: 0;
+}
+
+.process_of_work_content .scrollspy-example.Communication .communication_argument .argument_list {
+    margin-top: 25px;
+}
+
+.process_of_work_content .scrollspy-example.Communication .communication_argument .argument_list ul{
+    margin-left: 30px;
+}
+
+.process_of_work_content .scrollspy-example.Communication .communication_argument .argument_list ul li{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #666666;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.process_of_work_content .scrollspy-example.Communication .communication_argument .argument_list ul li::after{
+    position: absolute;
+    content: '';
+    top: 15px;
+    left: -30px;
+    width: 21px;
+    height: 1px;
+    background: #4F81BD;
+}
+
+.process_of_work_content .scrollspy-example.Communication .communication_argument .argument_list ul li:last-child{
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+/*  */
+
+
+
+
+/* #process_of_work{
+    position: relative;
+}
+
+.right_sidenav {
+    position: absolute;
+}
+
+.right_sidenav ul.right_sidenav_ul {
+    position: fixed;
+    top: 40%;
+    left: 20%;
+    transform: translate(-80%, -40%);
+    padding-left: 42px;
+}
+
+.right_sidenav ul.right_sidenav_ul::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: -40px;
+    width: 2px;
+    height: 350px;
+    background: #EEE;
+}
+
+.right_sidenav ul.right_sidenav_ul li {
+    margin-bottom: 25px;
+    transition: all linear .2s;
+}
+
+.right_sidenav ul.right_sidenav_ul li.is-current {
+    position: relative;
+    transition: all linear .2s;
+}
+
+.right_sidenav ul.right_sidenav_ul li.is-current::after {
+    position: absolute;
+    content: '';
+    left: -42px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 30px;
+    background: #4F81BD;
+    z-index: 9;
+}
+
+.right_sidenav ul.right_sidenav_ul li:last-child {
+    margin-bottom: 0;
+}
+
+.right_sidenav ul.right_sidenav_ul li a {
+    color: #dddddd;
+}
+
+.right_sidenav ul.right_sidenav_ul li.is-current a {
+    color: #000;
+}
+
+.right_sidenav ul.right_sidenav_ul li a:hover {
+    color: #000;
+    background: none;
+    border: none;
+} */
+
+
+
+/* =========================== Results will make you smile! Forward it to your clients Start =========================== */
+
+#result_make_you_smile .hiring-text h3{
+    max-width: 633px;
+}
+
+#result_make_you_smile .result_make_you_smile_part{
+    margin-top: 35px;
+}
+
+.result_make_you_smile_part .result_make_you_smile_text p{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #666666;
+    max-width: 450px;
+}
+
+.result_make_you_smile_part .result_make_you_smile_text p span{
+    font-weight: 600;
+}
+
+.result_make_you_smile_part .result_make_you_smile_text .img{
+    margin-top: 65px;
+}
+
+.result_make_you_smile_text .box{
+    padding: 20px 45px;
+    background: #FFFFFF;
+    box-shadow: -7px 9px 28px rgba(0, 0, 0, 0.06);
+    margin-right: 30px;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.result_make_you_smile_text .box:last-child{
+    margin-bottom: 0;
+}
+
+.result_make_you_smile_text .box .dots{
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: -15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background: #FFF;
+    box-shadow: -7px 9px 28px rgba(0, 0, 0, 0.06);
+}
+
+.result_make_you_smile_text .box .dot{
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    background: #4F81BD;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.result_make_you_smile_text .box p{
+    max-width: 360px;
+}
+
+
+/* Explore the footprints of our success */
+#explore_footprints .hiring-text{
+    text-align: center;
+}
+
+#explore_footprints .hiring-text h3{
+    max-width: 100%;
+}
+
+#explore_footprints .hiring-text p{
+    margin: auto;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#explore_footprints .explore_footprints_logo{
+    margin-top: 60px;
+}
+
+#explore_footprints .explore_footprints_logo .mrg_top{
+    margin-top: 45px;
+}

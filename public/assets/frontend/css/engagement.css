@@ -1,0 +1,1262 @@
+.all-overflow {
+    overflow: hidden;
+}
+
+#engagment .m-phon .phone {
+    color: #000;
+}
+
+#engagment .m-phon .phone path {
+    fill: #000;
+}
+
+#engagment .nav-item .nav-link {
+    color: #000;
+}
+
+.container {
+    max-width: 1380px;
+}
+
+ol,
+ul {
+    list-style-type: none;
+}
+
+
+/* =========================== ENGEGMENT PART START =========================== */
+
+#enegment-p {
+    padding-top: 200px;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 65px;
+    color: #000000;
+    padding-bottom: 15px;
+}
+
+.engagment-part p {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #666666;
+    width: 90%;
+}
+
+
+/* .engagment-part svg{
+    margin-top: -40px;
+} */
+
+#bringing_effective {
+    padding-top: 175px;
+    padding-bottom: 150px;
+}
+
+#bringing_effective .header-part h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    color: #000000;
+}
+
+.bringing_effective-part {
+    padding-top: 60px;
+    text-align: center;
+}
+
+.bringing_effective-part .svg {
+    padding-bottom: 28px;
+}
+
+.bringing_effective-part p {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 31px;
+    color: #666666;
+    padding: 0 50px;
+}
+
+.bringing_effective-part.pading .svg {
+    padding-bottom: 22px;
+}
+
+#hiring_works {
+    padding-bottom: 175px;
+}
+
+#engagment .row.R_engement_align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hiring-text h3 {
+    padding-bottom: 60px;
+}
+
+.hiring-text p {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #666666;
+    width: 100%;
+    /* margin-top: 200px; */
+}
+
+#engagment .hiring-text p {
+    margin-top: 0;
+}
+
+#engagment #hiring_works .hiring-text p {
+    margin-top: 200px;
+}
+
+.hiring-slider {
+    padding-top: 90px;
+    margin-left: 130px;
+}
+
+#career .hiring-text.career {
+    margin-left: 270px;
+}
+
+.hiring-slider-item {
+    padding: 40px;
+    background: #f7f7f7;
+    margin: 0px 15px;
+}
+
+.hiring-slider-item h5 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: right;
+    color: #BBBBBB;
+}
+
+.hiring-slider-item h5 span {
+    color: #4F81BD;
+}
+
+.hiring-slider-item h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 42px;
+    color: #000000;
+    padding-top: 42px;
+    padding-bottom: 23px;
+}
+
+.hiring-slider-item p {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #666666;
+}
+
+#areas_responsibility {
+    padding: 130px 0;
+    background: #4F81BD;
+}
+
+#areas_responsibility .hiring-text h3 {
+    color: #FFFFFF;
+    padding-bottom: 60px;
+}
+
+.areas_responsibility-text h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFFFFF;
+    padding-bottom: 20px;
+}
+
+.areas_responsibility-text .areas_ul {
+    padding-left: 30px;
+}
+
+.areas_responsibility-text .areas_ul li {
+    padding-bottom: 25px;
+}
+
+.areas_responsibility-text .areas_ul li:last-child {
+    padding-bottom: 0;
+}
+
+.areas_responsibility-text .areas_ul li a {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #FFFFFF;
+    text-decoration: none;
+    position: relative;
+}
+
+.areas_responsibility-text .areas_ul li a::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    transform: translateX(-50%);
+    left: -20px;
+    width: 21px;
+    height: 1px;
+    background: #FFFFFF;
+}
+
+#complete_authority {
+    padding-top: 180px;
+    padding-bottom: 130px;
+    position: relative;
+}
+
+.complete_authority-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.complete_authority-text .overlay {
+    position: absolute;
+    top: -100px;
+    left: -292px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.complete_authority-text p {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #666666;
+    width: 90%;
+}
+
+.complete_authority-box {
+    padding: 63px 30px;
+    background: #f7f7f7;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.complete_authority-box p {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 31px;
+    color: #666666;
+    padding: 0 5px;
+    padding-top: 25px;
+}
+
+.teams_skilled_tab .img-part {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.teams_skilled_tab .img-part:last-child .row {
+    padding: 0 120px;
+}
+
+.teams_skilled_tab .img-part p {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #000000;
+    padding-top: 20px;
+}
+
+#teams_skilled .nav-tabs .nav-link {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    opacity: 0.3;
+    border: none;
+    border-radius: inherit;
+    position: relative;
+    margin-right: 120px;
+}
+
+#teams_skilled .nav-tabs .nav-link::after {
+    position: absolute;
+    content: '';
+    bottom: -31px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #000000;
+    opacity: 0;
+}
+
+#teams_skilled .nav-tabs .nav-link.active {
+    opacity: 1;
+    color: #000000;
+}
+
+#teams_skilled .nav-tabs .nav-link.active::after {
+    opacity: 1;
+}
+
+#teams_skilled nav .nav-tabs {
+    padding-bottom: 27px;
+    border-bottom: 3px solid #F7F7F7;
+    justify-content: center;
+}
+
+#Mobile_TEAMS_SKILLED {
+    display: none;
+}
+
+#you_can_hire {
+    padding: 175px 0;
+    padding-bottom: 0;
+}
+
+#engagment #you_can_hire {
+    padding: 150px 0px 0px;
+}
+
+#you_can_hire.padding {
+    padding-top: 40px;
+    padding-bottom: 140px;
+}
+
+#engagment #you_can_hire.padding {
+    padding-top: 85px;
+    padding-bottom: 100px;
+}
+
+#engagment #you_can_hire.padding.top {
+    padding-top: 150px;
+}
+
+#you_can_hire .hiring-text h3 {
+    padding-bottom: 60px;
+}
+
+#you_can_hire .hiring-text.padding h3 {
+    padding-bottom: 0;
+    width: 80%;
+}
+
+#you_can_hire .hire-text {
+    margin-bottom: 70px;
+}
+
+#you_can_hire .hiring-text p {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #666666;
+    width: 90%;
+    padding-top: 10px;
+    padding-bottom: 60px;
+}
+
+#you_can_hire .hire-text h4 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #000000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.hire-text.secnd p {
+    width: 90%;
+}
+
+#you_can_hire .hire-text p {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #666666;
+    line-height: 30px;
+}
+
+#mh_why_us .tab-content h1 {
+    padding-bottom: 28px;
+}
+
+.mh_why_us_details p {
+    width: 97%;
+}
+
+#r_project_communication {
+    padding-top: 160px;
+}
+
+#r_project_communication {
+    padding-bottom: 0;
+}
+
+.all_tand_t_elements {
+    display: none;
+}
+
+
+/* =========================== ENGEGMENT PART END =========================== */
+
+
+/* ==========================================  RASEL MEDIA PART CSS ========================================== */
+
+
+/* Large devices (desktops, 1200px and up) */
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+    .all-overflow .container {
+        max-width: 1200px !important;
+        padding: 0;
+    }
+    h3 {
+        font-size: 33px;
+        line-height: 52px;
+        padding-bottom: 12px;
+    }
+    .engagment-part p {
+        font-size: 14px;
+        line-height: 27px;
+        width: 89%;
+    }
+    /* #engagment .hiring-text p {
+        margin-top: 270px;
+    } */
+    #bringing_effective .header-part h3 {
+        font-size: 24px;
+    }
+    .bringing_effective-part p {
+        font-size: 14px;
+    }
+    #bringing_effective {
+        padding-top: 135px;
+        padding-bottom: 135px;
+    }
+    .bringing_effective-part .svg svg {
+        height: 40px;
+        width: auto;
+    }
+    .hiring-text p {
+        font-size: 14px;
+        line-height: 27px;
+        width: 78%;
+    }
+    .hiring-slider-item h4 {
+        font-size: 24px;
+    }
+    .hiring-slider-item p {
+        font-size: 14px;
+        line-height: 27px;
+    }
+    .areas_responsibility-text h4 {
+        font-size: 22px;
+    }
+    .areas_responsibility-text .areas_ul li a {
+        font-size: 15px;
+        line-height: 27px;
+    }
+    .areas_responsibility-text .areas_ul li {
+        padding-bottom: 18px;
+    }
+    .complete_authority-box p {
+        font-size: 14px;
+        line-height: 27px;
+    }
+    #teams_skilled .nav-tabs .nav-link {
+        font-size: 16px;
+        margin-right: 80px;
+    }
+    .teams_skilled_tab .img-part img {
+        height: 40px;
+        width: auto;
+    }
+    .teams_skilled_tab .img-part p {
+        font-size: 18px !important;
+        padding-top: 17px;
+    }
+    #engagment #you_can_hire.padding.top {
+        padding-top: 135px;
+    }
+    .hire-text img {
+        height: 40px;
+        width: auto;
+    }
+    #engagment .mh_why_us_details p {
+        font-size: 14px;
+        line-height: 28px;
+        width: 97%;
+        padding-top: 5px;
+    }
+    #engagment #mh_why_us li.nav-item a {
+        font-size: 18px;
+    }
+    #engagment #mh_why_us li {
+        margin-bottom: 0px;
+    }
+    #you_can_hire .hiring-text p {
+        font-size: 14px;
+        line-height: 27px;
+        padding-bottom: 50px;
+    }
+    #you_can_hire .hire-text p {
+        font-size: 14px;
+        line-height: 27px;
+    }
+    #you_can_hire .hire-text h4 {
+        font-size: 18px;
+        padding-bottom: 15px;
+    }
+    #engagment #you_can_hire.padding {
+        padding-bottom: 75px;
+    }
+    #engagment #you_can_hire {
+        padding: 140px 0px 0px;
+    }
+    #you_can_hire .hiring-text.padding h3 {
+        width: 100%;
+        max-width: 400px;
+    }
+    #engagment #you_can_hire.padding {
+        padding-top: 60px;
+    }
+    #r_project_communication {
+        padding-top: 135px;
+    }
+    #engagment #r_project_communication.dismiss_ {
+        padding-bottom: 0;
+    }
+    .complete_authority-text .overlay {
+        left: -160px;
+    }
+    .complete_authority-text p {
+        font-size: 14px;
+        width: 87%;
+        line-height: 27px;
+    }
+    .complete_authority-box p {
+        padding: 0 11px;
+        padding-top: 20px;
+    }
+}
+
+
+/* Large devices (desktops, less than 1200px) */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .all-overflow .container {
+        max-width: 1200px !important;
+        padding: 0;
+    }
+    h3 {
+        font-size: 28px;
+        line-height: 52px;
+        padding-bottom: 12px;
+    }
+    .engagment-part p {
+        font-size: 14px;
+        line-height: 27px;
+        width: 89%;
+    }
+    /* #engagment .hiring-text p {
+        margin-top: 270px;
+    } */
+    #bringing_effective .header-part h3 {
+        font-size: 24px;
+    }
+    .bringing_effective-part p {
+        font-size: 14px;
+    }
+    #bringing_effective {
+        padding-top: 160px;
+        padding-bottom: 160px;
+    }
+    .hiring-text p {
+        font-size: 14px;
+        line-height: 27px;
+        width: 90%;
+    }
+    .hiring-slider-item h4 {
+        font-size: 24px;
+    }
+    .hiring-slider-item p {
+        font-size: 14px;
+        line-height: 27px;
+    }
+    .areas_responsibility-text h4 {
+        font-size: 22px;
+    }
+    .areas_responsibility-text .areas_ul li a {
+        font-size: 15px;
+        line-height: 27px;
+    }
+    .areas_responsibility-text .areas_ul li {
+        padding-bottom: 18px;
+    }
+    .complete_authority-box p {
+        font-size: 14px;
+        line-height: 27px;
+    }
+    #teams_skilled .nav-tabs .nav-link {
+        font-size: 16px;
+        margin-right: 80px;
+    }
+    .teams_skilled_tab .img-part img {
+        height: 40px;
+        width: auto;
+    }
+    .teams_skilled_tab .img-part p {
+        font-size: 17px;
+        padding-top: 17px;
+    }
+    .hire-text img {
+        height: 40px;
+        width: auto;
+    }
+    #engagment .mh_why_us_details p {
+        font-size: 14px;
+        line-height: 28px;
+        width: 97%;
+        padding-top: 5px;
+    }
+    #engagment #mh_why_us li.nav-item a {
+        font-size: 18px;
+    }
+    #engagment #mh_why_us li {
+        margin-bottom: 0px;
+    }
+    #you_can_hire .hiring-text p {
+        font-size: 14px;
+        line-height: 27px;
+        padding-bottom: 50px;
+    }
+    #you_can_hire .hire-text p {
+        font-size: 14px;
+        line-height: 27px;
+    }
+    #you_can_hire .hire-text h4 {
+        font-size: 17px;
+        padding-bottom: 15px;
+    }
+    .complete_authority-text .overlay {
+        left: -160px;
+    }
+    .complete_authority-text p {
+        font-size: 14px;
+        width: 87%;
+        line-height: 27px;
+    }
+    .complete_authority-box p {
+        padding: 0 11px;
+        padding-top: 20px;
+    }
+}
+
+
+/* Medium devices (tablets, less than 992px) */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #enegment-p .row .col-lg-7 {
+        order: 2;
+    }
+    #enegment-p .row .col-lg-4 {
+        order: 1;
+    }
+    .engagment-part {
+        text-align: center;
+    }
+    .engagment-part h3 {
+        padding-top: 30px;
+    }
+    .engagment-part svg {
+        height: 350px;
+        width: auto;
+    }
+    h3 {
+        font-size: 22px;
+        line-height: 39px;
+        padding-top: 40px;
+    }
+    .engagment-part p {
+        width: 100%;
+        margin: auto;
+    }
+    #bringing_effective {
+        padding-top: 70px;
+        padding-bottom: 60px;
+    }
+    #bringing_effective .header-part h3 {
+        color: #000000;
+        text-align: center;
+        font-size: 18px;
+        max-width: inherit;
+        margin: auto;
+        line-height: 32px;
+    }
+    #engagment #myTab li {
+        list-style: none;
+        width: inherit;
+        min-width: 150px;
+        text-align: center;
+        margin-bottom: 18px;
+        padding-bottom: 18px;
+    }
+    #engagment .mob_tab li {
+        color: white;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        display: inline-grid;
+    }
+    #engagment #myTab li {
+        border-bottom: none;
+    }
+    #engagment #mh_why_us .mob_tab li {
+        display: block;
+        margin-left: 0;
+    }
+    .bringing_effective-part {
+        padding-top: 40px;
+        text-align: center;
+    }
+    .bringing_effective-part p {
+        color: #666666;
+        padding: 0;
+        margin: auto;
+    }
+    .hiring-text h3 {
+        padding-bottom: 10px;
+    }
+    .hiring-text p {
+        width: 100%;
+        margin-top: 0;
+    }
+    .hiring-slider {
+        padding-top: 50px;
+    }
+    #areas_responsibility {
+        padding: 50px 0;
+    }
+    #areas_responsibility .hiring-text h3 {
+        padding-bottom: 40px;
+    }
+    .areas_responsibility-text h4 {
+        font-size: 18px;
+    }
+    .areas_responsibility-text .areas_ul li {
+        max-width: 250px;
+    }
+    .areas_responsibility-text .areas_ul li a {
+        font-size: 16px;
+    }
+    .areas_responsibility-text .areas_ul li a::after {
+        top: 10px;
+        transform: translateY(-50%);
+        left: -30px;
+    }
+    .complete_authority-text h3 {
+        max-width: 325px;
+    }
+    .complete_authority-text {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        padding-bottom: 40px;
+    }
+    #complete_authority {
+        padding-top: 60px;
+        padding-bottom: 20px;
+    }
+    .complete_authority-text p {
+        width: 100%;
+    }
+    .complete_authority-text .overlay img {
+        height: 230px;
+        width: auto;
+    }
+    .complete_authority-text .overlay {
+        position: absolute;
+        top: -60px;
+        left: -70px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    .complete_authority-box {
+        text-align: left;
+    }
+    .complete_authority-box p {
+        padding: 0;
+        max-width: 260px;
+        font-size: 16px;
+        padding-top: 20px;
+    }
+    #teams_skilled h3 {
+        text-align: left;
+        max-width: 325px;
+    }
+    #you_can_hire .hire-text h4 {
+        font-size: 18px;
+    }
+    #you_can_hire .hire-text {
+        margin-bottom: 40px;
+    }
+    #you_can_hire .hiring-text.padding h3 {
+        width: 100%;
+        max-width: 325px;
+    }
+    h3 {
+        font-size: 22px;
+        line-height: 39px;
+        padding-top: 0px;
+    }
+    #Mobile_TEAMS_SKILLED {
+        display: block;
+    }
+    #engagment #teams_skilled {
+        display: none;
+    }
+    #engagment #you_can_hire.padding.top {
+        padding-top: 170px;
+    }
+    #engagment #myTab li {
+        min-width: inherit;
+    }
+    #engagment .nav-item .nav-link {
+        margin-right: 20px;
+        padding: 0;
+        position: relative;
+    }
+    #engagment .nav-item .nav-link::after {
+        position: absolute;
+        content: '';
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 8px;
+        height: 8px;
+        background: #000000;
+        border-radius: 50%;
+        display: none;
+    }
+    #engagment .nav-item .nav-link.nav-link.active::after {
+        display: block;
+    }
+    #engagment .mob_tab {
+        height: 80px;
+    }
+    #Mobile_TEAMS_SKILLED .hiring-text h3 {
+        max-width: 325px;
+        text-align: left !important;
+    }
+    #Mobile_TEAMS_SKILLED {
+        padding-top: 15px;
+    }
+    #Mobile_TEAMS_SKILLED .nav-link {
+        color: #000000;
+        opacity: 0.3;
+    }
+    #Mobile_TEAMS_SKILLED .nav-link.active {
+        color: #000000 !important;
+        opacity: 1;
+    }
+    #you_can_hire .hiring-text h3 {
+        padding-bottom: 40px;
+    }
+    .hiring-slider-item h5 {
+        font-size: 16px;
+    }
+    #engagment .all_tand_t_elements {
+        display: block;
+    }
+    #engagment .all_tand_t_elements .nav-link {
+        color: #000000 !important;
+        opacity: 0.3;
+    }
+    #engagment .all_tand_t_elements .nav-link.active {
+        color: #000000;
+        opacity: 1;
+        background-color: transparent;
+        border-color: transparent;
+        border: none;
+    }
+    #you_can_hire {
+        padding: 270px 0;
+        padding-bottom: 0;
+    }
+    #engagment #you_can_hire.padding {
+        padding-top: 40px;
+        padding-bottom: 80px;
+    }
+    #engagment #r_project_communication {
+        padding-top: 70px;
+    }
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 320px) and (max-width: 767.98px) {
+    #enegment-p .row .col-lg-7 {
+        order: 2;
+    }
+    #enegment-p .row .col-lg-4 {
+        order: 1;
+    }
+    .engagment-part {
+        text-align: center;
+    }
+    .engagment-part h3 {
+        padding-top: 30px;
+    }
+    .engagment-part svg {
+        height: 206px;
+        width: auto;
+    }
+    h3 {
+        font-size: 22px;
+        line-height: 39px;
+        padding-top: 40px;
+    }
+    .engagment-part p {
+        width: 100%;
+        margin: auto;
+    }
+    #bringing_effective {
+        padding-top: 70px;
+        padding-bottom: 60px;
+    }
+    #bringing_effective .header-part h3 {
+        color: #000000;
+        text-align: center;
+        font-size: 18px;
+        max-width: 285px;
+        margin: auto;
+        line-height: 32px;
+    }
+    .bringing_effective-part {
+        padding-top: 40px;
+        text-align: center;
+    }
+    .bringing_effective-part p {
+        color: #666666;
+        padding: 0;
+        margin: auto;
+    }
+    .hiring-text h3 {
+        padding-bottom: 10px;
+    }
+    .hiring-text p {
+        width: 100%;
+        margin-top: 0;
+    }
+    .hiring-slider {
+        padding-top: 50px;
+    }
+    #areas_responsibility {
+        padding: 50px 0;
+        padding-bottom: 30px !important;
+    }
+    #areas_responsibility .hiring-text h3 {
+        padding-bottom: 40px;
+    }
+    .areas_responsibility-text h4 {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    #areas_responsibility .hiring-text h3 {
+        padding-bottom: 10px !important;
+    }
+    #engagment #you_can_hire {
+        padding: 150px 0px 0px;
+        padding-top: 270px;
+    }
+    #you_can_hire .hiring-text p {
+        padding-bottom: 25px;
+    }
+    #you_can_hire .hire-text img.img-fluid {
+        height: 35px;
+    }
+    .areas_responsibility-text .areas_ul li {
+        max-width: 250px;
+    }
+    .areas_responsibility-text .areas_ul li a {
+        font-size: 16px;
+    }
+    .areas_responsibility-text .areas_ul li a::after {
+        top: 10px;
+        transform: translateY(-50%);
+        left: -30px;
+    }
+    .complete_authority-text h3 {
+        max-width: 325px;
+    }
+    .complete_authority-text {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        padding-bottom: 30px;
+    }
+    #complete_authority {
+        padding-top: 60px;
+        padding-bottom: 20px;
+    }
+    .complete_authority-text p {
+        width: 100%;
+    }
+    .complete_authority-text .overlay img {
+        height: 230px;
+        width: auto;
+    }
+    .complete_authority-text .overlay {
+        position: absolute;
+        top: -60px;
+        left: -70px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    .complete_authority-box {
+        text-align: left;
+    }
+    .complete_authority-box p {
+        padding: 0;
+        max-width: 260px;
+        font-size: 16px;
+        padding-top: 20px;
+    }
+    #teams_skilled h3 {
+        text-align: left;
+        max-width: 325px;
+    }
+    #you_can_hire .hire-text h4 {
+        font-size: 18px;
+    }
+    #you_can_hire .hire-text {
+        margin-bottom: 40px;
+    }
+    #you_can_hire .hiring-text.padding h3 {
+        width: 100%;
+        max-width: 325px;
+    }
+    h3 {
+        font-size: 22px;
+        line-height: 39px;
+        padding-top: 0px;
+    }
+    #Mobile_TEAMS_SKILLED {
+        display: block;
+    }
+    #engagment #teams_skilled {
+        display: none;
+    }
+    #engagment #you_can_hire.padding.top {
+        padding-top: 260px;
+    }
+    #engagment #myTab li {
+        min-width: inherit;
+    }
+    #engagment .nav-item .nav-link {
+        margin-right: 20px;
+        padding: 0;
+        position: relative;
+    }
+    #engagment .nav-item .nav-link::after {
+        position: absolute;
+        content: '';
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 8px;
+        height: 8px;
+        background: #000000;
+        border-radius: 50%;
+        display: none;
+    }
+    #engagment .nav-item .nav-link.nav-link.active::after {
+        display: block;
+    }
+    #engagment .mob_tab {
+        height: 80px;
+    }
+    #Mobile_TEAMS_SKILLED .hiring-text h3 {
+        max-width: 325px;
+        text-align: left !important;
+    }
+    #Mobile_TEAMS_SKILLED {
+        padding-top: 15px;
+    }
+    #Mobile_TEAMS_SKILLED .nav-link {
+        color: #000000;
+        opacity: 0.3;
+    }
+    #Mobile_TEAMS_SKILLED .nav-link.active {
+        color: #000000 !important;
+        opacity: 1;
+    }
+    #you_can_hire .hiring-text h3 {
+        padding-bottom: 40px;
+    }
+    .hiring-slider-item h5 {
+        font-size: 16px;
+    }
+    #engagment .all_tand_t_elements {
+        display: block;
+    }
+    #engagment .all_tand_t_elements .nav-link {
+        color: #000000 !important;
+        opacity: 0.3;
+    }
+    #engagment .all_tand_t_elements .nav-link.active {
+        color: #000000;
+        opacity: 1;
+        background-color: transparent;
+        border-color: transparent;
+        border: none;
+    }
+    #you_can_hire {
+        padding: 270px 0;
+        padding-bottom: 0;
+    }
+    #engagment #you_can_hire.padding {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    #engagment #r_project_communication {
+        padding-top: 70px;
+    }
+    #complete_authority {
+        padding-bottom: 40px !important;
+        position: relative;
+    }
+}
+
+.slick-list {
+    padding: 0 15% 0 0;
+}
+
+@media screen and (min-width: 832px) {
+    .slick-list {
+        padding: 0 40% 0 0;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .hiring-slider-item h4 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .hiring-slider-item h4 {
+        font-size: 18px;
+        padding-top: 18px;
+        padding-bottom: 10px;
+    }
+    .hiring-slider-item {
+        margin: 0px 5px;
+    }
+    .hiring-slider-item {
+        padding: 30px 20px;
+        padding-bottom: 33px;
+    }
+    #engagment .hiring-slider-item svg {
+        height: 50px;
+        width: auto;
+    }
+}
+
+@media screen and (max-width:1440px) {
+    #engagment #hiring_works .hiring-text p {
+        margin-top: 220px;
+    }
+    #areas_responsibility .hiring-text h3 {
+        max-width: 100%;
+        padding-bottom: 45px;
+    }
+    #areas_responsibility {
+        padding-bottom: 120px;
+    }
+    #complete_authority {
+        padding-top: 150px;
+        padding-bottom: 110px;
+        position: relative;
+    }
+    #engagment #teams_skilled .hiring-text h3 {
+        padding-bottom: 60px;
+        max-width: 550px;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .hiring-text p {
+        margin-top: 0px;
+    }
+}
+
+
+/* Code for slider bar started  */
+
+.hiring-slider {
+    position: relative;
+}
+
+.hiring-slider li.slick-active {
+    background: #4F81BD !important;
+}
+
+.hiring-slider .slick-dots li {
+    width: 10px;
+    float: left;
+    border: none;
+    background: #ddd;
+    height: 0px;
+    min-width: 15px;
+    padding: 2px 0px;
+}
+
+.hiring-slider .slick-dots {
+    margin-top: 0px;
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    cursor: pointer;
+}
+
+.hiring-slider li button {
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+    .hiring-slider .slick-dots {
+        margin-top: 0px;
+        position: absolute;
+        bottom: -50px;
+        left: 0px;
+        top: unset;
+        right: unset;
+        margin-left: 8px;
+    }
+    #enegment-p {
+        padding-top: 140px;
+    }
+}
+
+
+/* Code for slider bar endeds  */

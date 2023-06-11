@@ -1,0 +1,279 @@
+                .serverless_landing {
+                    overflow: hidden;
+                }
+                
+                .serverless_landing .padding-top.interpership {
+                    padding-top: 120px;
+                }
+                
+                .serverless_landing .get_in_touch {
+                    margin-top: 25px;
+                }
+                
+                .serverless_landing .get_in_touch .btn {
+                    font-family: 'Rubik', sans-serif;
+                    height: 44px;
+                    width: 138px;
+                    border-radius: 45px;
+                    border: none;
+                    background: #4F81BD;
+                    font-size: 15px;
+                    font-weight: 500;
+                    transition: all linear .3s;
+                }
+                
+                .serverless_landing .get_in_touch .btn a {
+                    text-decoration: none;
+                    color: #FFFFFF;
+                    transition: all linear .3s;
+                }
+                
+                .serverless_landing .engagment-part p {
+                    font-family: 'Rubik', sans-serif;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 30px;
+                    color: #666666;
+                    width: 100%;
+                }
+                
+                .serverless_landing #you_can_hire .hiring-text.padding h3 {
+                    padding-bottom: 0;
+                    width: 90%;
+                }
+                
+                .serverless_landing #software_solution h2 {
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 700;
+                    font-size: 40px;
+                    line-height: 65px;
+                    max-width: 785px;
+                    width: 100%;
+                    color: #000000;
+                    list-style: none;
+                }
+                
+                .serverless_landing #mh_why_us h1 {
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 700;
+                    font-size: 64px;
+                    color: #FFFFFF;
+                }
+                
+                .serverless_landing #why_doodle {
+                    background: #4F81BD;
+                    padding: 110px 0;
+                    position: relative;
+                }
+                
+                .serverless_landing .why_doodle_text h1 {
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: bold;
+                    font-size: 40px;
+                    line-height: 65px;
+                    color: #FFFFFF;
+                }
+                
+                .serverless_landing .why_doodle_text p {
+                    font-family: 'Rubik', sans-serif;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 30px;
+                    color: #FFFFFF;
+                    margin-top: 25px;
+                }
+                
+                .serverless_landing #why_doodle .overlay {
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                
+                .serverless_landing .why_doodle_box_text {
+                    background: #FFFFFF;
+                    padding: 40px 30px;
+                    margin-bottom: 30px;
+                    height: 370px;
+                }
+                
+                .serverless_landing .why_doodle_box_text.last-child {
+                    margin-bottom: 0;
+                }
+                
+                .serverless_landing .why_doodle_box_text h3 {
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 30px;
+                    color: #000000;
+                    margin-top: 30px;
+                    padding: 0;
+                }
+                
+                .serverless_landing .why_doodle_box_text p {
+                    font-family: 'Rubik', sans-serif;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 30px;
+                    color: #666666;
+                    margin-top: 30px;
+                    max-width: 100%;
+                }
+                
+                .serverless_landing #why_doodle .row.custome_flex {
+                    display: flex;
+                    align-items: center;
+                }
+                
+                .serverless_landing .why_doodle_box {
+                    margin-left: 60px;
+                }
+                /* ==========================================  RASEL MEDIA PART CSS ========================================== */
+                /* Large devices (desktops, 1200px and up) */
+                
+                @media (min-width: 1200px) and (max-width: 1440px) {
+                    .container {
+                        max-width: 1200px !important;
+                        padding: 0;
+                    }
+                    .serverless_landing .get_in_touch .btn {
+                        font-size: 14px;
+                    }
+                    .serverless_landing #you_can_hire .hiring-text.padding h3 {
+                        max-width: 540px;
+                    }
+                    .serverless_landing #software_solution h2 {
+                        font-size: 33px;
+                        line-height: 52px;
+                        max-width: 750px;
+                    }
+                    .serverless_landing .why_doodle_text h1 {
+                        font-size: 33px;
+                        line-height: 52px;
+                    }
+                    .serverless_landing .why_doodle_text p {
+                        margin-top: 15px;
+                    }
+                    .serverless_landing .why_doodle_box_text h3 {
+                        font-size: 18px;
+                        line-height: 27px;
+                        margin-top: 20px;
+                    }
+                    .serverless_landing .why_doodle_box_text p {
+                        margin-top: 20px;
+                    }
+                    .serverless_landing .why_doodle_box_text {
+                        height: 335px;
+                    }
+                }
+                /* Large devices (desktops, less than 1200px) */
+                
+                @media (min-width: 992px) and (max-width: 1199.98px) {
+                    .container {
+                        max-width: 1200px !important;
+                        padding: 0;
+                    }
+                    .serverless_landing #software_solution h2 {
+                        font-size: 28px;
+                        line-height: 52px;
+                        max-width: 750px;
+                    }
+                    .serverless_landing .why_doodle_text h1 {
+                        font-size: 28px;
+                        line-height: 52px;
+                    }
+                }
+                /* Medium devices (tablets, less than 992px) */
+                
+                @media (min-width: 768px) and (max-width: 991px) {
+                    .serverless_landing #digital_solution .digital_solution_image svg {
+                        width: 90%;
+                        max-width: 600px;
+                    }
+                    .serverless_landing .get_in_touch {
+                        text-align: center;
+                    }
+                    .serverless_landing .digital_solution_details p {
+                        font-size: 14px;
+                    }
+                    .serverless_landing #you_can_hire {
+                        padding: 90px 0;
+                        padding-bottom: 0;
+                    }
+                    .serverless_landing #software_solution h2 {
+                        max-width: 400px;
+                        font-size: 22px;
+                        line-height: 39px;
+                    }
+                    .serverless_landing .why_doodle_text h1 {
+                        font-size: 22px;
+                        line-height: 39px;
+                    }
+                    .serverless_landing .why_doodle_box {
+                        margin-left: 0px;
+                        margin-top: 50px;
+                    }
+                    .serverless_landing .why_doodle_box_text h3 {
+                        font-size: 18px;
+                        margin-top: 20px;
+                    }
+                    .serverless_landing .why_doodle_box_text img {
+                        height: 35px;
+                        width: auto;
+                    }
+                    .serverless_landing .why_doodle_box_text p {
+                        margin-top: 15px;
+                    }
+                }
+                /* Small devices (landscape phones, less than 768px) */
+                
+                @media (max-width: 767.98px) {
+                    .serverless_landing #digital_solution {
+                        margin-top: 0;
+                    }
+                    .serverless_landing #digital_solution .digital_solution_image svg {
+                        width: 80%;
+                        max-width: 600px;
+                    }
+                    .serverless_landing .get_in_touch {
+                        text-align: center;
+                    }
+                    .serverless_landing .digital_solution_details p {
+                        font-size: 14px;
+                    }
+                    .serverless_landing #you_can_hire {
+                        padding: 90px 0;
+                        padding-bottom: 0;
+                    }
+                    .serverless_landing #software_solution h2 {
+                        max-width: 400px;
+                        font-size: 22px;
+                        line-height: 39px;
+                    }
+                    .serverless_landing .why_doodle_text h1 {
+                        font-size: 22px;
+                        line-height: 39px;
+                    }
+                    .serverless_landing .why_doodle_box {
+                        margin-left: 0px;
+                        margin-top: 50px;
+                    }
+                    .serverless_landing .why_doodle_box_text h3 {
+                        font-size: 18px;
+                        margin-top: 20px;
+                    }
+                    .serverless_landing .why_doodle_box_text img {
+                        height: 35px;
+                        width: auto;
+                    }
+                    .serverless_landing .why_doodle_box_text p {
+                        margin-top: 15px;
+                    }
+                    .serverless_landing #you_can_hire .hiring-text.padding h3 {
+                        width: 100%;
+                    }
+                    .serverless_landing .why_doodle_box_text.last-child:first-child {
+                        margin-bottom: 30px;
+                    }
+                }
