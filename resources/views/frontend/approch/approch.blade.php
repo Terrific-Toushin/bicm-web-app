@@ -1,10 +1,10 @@
-@extends('frontend.master')
+    @extends('frontend.master')
 
-@section('stylesheet')
-    <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/recent_projects.css">
-    <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/approch.css">
-    <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/media.css">
-@endsection
+    @section('stylesheet')
+        <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/recent_projects.css">
+        <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/approch.css">
+        <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/media.css">
+    @endsection
 
 @section('content')
     <!-- =========================== APPROCH Discovary PART START =========================== -->

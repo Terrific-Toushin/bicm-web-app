@@ -16,6 +16,10 @@ class FrontendController extends Controller
         return view('frontend.mastersProgram.mastersProgram');
     }
 
+    public function certificationTraining(){
+        return view('frontend.certificationTraining.certificationTraining');
+    }
+
     public function approch(){
         return view('frontend.approch.approch');
     }

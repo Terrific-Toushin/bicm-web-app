@@ -47,8 +47,8 @@
                     <a class="nav-link" href="{{route('approch')}}">Diploma</a>
                 </li>
 
-                <li class="nav-item Engagement_Dropdown {{ (request()->is('engagement*')) ? 'active' : '' }}">
-                    <a class="nav-link" href="#">Certification and Training</a>
+                <li class="nav-item Engagement_Dropdown {{ (request()->is('certificationTraining')) ? 'active' : '' }}">
+                    <a class="nav-link" href="{{route('certificationTraining')}}">Certification and Training</a>
                     <div class="engagement_dropdown">
                         <ul>
                             <li><a href="#">Certificate Courses</a></li>

@@ -22,6 +22,7 @@ Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::get('/home', [FrontendController::class, 'index']);
 Route::get('/service', [FrontendController::class, 'service'])->name('service');
 Route::get('/masters-program', [FrontendController::class, 'mastersProgram'])->name('mastersProgram');
+Route::get('/certification-training', [FrontendController::class, 'certificationTraining'])->name('certificationTraining');
 Route::get('/technology', [FrontendController::class, 'technology'])->name('technology');
 Route::get('/approch', [FrontendController::class, 'approch'])->name('approch');
 
