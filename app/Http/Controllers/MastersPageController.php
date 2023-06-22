@@ -23,7 +23,7 @@ class MastersPageController extends Controller
     public function editMastersProgram($id)
     {
         $mastersProgram = MastersProgram::find($id);
-        return view('admin.masterPage.editMastersProgram',['masterProgram'=>$mastersProgram]);
+        return view('admin.masterPage.editMastersProgram',['mastersProgram'=>$mastersProgram]);
     }
 
     public function storeMastersProgram(Request $request)
@@ -75,8 +75,6 @@ class MastersPageController extends Controller
                     $imgUrl = $mastersProgram->image;
                 }
             }
-
-            $mastersProgram->masters_program_id = floor(time() - 999999999);
             $mastersProgram->image = $imgUrl;
             $mastersProgram->tittle = $request->tittle;
             $mastersProgram->schedule = $request->schedule;

@@ -1,22 +1,22 @@
 @extends('admin.master')
-<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
 @section('styleSheet')
     <!-- BEGIN PAGE LEVEL STYLES -->
     <link rel="stylesheet" type="text/css"
-          href="{{ asset('/') }}assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
+          href="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
     <link rel="stylesheet" type="text/css"
-          href="{{ asset('/') }}assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"/>
+          href="{{ asset('/') }}/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"/>
     <link rel="stylesheet" type="text/css"
-          href="{{ asset('/') }}assets/global/plugins/jquery-tags-input/jquery.tagsinput.css"/>
+          href="{{ asset('/') }}/assets/global/plugins/jquery-tags-input/jquery.tagsinput.css"/>
     <link rel="stylesheet" type="text/css"
-          href="{{ asset('/') }}assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}assets/global/plugins/typeahead/typeahead.css">
+          href="{{ asset('/') }}/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/typeahead/typeahead.css">
     <link rel="stylesheet" type="text/css"
-          href="{{ asset('/') }}assets/global/plugins/bootstrap-select/bootstrap-select.min.css"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}assets/global/plugins/select2/select2.css"/>
+          href="{{ asset('/') }}/assets/global/plugins/bootstrap-select/bootstrap-select.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/select2/select2.css"/>
     <link rel="stylesheet" type="text/css"
-          href="{{ asset('/') }}assets/global/plugins/jquery-multi-select/css/multi-select.css"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
+          href="{{ asset('/') }}/assets/global/plugins/jquery-multi-select/css/multi-select.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
     <!-- END PAGE LEVEL STYLES -->
 @endsection
 @section('content')
@@ -77,8 +77,9 @@
                                                         </label>
                                                         <div class="col-md-3">
                                                             <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
-                                                                </div>
+
+                                                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+
                                                                 <div>
                                                                     <span class="btn default btn-file">
                                                                         <span class="fileinput-new">Select image </span>
@@ -88,7 +89,7 @@
                                                                     <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                                                 </div>
                                                             </div>
-                                                            <input type="hidden" class="form-control" name="mastersSettingId" value="{{$masterSettings->masters_setting_id}}" placeholder="" accept="image/*">
+                                                            <input type="hidden" class="form-control" name="mastersSettingId" value="{{$masterSettings->masters_setting_id}}" placeholder="">
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label class="col-md-2 control-label">Current Banner</label>
@@ -145,13 +146,13 @@
                                                     <th width="10%">
                                                         Duration
                                                     </th>
-                                                    <th width="10%">
+                                                    <th width="7%">
                                                         Amount
                                                     </th>
-                                                    <th width="10%">
+                                                    <th width="7%">
                                                         Status
                                                     </th>
-                                                    <th width="10%" >
+                                                    <th width="15%" >
                                                         Action
                                                     </th>
                                                 </tr>
@@ -168,9 +169,9 @@
                                                     <td>{{$program->schedule}}</td>
                                                     <td>{{$program->duration}}</td>
                                                     <td>{{$program->amount}}</td>
-                                                    <td>{{$program->status}}</td>
+                                                    <td>{{$program->status == 'Y' ? "show" : "Hide" }}</td>
                                                     <td>
-                                                        <a href="javascript:;" class="btn default btn-sm">
+                                                        <a href="{{ route('editMastersProgram', ['id' => $program->masters_program_id]) }}" class="btn default btn-sm">
                                                             <i class="fa fa-edit"></i> Edit </a>
                                                         <a href="javascript:;" class="btn default btn-sm">
                                                             <i class="fa fa-times"></i> Remove </a>
@@ -192,38 +193,38 @@
     </div>
 @endsection
 @section('customJs')
-    <script type="text/javascript" src="{{ asset('/') }}assets/global/plugins/fuelux/js/spinner.min.js"></script>
-    <script type="text/javascript" src="{{ asset('/') }}assets/global/plugins/fuelux/js/spinner.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/fuelux/js/spinner.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/fuelux/js/spinner.min.js"></script>
     <script type="text/javascript"
-            src="{{ asset('/') }}assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+            src="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
     <script type="text/javascript"
-            src="{{ asset('/') }}assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
+            src="{{ asset('/') }}/assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
     <script type="text/javascript"
-            src="{{ asset('/') }}assets/global/plugins/jquery.input-ip-address-control-1.0.min.js"></script>
-    <script src="{{ asset('/') }}assets/global/plugins/bootstrap-pwstrength/pwstrength-bootstrap.min.js"
+            src="{{ asset('/') }}/assets/global/plugins/jquery.input-ip-address-control-1.0.min.js"></script>
+    <script src="{{ asset('/') }}/assets/global/plugins/bootstrap-pwstrength/pwstrength-bootstrap.min.js"
             type="text/javascript"></script>
-    <script src="{{ asset('/') }}assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"
+    <script src="{{ asset('/') }}/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"
             type="text/javascript"></script>
-    <script src="{{ asset('/') }}assets/global/plugins/jquery-tags-input/jquery.tagsinput.min.js"
+    <script src="{{ asset('/') }}/assets/global/plugins/jquery-tags-input/jquery.tagsinput.min.js"
             type="text/javascript"></script>
-    <script src="{{ asset('/') }}assets/global/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"
+    <script src="{{ asset('/') }}/assets/global/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"
             type="text/javascript"></script>
-    <script src="{{ asset('/') }}assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js"
+    <script src="{{ asset('/') }}/assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js"
             type="text/javascript"></script>
-    <script src="{{ asset('/') }}assets/global/plugins/typeahead/handlebars.min.js" type="text/javascript"></script>
-    <script src="{{ asset('/') }}assets/global/plugins/typeahead/typeahead.bundle.min.js"
+    <script src="{{ asset('/') }}/assets/global/plugins/typeahead/handlebars.min.js" type="text/javascript"></script>
+    <script src="{{ asset('/') }}/assets/global/plugins/typeahead/typeahead.bundle.min.js"
             type="text/javascript"></script>
-    <script type="text/javascript" src="{{ asset('/') }}assets/global/plugins/ckeditor/ckeditor.js"></script>
-    <script src="{{ asset('/') }}assets/global/plugins/jquery-tags-input/jquery.tagsinput.min.js"
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/ckeditor/ckeditor.js"></script>
+    <script src="{{ asset('/') }}/assets/global/plugins/jquery-tags-input/jquery.tagsinput.min.js"
             type="text/javascript"></script>
-    <script src="{{ asset('/') }}assets/global/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"
+    <script src="{{ asset('/') }}/assets/global/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"
             type="text/javascript"></script>
-    <script src="{{ asset('/') }}assets/admin/pages/scripts/components-form-tools.js"></script>
+    <script src="{{ asset('/') }}/assets/admin/pages/scripts/components-form-tools.js"></script>
     <script type="text/javascript"
-            src="{{ asset('/') }}assets/global/plugins/bootstrap-select/bootstrap-select.min.js"></script>
-    <script type="text/javascript" src="{{ asset('/') }}assets/global/plugins/select2/select2.min.js"></script>
+            src="{{ asset('/') }}/assets/global/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/select2/select2.min.js"></script>
     <script type="text/javascript"
-            src="{{ asset('/') }}assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js"></script>
-    <script src="{{ asset('/') }}assets/admin/pages/scripts/components-dropdowns.js"></script>
-    <script type="text/javascript" src="{{ asset('/') }}assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+            src="{{ asset('/') }}/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js"></script>
+    <script src="{{ asset('/') }}/assets/admin/pages/scripts/components-dropdowns.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
 @endsection

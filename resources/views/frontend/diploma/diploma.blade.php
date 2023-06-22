@@ -1,7 +1,7 @@
     @extends('frontend.master')
 
     @section('stylesheet')
-        <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/blog_archive.css">
+        <link rel="stylesheet" href="{{ asset('/') }}/assets/frontend/css/blog_archive.css">
     @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
                     <div class="digital-part text-center technology">
                         <h2><span>BICM Certification</span> and Training</h2>
                         <div class="digital-overlay">
-                            <img src="{{ asset('/') }}assets/frontend/images/mastersProgram.jpg" alt="Digital-Solution">
+                            <img src="{{ asset('/') }}/assets/frontend/images/mastersProgram.jpg" alt="Digital-Solution">
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                 <div class="col-lg-4 col-sm-6 mix technology">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/technology-1.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/technology-1.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>5 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -74,7 +74,7 @@
                 <div class="col-lg-4 col-sm-6 mix corporate">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/corporate-1.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/corporate-1.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>8 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -84,7 +84,7 @@
                 <div class="col-lg-4 col-sm-6 mix job">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/job-1.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/job-1.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>10 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -94,7 +94,7 @@
                 <div class="col-lg-4 col-sm-6 mix javascript">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"> <img src="{{ asset('/') }}assets/frontend/images/javascript-1.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"> <img src="{{ asset('/') }}/assets/frontend/images/javascript-1.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>5 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -104,7 +104,7 @@
                 <div class="col-lg-4 col-sm-6 mix react">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/react-1.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/react-1.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>8 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -114,7 +114,7 @@
                 <div class="col-lg-4 col-sm-6 mix job">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/job-1.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/job-1.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>10 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -125,7 +125,7 @@
                 <div class="col-lg-4 col-sm-6 mix technology">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/technology-2.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/technology-2.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>5 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -135,7 +135,7 @@
                 <div class="col-lg-4 col-sm-6 mix corporate">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/corporate-2.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/corporate-2.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span> 8 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -145,7 +145,7 @@
                 <div class="col-lg-4 col-sm-6 mix job">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/job-2.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/job-2.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>10 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -155,7 +155,7 @@
                 <div class="col-lg-4 col-sm-6 mix javascript">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/javascript-2.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/javascript-2.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>5 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -165,7 +165,7 @@
                 <div class="col-lg-4 col-sm-6 mix react">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"> <img src="{{ asset('/') }}assets/frontend/images/react-2.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"> <img src="{{ asset('/') }}/assets/frontend/images/react-2.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>8 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -175,7 +175,7 @@
                 <div class="col-lg-4 col-sm-6 mix job">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/job-2.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/job-2.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>10 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -186,7 +186,7 @@
                 <div class="col-lg-4 col-sm-6 mix technology">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/technology-3.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/technology-3.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>5 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -196,7 +196,7 @@
                 <div class="col-lg-4 col-sm-6 mix corporate">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/corporate-3.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/corporate-3.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>8 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -206,7 +206,7 @@
                 <div class="col-lg-4 col-sm-6 mix job">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/job-3.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/job-3.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>10 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -216,7 +216,7 @@
                 <div class="col-lg-4 col-sm-6 mix javascript">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/javascript-3.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/javascript-3.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>5 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -226,7 +226,7 @@
                 <div class="col-lg-4 col-sm-6 mix react">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/react-3.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/react-3.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>8 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -236,7 +236,7 @@
                 <div class="col-lg-4 col-sm-6 mix job">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/job-3.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/job-3.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>10 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -247,7 +247,7 @@
                 <div class="col-lg-4 col-sm-6 mix technology">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/technology-3.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/technology-3.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>5 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -257,7 +257,7 @@
                 <div class="col-lg-4 col-sm-6 mix corporate">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/corporate-3.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/corporate-3.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>8 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -268,7 +268,7 @@
                 <div class="col-lg-4 col-sm-6 mix javascript">
                     <div class="blog-tab">
                         <div class="img">
-                            <a href="blog_single.html"><img src="{{ asset('/') }}assets/frontend/images/javascript-3.png" alt="Technology" class="img-fluid w-100"></a>
+                            <a href="blog_single.html"><img src="{{ asset('/') }}/assets/frontend/images/javascript-3.png" alt="Technology" class="img-fluid w-100"></a>
                         </div>
                         <h4><a href="blog_single.html">Technology </a> <span>5 min read</span></h4>
                         <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work Strategy</a></p>
@@ -353,7 +353,7 @@
             <div class="row">
                 <div class="col-lg-6 col-xs-6 col-md-6">
                     <div class="tiny_footer_logo">
-                        <a href="index.html"><img class="img-responsive" src="{{ asset('/') }}assets/frontend/images/tiny_.png" alt="" srcset=""></a>
+                        <a href="index.html"><img class="img-responsive" src="{{ asset('/') }}/assets/frontend/images/tiny_.png" alt="" srcset=""></a>
                         <span>© Copyright 2021 Doodle Inc.</span>
                     </div>
                 </div>

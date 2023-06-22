@@ -1,9 +1,9 @@
     @extends('frontend.master')
 
     @section('stylesheet')
-        <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/recent_projects.css">
-        <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/approch.css">
-        <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/media.css">
+        <link rel="stylesheet" href="{{ asset('/') }}/assets/frontend/css/recent_projects.css">
+        <link rel="stylesheet" href="{{ asset('/') }}/assets/frontend/css/approch.css">
+        <link rel="stylesheet" href="{{ asset('/') }}/assets/frontend/css/media.css">
     @endsection
 
 @section('content')
@@ -53,7 +53,7 @@
 
                                     <div class="overlay-planing">
 
-                                        <img src="{{ asset('/') }}assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
+                                        <img src="{{ asset('/') }}/assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
 
                                     </div>
 
@@ -97,13 +97,13 @@
 
 
                                     <div class="outcome-overlay">
-                                        <img src="{{ asset('/') }}assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
+                                        <img src="{{ asset('/') }}/assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
                                     </div>
                                 </div>
 
                                 <!-- Mobile Image -->
                                 <div class="Mob_overlay">
-                                    <img src="{{ asset('/') }}assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
+                                    <img src="{{ asset('/') }}/assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
                                 </div>
                             </div>
                             <!-- =====================================================Start planning =========================================== -->
@@ -130,7 +130,7 @@
 
                                     <div class="overlay-planing">
 
-                                        <img src="{{ asset('/') }}assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
+                                        <img src="{{ asset('/') }}/assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
 
                                     </div>
 
@@ -175,7 +175,7 @@
 
 
                                     <div class="outcome-overlay">
-                                        <img src="{{ asset('/') }}assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
+                                        <img src="{{ asset('/') }}/assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
                                     </div>
                                 </div>
 
@@ -192,14 +192,14 @@
                                             </ul>
                                         </div>
                                         <div class="outcome-overlay">
-                                            <img src="{{ asset('/') }}assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
+                                            <img src="{{ asset('/') }}/assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Mobile Image -->
                                 <div class="Mob_overlay">
-                                    <img src="{{ asset('/') }}assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
+                                    <img src="{{ asset('/') }}/assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
                                 </div>
                             </div>
 
@@ -225,7 +225,7 @@
 
                                     <div class="overlay-planing">
 
-                                        <img src="{{ asset('/') }}assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
+                                        <img src="{{ asset('/') }}/assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
 
                                     </div>
 
@@ -264,7 +264,7 @@
 
 
                                     <div class="outcome-overlay">
-                                        <img src="{{ asset('/') }}assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
+                                        <img src="{{ asset('/') }}/assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
                                     </div>
                                 </div>
 
@@ -281,14 +281,14 @@
                                             </ul>
                                         </div>
                                         <div class="outcome-overlay">
-                                            <img src="{{ asset('/') }}assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
+                                            <img src="{{ asset('/') }}/assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Mobile Image -->
                                 <div class="Mob_overlay">
-                                    <img src="{{ asset('/') }}assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
+                                    <img src="{{ asset('/') }}/assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
                                 </div>
                             </div>
 
@@ -316,7 +316,7 @@
 
                                     <div class="overlay-planing">
 
-                                        <img src="{{ asset('/') }}assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
+                                        <img src="{{ asset('/') }}/assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
 
                                     </div>
 
@@ -359,7 +359,7 @@
 
 
                                     <div class="outcome-overlay">
-                                        <img src="{{ asset('/') }}assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
+                                        <img src="{{ asset('/') }}/assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
                                     </div>
                                 </div>
 
@@ -376,14 +376,14 @@
                                             </ul>
                                         </div>
                                         <div class="outcome-overlay">
-                                            <img src="{{ asset('/') }}assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
+                                            <img src="{{ asset('/') }}/assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Mobile Image -->
                                 <div class="Mob_overlay">
-                                    <img src="{{ asset('/') }}assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
+                                    <img src="{{ asset('/') }}/assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
                                 </div>
                             </div>
 
@@ -405,7 +405,7 @@
 
                                     <div class="overlay-planing">
 
-                                        <img src="{{ asset('/') }}assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
+                                        <img src="{{ asset('/') }}/assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
 
                                     </div>
 
@@ -448,7 +448,7 @@
 
 
                                     <div class="outcome-overlay">
-                                        <img src="{{ asset('/') }}assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
+                                        <img src="{{ asset('/') }}/assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
                                     </div>
                                 </div>
 
@@ -465,14 +465,14 @@
                                             </ul>
                                         </div>
                                         <div class="outcome-overlay">
-                                            <img src="{{ asset('/') }}assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
+                                            <img src="{{ asset('/') }}/assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Mobile Image -->
                                 <div class="Mob_overlay">
-                                    <img src="{{ asset('/') }}assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
+                                    <img src="{{ asset('/') }}/assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
                                 </div>
                             </div>
 
@@ -500,7 +500,7 @@
 
                                     <div class="overlay-planing">
 
-                                        <img src="{{ asset('/') }}assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
+                                        <img src="{{ asset('/') }}/assets/frontend/images/discovery 1.png" alt="Image" class="img-fluid w-100">
 
                                     </div>
 
@@ -544,7 +544,7 @@
 
 
                                     <div class="outcome-overlay">
-                                        <img src="{{ asset('/') }}assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
+                                        <img src="{{ asset('/') }}/assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
                                     </div>
                                 </div>
 
@@ -561,7 +561,7 @@
                                             </ul>
                                         </div>
                                         <div class="outcome-overlay">
-                                            <img src="{{ asset('/') }}assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
+                                            <img src="{{ asset('/') }}/assets/frontend/images/approch-Outcome.png" alt="Iamges" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -578,7 +578,7 @@
                                     <li class=""><a class="" href="#testings">Testing</a></li>
                                     <li class=""><a class="" href="#maintenance">Maintenance</a></li>
                                     <div class="lefi_overlays">
-                                        <img src="{{ asset('/') }}assets/frontend/images/approch_left.png" alt="image" class="img-fluid">
+                                        <img src="{{ asset('/') }}/assets/frontend/images/approch_left.png" alt="image" class="img-fluid">
                                     </div>
                                 </ul>
 
@@ -1139,7 +1139,7 @@
                     <div class="mh_engagement_models_elements">
 
                         <div class="off_shor_logo">
-                            <img src="{{ asset('/') }}assets/frontend/images/all icon v2/offshore team.svg" alt="images">
+                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/offshore team.svg" alt="images">
                         </div>
 
                         <h5>Offshore Dedicated team</h5>
@@ -1161,7 +1161,7 @@
                 <div class="col-lg-4">
                     <div class="mh_engagement_models_elements">
                         <div class="off_shor_logo">
-                            <img src="{{ asset('/') }}assets/frontend/images/all icon v2/sla based.svg" alt="images">
+                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/sla based.svg" alt="images">
                         </div>
 
                         <h5>SLA Based Approach</h5>
@@ -1184,7 +1184,7 @@
                 <div class="col-lg-4">
                     <div class="mh_engagement_models_elements">
                         <div class="off_shor_logo">
-                            <img src="{{ asset('/') }}assets/frontend/images/all icon v2/project base.svg" alt="images">
+                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/project base.svg" alt="images">
                         </div>
 
                         <h5>Project based approach
@@ -1361,7 +1361,7 @@
             <div class="row">
                 <div class="col-lg-6 col-xs-6 col-md-6 col-sm-6">
                     <div class="tiny_footer_logo">
-                        <a href="index.html"><img class="img-responsive" src="{{ asset('/') }}assets/frontend/images/tiny_.png" alt="" srcset=""></a>
+                        <a href="index.html"><img class="img-responsive" src="{{ asset('/') }}/assets/frontend/images/tiny_.png" alt="" srcset=""></a>
                         <span>© Copyright 2021 Doodle Inc.</span>
                     </div>
                 </div>

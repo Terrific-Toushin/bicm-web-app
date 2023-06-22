@@ -1,9 +1,9 @@
 @extends('frontend.master')
 @section('stylesheet')
-    <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/jquery.mb.YTPlayer.min.css">
-    <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/jquery.background-video.css">
-    <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/recent_projects.css">
-    <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/service.css">
+    <link rel="stylesheet" href="{{ asset('/') }}/assets/frontend/css/jquery.mb.YTPlayer.min.css">
+    <link rel="stylesheet" href="{{ asset('/') }}/assets/frontend/css/jquery.background-video.css">
+    <link rel="stylesheet" href="{{ asset('/') }}/assets/frontend/css/recent_projects.css">
+    <link rel="stylesheet" href="{{ asset('/') }}/assets/frontend/css/service.css">
 @endsection
 @section('content')
     <div class="padding-top"></div>
@@ -31,7 +31,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/custom software development.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/custom software development.svg" alt="images">
                             </div>
 
                         </div>
@@ -52,7 +52,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
                             </div>
 
                         </div>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/Product development.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/Product development.svg" alt="images">
                             </div>
 
                         </div>
@@ -95,7 +95,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/web application.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/web application.svg" alt="images">
                             </div>
 
                         </div>
@@ -118,7 +118,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/mobile application.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/mobile application.svg" alt="images">
                             </div>
 
                         </div>
@@ -139,7 +139,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/cloud application development.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/cloud application development.svg" alt="images">
                             </div>
 
                         </div>
@@ -160,7 +160,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/system integration.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/system integration.svg" alt="images">
                             </div>
 
                         </div>
@@ -198,7 +198,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/digital transformation.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/digital transformation.svg" alt="images">
                             </div>
 
                         </div>
@@ -219,7 +219,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/business techonology consulting.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/business techonology consulting.svg" alt="images">
                             </div>
 
                         </div>
@@ -240,7 +240,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/cloud strategy conlusting.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/cloud strategy conlusting.svg" alt="images">
                             </div>
 
                         </div>
@@ -261,7 +261,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/maintenance.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/maintenance.svg" alt="images">
                             </div>
 
                         </div>
@@ -284,7 +284,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/application support.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/application support.svg" alt="images">
                             </div>
 
                         </div>
@@ -304,7 +304,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/infrasturcture support.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/infrasturcture support.svg" alt="images">
                             </div>
 
                         </div>
@@ -324,7 +324,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/customer support.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/customer support.svg" alt="images">
                             </div>
 
                         </div>
@@ -363,7 +363,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/network security.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/network security.svg" alt="images">
                             </div>
 
                         </div>
@@ -383,7 +383,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/infrasturcture security.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/infrasturcture security.svg" alt="images">
                             </div>
 
                         </div>
@@ -404,7 +404,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/application security.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/application security.svg" alt="images">
                             </div>
 
                         </div>
@@ -426,7 +426,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/risk and complience.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/risk and complience.svg" alt="images">
                             </div>
 
                         </div>
@@ -462,7 +462,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/robotics process and automation.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/robotics process and automation.svg" alt="images">
                             </div>
 
                         </div>
@@ -482,7 +482,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/artificial-intelligence.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/artificial-intelligence.svg" alt="images">
                             </div>
 
                         </div>
@@ -503,7 +503,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/machine learning.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/machine learning.svg" alt="images">
                             </div>
 
                         </div>
@@ -524,7 +524,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/internet of things.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/internet of things.svg" alt="images">
                             </div>
 
                         </div>
@@ -545,7 +545,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/data analysis.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/data analysis.svg" alt="images">
                             </div>
 
                         </div>
@@ -566,7 +566,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/big data.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/big data.svg" alt="images">
                             </div>
 
                         </div>
@@ -602,7 +602,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/cloud infrasturcture.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/cloud infrasturcture.svg" alt="images">
                             </div>
 
                         </div>
@@ -622,7 +622,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/hybrid infrastucture.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/hybrid infrastucture.svg" alt="images">
                             </div>
 
                         </div>
@@ -643,7 +643,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/onpremesis infrastucture.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/onpremesis infrastucture.svg" alt="images">
                             </div>
 
                         </div>
@@ -664,7 +664,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/integration.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/integration.svg" alt="images">
                             </div>
 
                         </div>
@@ -685,7 +685,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/migration.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/migration.svg" alt="images">
                             </div>
 
                         </div>
@@ -706,7 +706,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/devOps.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/devOps.svg" alt="images">
                             </div>
 
                         </div>
@@ -742,7 +742,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/BI consulting.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/BI consulting.svg" alt="images">
                             </div>
 
                         </div>
@@ -762,7 +762,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/BI Implementation.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/BI Implementation.svg" alt="images">
                             </div>
 
                         </div>
@@ -783,7 +783,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/BI service delivery and famework.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/BI service delivery and famework.svg" alt="images">
                             </div>
 
                         </div>
@@ -804,7 +804,7 @@
                         </div>
                         <div class="development_icon text-center">
                             <div class="dev_img">
-                                <img src="{{ asset('/') }}assets/frontend/images/all icon v2/big data.svg" alt="images">
+                                <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/big data.svg" alt="images">
                             </div>
 
                         </div>
@@ -966,7 +966,7 @@
             <div class="row">
                 <div class="col-lg-6 col-xs-6 col-md-6">
                     <div class="tiny_footer_logo">
-                        <a href="index.html"><img class="img-responsive" src="{{ asset('/') }}assets/frontend/images/tiny_.png" alt="" srcset=""></a>
+                        <a href="index.html"><img class="img-responsive" src="{{ asset('/') }}/assets/frontend/images/tiny_.png" alt="" srcset=""></a>
                         <span>© Copyright 2021 Doodle Inc.</span>
                     </div>
                 </div>

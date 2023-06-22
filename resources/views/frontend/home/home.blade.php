@@ -104,7 +104,7 @@
                             <div class="mh_tech_box">
                                 <div class="tech_img">
                                     <img
-                                        src="{{ asset('/') }}assets/frontend/images/all icon v2/artificial-intelligence.svg"
+                                        src="{{ asset('/') }}/assets/frontend/images/all icon v2/artificial-intelligence.svg"
                                         alt="images">
                                 </div>
 
@@ -123,7 +123,7 @@
                         <div class="col-lg-4 col-sm-12" data-aos="fade-up">
                             <div class="mh_tech_box">
                                 <div class="tech_img">
-                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/internet of things.svg"
+                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/internet of things.svg"
                                          alt="images">
                                 </div>
 
@@ -138,7 +138,7 @@
                             <!-- Cloud Computing -->
                             <div class="mh_tech_box">
                                 <div class="tech_img">
-                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/cloud computing.svg"
+                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/cloud computing.svg"
                                          alt="images">
                                 </div>
 
@@ -153,7 +153,7 @@
                             <!-- Big Data -->
                             <div class="mh_tech_box">
                                 <div class="tech_img">
-                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/big data.svg"
+                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/big data.svg"
                                          alt="images">
                                 </div>
 
@@ -174,7 +174,7 @@
                             <!-- BlockChain -->
                             <div class="mh_tech_box height">
                                 <div class="tech_img">
-                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/blockchain.svg"
+                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/blockchain.svg"
                                          alt="images">
                                 </div>
 
@@ -189,7 +189,7 @@
                             <!-- Augmented -->
                             <div class="mh_tech_box height">
                                 <div class="tech_img">
-                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/augmented reality.svg"
+                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/augmented reality.svg"
                                          alt="images">
                                 </div>
 
@@ -203,7 +203,7 @@
                             <!-- Virtual -->
                             <div class="mh_tech_box height">
                                 <div class="tech_img">
-                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/virtual reality.svg"
+                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/virtual reality.svg"
                                          alt="images">
                                 </div>
 
@@ -241,7 +241,7 @@
                     <div class="slider_item">
 
                         <div class="logo">
-                            <img src="{{ asset('/') }}assets/frontend/images/all icon v2/artificial-intelligence.svg"
+                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/artificial-intelligence.svg"
                                  alt="images">
                         </div>
 
@@ -253,7 +253,7 @@
                     <div class="slider_item">
 
                         <div class="logo">
-                            <img src="{{ asset('/') }}assets/frontend/images/all icon v2/internet of things.svg"
+                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/internet of things.svg"
                                  alt="images">
                         </div>
 
@@ -265,7 +265,7 @@
                     <div class="slider_item">
 
                         <div class="logo">
-                            <img src="{{ asset('/') }}assets/frontend/images/all icon v2/cloud computing.svg"
+                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/cloud computing.svg"
                                  alt="images">
                         </div>
 
@@ -277,7 +277,7 @@
                     <div class="slider_item">
 
                         <div class="logo">
-                            <img src="{{ asset('/') }}assets/frontend/images/all icon v2/big data.svg" alt="images">
+                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/big data.svg" alt="images">
                         </div>
 
                         <h4>Big Data</h4>
@@ -288,7 +288,7 @@
                     <div class="slider_item">
 
                         <div class="logo">
-                            <img src="{{ asset('/') }}assets/frontend/images/all icon v2/blockchain.svg" alt="images">
+                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/blockchain.svg" alt="images">
                         </div>
 
                         <h4>BlockChain</h4>
@@ -300,7 +300,7 @@
                     <div class="slider_item">
 
                         <div class="logo">
-                            <img src="{{ asset('/') }}assets/frontend/images/all icon v2/augmented reality.svg"
+                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/augmented reality.svg"
                                  alt="images">
                         </div>
 
@@ -312,7 +312,7 @@
                     <div class="slider_item">
 
                         <div class="logo">
-                            <img src="{{ asset('/') }}assets/frontend/images/all icon v2/virtual reality.svg"
+                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/virtual reality.svg"
                                  alt="images">
                         </div>
 
@@ -352,7 +352,7 @@
                         <div class="col-lg-4 col-md-4 custome-col" data-aos="fade-up"
                              data-aos-anchor-placement="bottom-bottom">
                             <a href="blog_single.html"><img class="img-responsive"
-                                                            src="{{ asset('/') }}assets/frontend/images/blog1.png"
+                                                            src="{{ asset('/') }}/assets/frontend/images/blog1.png"
                                                             alt="" srcset=""></a>
                             <div class="mh_blog_images_cat">
                                 <h6><span class="cat_name"><a href="blog_single.html">Technology</a></span> <span
@@ -366,7 +366,7 @@
                         <div class="col-lg-4 col-md-4 custome-col" data-aos="fade-up"
                              data-aos-anchor-placement="bottom-bottom">
                             <a href="blog_single.html"><img class="img-responsive"
-                                                            src="{{ asset('/') }}assets/frontend/images/blog2.png"
+                                                            src="{{ asset('/') }}/assets/frontend/images/blog2.png"
                                                             alt="" srcset=""></a>
                             <div class="mh_blog_images_cat">
                                 <h6><span class="cat_name"><a href="blog_single.html">Technology</a></span> <span
@@ -379,7 +379,7 @@
                         <div class="col-lg-4 col-md-4 custome-col" data-aos="fade-up"
                              data-aos-anchor-placement="bottom-bottom">
                             <a href="blog_single.html"><img class="img-responsive"
-                                                            src="{{ asset('/') }}assets/frontend/images/blog3.png"
+                                                            src="{{ asset('/') }}/assets/frontend/images/blog3.png"
                                                             alt="" srcset=""></a>
                             <div class="mh_blog_images_cat">
                                 <h6><span class="cat_name"><a href="blog_single.html">Technology</a></span> <span
@@ -492,25 +492,25 @@
                     <div class="row">
                         <div class="col-lg-8 col-md-8 mh_projegct_images_frame" data-aos="flip-up">
                             <a href="single_recent_projects.html"><img class="img-responsive"
-                                                                       src="{{ asset('/') }}assets/frontend/images/1.png"
+                                                                       src="{{ asset('/') }}/assets/frontend/images/1.png"
                                                                        alt="" srcset=""></a>
                             <p class="mh_caption">nexhex branding logo | ( N + H + Connection ) Modern Logo design</p>
                         </div>
                         <div class="col-lg-4 col-md-4 mh_projegct_images_frame" data-aos="flip-up">
                             <a href="single_recent_projects.html"><img class="img-responsive "
-                                                                       src="{{ asset('/') }}assets/frontend/images/2.png"
+                                                                       src="{{ asset('/') }}/assets/frontend/images/2.png"
                                                                        alt="" srcset=""></a>
                             <p class="mh_caption">Music Apps for Likeopedia</p>
                         </div>
                         <div class="col-lg-4 col-md-4 mh_projegct_images_frame" data-aos="flip-up">
                             <a href="single_recent_projects.html"><img class="img-responsive "
-                                                                       src="{{ asset('/') }}assets/frontend/images/3.png"
+                                                                       src="{{ asset('/') }}/assets/frontend/images/3.png"
                                                                        alt="" srcset=""></a>
                             <p class="mh_caption">Music Apps for Likeopedia</p>
                         </div>
                         <div class="col-lg-8 col-md-8 mh_projegct_images_frame" data-aos="flip-up">
                             <a href="single_recent_projects.html"><img class="img-responsive "
-                                                                       src="{{ asset('/') }}assets/frontend/images/4.png"
+                                                                       src="{{ asset('/') }}/assets/frontend/images/4.png"
                                                                        alt="" srcset=""></a>
                             <p class="mh_caption">nexhex branding logo | ( N + H + Connection ) Modern Logo design</p>
                         </div>
@@ -548,7 +548,7 @@
 
                 <div class="img_slider">
                     <a href="single_recent_projects.html"><img
-                            src="{{ asset('/') }}assets/frontend/images/mob_recent_1.png" alt="images"></a>
+                            src="{{ asset('/') }}/assets/frontend/images/mob_recent_1.png" alt="images"></a>
                     <div class="Mob_recent_slider_overlay">
                         <p>Music Apps for Likeopedia</p>
                     </div>
@@ -556,7 +556,7 @@
 
                 <div class="img_slider">
                     <a href="single_recent_projects.html"><img
-                            src="{{ asset('/') }}assets/frontend/images/mob_recent_1.png" alt="images"></a>
+                            src="{{ asset('/') }}/assets/frontend/images/mob_recent_1.png" alt="images"></a>
                     <div class="Mob_recent_slider_overlay">
                         <p>Music Apps for Likeopedia</p>
                     </div>
@@ -568,7 +568,7 @@
 
                 <div class="img_slider">
                     <a href="single_recent_projects.html"><img
-                            src="{{ asset('/') }}assets/frontend/images/mob_recent_1.png" alt="images"></a>
+                            src="{{ asset('/') }}/assets/frontend/images/mob_recent_1.png" alt="images"></a>
                     <div class="Mob_recent_slider_overlay">
                         <p>Music Apps for Likeopedia</p>
                     </div>
@@ -576,7 +576,7 @@
 
                 <div class="img_slider">
                     <a href="single_recent_projects.html"><img
-                            src="{{ asset('/') }}assets/frontend/images/mob_recent_1.png" alt="images"></a>
+                            src="{{ asset('/') }}/assets/frontend/images/mob_recent_1.png" alt="images"></a>
                     <div class="Mob_recent_slider_overlay">
                         <p>Music Apps for Likeopedia</p>
                     </div>
@@ -641,7 +641,7 @@
                     <div class="col-lg-6 col-xs-6 col-md-6">
                         <div class="tiny_footer_logo">
                             <a class="logo" href="index.html"><img class="img-responsive"
-                                                                   src="{{ asset('/') }}assets/frontend/images/tiny_.png"
+                                                                   src="{{ asset('/') }}/assets/frontend/images/tiny_.png"
                                                                    alt="" srcset=""></a>
                             <span class="text">© Copyright 2021 BICM.</span>
                         </div>

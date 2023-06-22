@@ -9,10 +9,10 @@
         <div class="logo-area">
             <div class="logo">
                 <a class="navbar-brand white" href="{{route('home')}}">
-                    <img src="{{ asset('/') }}assets/frontend/images/BICM-Logo.png" height="" width="" alt="Bicm Logo" />
+                    <img src="{{ asset('/') }}/assets/frontend/images/BICM-Logo.png" height="" width="" alt="Bicm Logo" />
                 </a>
                 <a class="navbar-brand black" href="{{route('home')}}">
-                    <img src="{{ asset('/') }}assets/frontend/images/bicmLogo_white.png" height="" width="" alt="Bicm Logo" />
+                    <img src="{{ asset('/') }}/assets/frontend/images/bicmLogo_white.png" height="" width="" alt="Bicm Logo" />
                 </a>
             </div>
 
@@ -90,7 +90,7 @@
 
     <div class="mob_nav_logo">
                 <span class="mob_logo">
-                <img src="{{ asset('/') }}assets/frontend/images/BICM-Logo.png" height="" width="" alt="Bicm Logo" />
+                <img src="{{ asset('/') }}/assets/frontend/images/BICM-Logo.png" height="" width="" alt="Bicm Logo" />
             </span>
 
         <span class="mob_nav_cross pull-right">
@@ -155,7 +155,7 @@
                     <li><a href="#">Financial Market Review</a></li>
                     <li><a href="#">BICM Jounral</a></li>
                     <li><a href="#">Research Seminar Series</a></li>
-                    <li><a href="#">ICSFI 2021</a></li>   
+                    <li><a href="#">ICSFI 2021</a></li>
                     <li><a href="#">BICM RESEARCH GRANT</a></li>
                 </ul>
             </li>

@@ -1,9 +1,9 @@
 @extends('frontend.master')
 @section('stylesheet')
-    <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/recent_projects.css">
-    <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/engagement.css">
-    <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/blog_archive.css">
-    <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/media.css">
+    <link rel="stylesheet" href="{{ asset('/') }}/assets/frontend/css/recent_projects.css">
+    <link rel="stylesheet" href="{{ asset('/') }}/assets/frontend/css/engagement.css">
+    <link rel="stylesheet" href="{{ asset('/') }}/assets/frontend/css/blog_archive.css">
+    <link rel="stylesheet" href="{{ asset('/') }}/assets/frontend/css/media.css">
 @endsection
 @section('content')
     <section id="digital-solution">
@@ -13,7 +13,7 @@
                     <div class="digital-part text-center technology">
                         <h2><span>MASTER OF APPLIED</span>FINANCE AND CAPITAL MARKET (MAFCM)</h2>
                         <div class="digital-overlay">
-                            <img src="{{ asset('/') }}assets/frontend/images/mastersProgram.jpg" alt="Digital-Solution">
+                            <img src="{{ asset('/') }}/assets/frontend/images/mastersProgram.jpg" alt="Digital-Solution">
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                                         <div class="row">
                                             <div class="col-lg-3 col-md-3">
                                                 <div class="logo">
-                                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
+                                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
                                                 </div>
                                             </div>
                                             <div class="col-lg-9 col-md-9">
@@ -80,7 +80,7 @@
                                             <button>
                                                 Apply
                                                 <a href="career_form.html">
-                                                    <img src="{{ asset('/') }}assets/frontend/images/career.png" alt="images" class="img-fluid">
+                                                    <img src="{{ asset('/') }}/assets/frontend/images/career.png" alt="images" class="img-fluid">
                                                 </a>
                                             </button>
                                         </div>
@@ -101,7 +101,7 @@
                                         <div class="row">
                                             <div class="col-lg-3 col-md-3">
                                                 <div class="logo">
-                                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
+                                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
                                                 </div>
                                             </div>
                                             <div class="col-lg-9 col-md-9">
@@ -142,7 +142,7 @@
                                             <button>
                                                 Apply
                                                 <a href="career_form.html">
-                                                    <img src="{{ asset('/') }}assets/frontend/images/career.png" alt="images" class="img-fluid">
+                                                    <img src="{{ asset('/') }}/assets/frontend/images/career.png" alt="images" class="img-fluid">
                                                 </a>
                                             </button>
                                         </div>
@@ -163,7 +163,7 @@
                                         <div class="row">
                                             <div class="col-lg-3 col-md-3">
                                                 <div class="logo">
-                                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
+                                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
                                                 </div>
                                             </div>
                                             <div class="col-lg-9 col-md-9">
@@ -204,7 +204,7 @@
                                             <button>
                                                 Apply
                                                 <a href="career_form.html">
-                                                    <img src="{{ asset('/') }}assets/frontend/images/career.png" alt="images" class="img-fluid">
+                                                    <img src="{{ asset('/') }}/assets/frontend/images/career.png" alt="images" class="img-fluid">
                                                 </a>
                                             </button>
                                         </div>
@@ -225,7 +225,7 @@
                                         <div class="row">
                                             <div class="col-lg-3 col-md-3">
                                                 <div class="logo">
-                                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
+                                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
                                                 </div>
                                             </div>
                                             <div class="col-lg-9 col-md-9">
@@ -266,7 +266,7 @@
                                             <button>
                                                 Apply
                                                 <a href="career_form.html">
-                                                    <img src="{{ asset('/') }}assets/frontend/images/career.png" alt="images" class="img-fluid">
+                                                    <img src="{{ asset('/') }}/assets/frontend/images/career.png" alt="images" class="img-fluid">
                                                 </a>
                                             </button>
                                         </div>
@@ -287,7 +287,7 @@
                                         <div class="row">
                                             <div class="col-lg-3 col-md-3">
                                                 <div class="logo">
-                                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
+                                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
                                                 </div>
                                             </div>
                                             <div class="col-lg-9 col-md-9">
@@ -328,7 +328,7 @@
                                             <button>
                                                 Apply
                                                 <a href="career_form.html">
-                                                    <img src="{{ asset('/') }}assets/frontend/images/career.png" alt="images" class="img-fluid">
+                                                    <img src="{{ asset('/') }}/assets/frontend/images/career.png" alt="images" class="img-fluid">
                                                 </a>
                                             </button>
                                         </div>
@@ -373,7 +373,7 @@
                             the product development by consistent
                         </p>
                         <div class="img">
-                            <img src="{{ asset('/') }}assets/frontend/images/trained.png" alt="img">
+                            <img src="{{ asset('/') }}/assets/frontend/images/trained.png" alt="img">
                         </div>
 
                         <form action="">
@@ -408,7 +408,7 @@
             <div class="row">
                 <div class="col-lg-6 col-xs-6 col-md-6">
                     <div class="tiny_footer_logo">
-                        <a href="index.html"><img class="img-responsive" src="{{ asset('/') }}assets/frontend/images/tiny_.png" alt="" srcset=""></a>
+                        <a href="index.html"><img class="img-responsive" src="{{ asset('/') }}/assets/frontend/images/tiny_.png" alt="" srcset=""></a>
                         <span>© Copyright 2021 Doodle Inc.</span>
                     </div>
                 </div>

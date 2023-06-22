@@ -5,7 +5,7 @@
     'env' => 'local',
     'debug' => true,
     'url' => 'http://localhost',
-    'asset_url' => 'public',
+    'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_locale' => 'en',

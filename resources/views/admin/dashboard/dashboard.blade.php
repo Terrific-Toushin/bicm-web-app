@@ -849,7 +849,7 @@
                                     <div class="media-status">
                                         <span class="badge badge-success">8</span>
                                     </div>
-                                    <img class="media-object" src="{{ asset('/') }}assets/admin/layout/img/avatar3.jpg" alt="...">
+                                    <img class="media-object" src="{{ asset('/') }}/assets/admin/layout/img/avatar3.jpg" alt="...">
                                     <div class="media-body">
                                         <h4 class="media-heading">Bob Nilson</h4>
                                         <div class="media-heading-sub">
@@ -858,7 +858,7 @@
                                     </div>
                                 </li>
                                 <li class="media">
-                                    <img class="media-object" src="{{ asset('/') }}assets/admin/layout/img/avatar1.jpg" alt="...">
+                                    <img class="media-object" src="{{ asset('/') }}/assets/admin/layout/img/avatar1.jpg" alt="...">
                                     <div class="media-body">
                                         <h4 class="media-heading">Nick Larson</h4>
                                         <div class="media-heading-sub">
@@ -870,7 +870,7 @@
                                     <div class="media-status">
                                         <span class="badge badge-danger">3</span>
                                     </div>
-                                    <img class="media-object" src="{{ asset('/') }}assets/admin/layout/img/avatar4.jpg" alt="...">
+                                    <img class="media-object" src="{{ asset('/') }}/assets/admin/layout/img/avatar4.jpg" alt="...">
                                     <div class="media-body">
                                         <h4 class="media-heading">Deon Hubert</h4>
                                         <div class="media-heading-sub">
@@ -879,7 +879,7 @@
                                     </div>
                                 </li>
                                 <li class="media">
-                                    <img class="media-object" src="{{ asset('/') }}assets/admin/layout/img/avatar2.jpg" alt="...">
+                                    <img class="media-object" src="{{ asset('/') }}/assets/admin/layout/img/avatar2.jpg" alt="...">
                                     <div class="media-body">
                                         <h4 class="media-heading">Ella Wong</h4>
                                         <div class="media-heading-sub">
@@ -894,7 +894,7 @@
                                     <div class="media-status">
                                         <span class="badge badge-warning">2</span>
                                     </div>
-                                    <img class="media-object" src="{{ asset('/') }}assets/admin/layout/img/avatar6.jpg" alt="...">
+                                    <img class="media-object" src="{{ asset('/') }}/assets/admin/layout/img/avatar6.jpg" alt="...">
                                     <div class="media-body">
                                         <h4 class="media-heading">Lara Kunis</h4>
                                         <div class="media-heading-sub">
@@ -909,7 +909,7 @@
                                     <div class="media-status">
                                         <span class="label label-sm label-success">new</span>
                                     </div>
-                                    <img class="media-object" src="{{ asset('/') }}assets/admin/layout/img/avatar7.jpg" alt="...">
+                                    <img class="media-object" src="{{ asset('/') }}/assets/admin/layout/img/avatar7.jpg" alt="...">
                                     <div class="media-body">
                                         <h4 class="media-heading">Ernie Kyllonen</h4>
                                         <div class="media-heading-sub">
@@ -919,7 +919,7 @@
                                     </div>
                                 </li>
                                 <li class="media">
-                                    <img class="media-object" src="{{ asset('/') }}assets/admin/layout/img/avatar8.jpg" alt="...">
+                                    <img class="media-object" src="{{ asset('/') }}/assets/admin/layout/img/avatar8.jpg" alt="...">
                                     <div class="media-body">
                                         <h4 class="media-heading">Lisa Stone</h4>
                                         <div class="media-heading-sub">
@@ -934,7 +934,7 @@
                                     <div class="media-status">
                                         <span class="badge badge-success">7</span>
                                     </div>
-                                    <img class="media-object" src="{{ asset('/') }}assets/admin/layout/img/avatar9.jpg" alt="...">
+                                    <img class="media-object" src="{{ asset('/') }}/assets/admin/layout/img/avatar9.jpg" alt="...">
                                     <div class="media-body">
                                         <h4 class="media-heading">Deon Portalatin</h4>
                                         <div class="media-heading-sub">
@@ -943,7 +943,7 @@
                                     </div>
                                 </li>
                                 <li class="media">
-                                    <img class="media-object" src="{{ asset('/') }}assets/admin/layout/img/avatar10.jpg" alt="...">
+                                    <img class="media-object" src="{{ asset('/') }}/assets/admin/layout/img/avatar10.jpg" alt="...">
                                     <div class="media-body">
                                         <h4 class="media-heading">Irina Savikova</h4>
                                         <div class="media-heading-sub">
@@ -955,7 +955,7 @@
                                     <div class="media-status">
                                         <span class="badge badge-danger">4</span>
                                     </div>
-                                    <img class="media-object" src="{{ asset('/') }}assets/admin/layout/img/avatar11.jpg" alt="...">
+                                    <img class="media-object" src="{{ asset('/') }}/assets/admin/layout/img/avatar11.jpg" alt="...">
                                     <div class="media-body">
                                         <h4 class="media-heading">Maria Gomez</h4>
                                         <div class="media-heading-sub">
@@ -975,7 +975,7 @@
                                 </div>
                                 <div class="page-quick-sidebar-chat-user-messages">
                                     <div class="post out">
-                                        <img class="avatar" alt="" src="{{ asset('/') }}assets/admin/layout/img/avatar3.jpg"/>
+                                        <img class="avatar" alt="" src="{{ asset('/') }}/assets/admin/layout/img/avatar3.jpg"/>
                                         <div class="message">
                                             <span class="arrow"></span>
                                             <a href="javascript:;" class="name">Bob Nilson</a>
@@ -985,7 +985,7 @@
                                         </div>
                                     </div>
                                     <div class="post in">
-                                        <img class="avatar" alt="" src="{{ asset('/') }}assets/admin/layout/img/avatar2.jpg"/>
+                                        <img class="avatar" alt="" src="{{ asset('/') }}/assets/admin/layout/img/avatar2.jpg"/>
                                         <div class="message">
                                             <span class="arrow"></span>
                                             <a href="javascript:;" class="name">Ella Wong</a>
@@ -995,7 +995,7 @@
                                         </div>
                                     </div>
                                     <div class="post out">
-                                        <img class="avatar" alt="" src="{{ asset('/') }}assets/admin/layout/img/avatar3.jpg"/>
+                                        <img class="avatar" alt="" src="{{ asset('/') }}/assets/admin/layout/img/avatar3.jpg"/>
                                         <div class="message">
                                             <span class="arrow"></span>
                                             <a href="javascript:;" class="name">Bob Nilson</a>
@@ -1005,7 +1005,7 @@
                                         </div>
                                     </div>
                                     <div class="post in">
-                                        <img class="avatar" alt="" src="{{ asset('/') }}assets/admin/layout/img/avatar2.jpg"/>
+                                        <img class="avatar" alt="" src="{{ asset('/') }}/assets/admin/layout/img/avatar2.jpg"/>
                                         <div class="message">
                                             <span class="arrow"></span>
                                             <a href="javascript:;" class="name">Ella Wong</a>
@@ -1015,7 +1015,7 @@
                                         </div>
                                     </div>
                                     <div class="post out">
-                                        <img class="avatar" alt="" src="{{ asset('/') }}assets/admin/layout/img/avatar3.jpg"/>
+                                        <img class="avatar" alt="" src="{{ asset('/') }}/assets/admin/layout/img/avatar3.jpg"/>
                                         <div class="message">
                                             <span class="arrow"></span>
                                             <a href="javascript:;" class="name">Bob Nilson</a>
@@ -1025,7 +1025,7 @@
                                         </div>
                                     </div>
                                     <div class="post in">
-                                        <img class="avatar" alt="" src="{{ asset('/') }}assets/admin/layout/img/avatar2.jpg"/>
+                                        <img class="avatar" alt="" src="{{ asset('/') }}/assets/admin/layout/img/avatar2.jpg"/>
                                         <div class="message">
                                             <span class="arrow"></span>
                                             <a href="javascript:;" class="name">Ella Wong</a>
@@ -1035,7 +1035,7 @@
                                         </div>
                                     </div>
                                     <div class="post out">
-                                        <img class="avatar" alt="" src="{{ asset('/') }}assets/admin/layout/img/avatar3.jpg"/>
+                                        <img class="avatar" alt="" src="{{ asset('/') }}/assets/admin/layout/img/avatar3.jpg"/>
                                         <div class="message">
                                             <span class="arrow"></span>
                                             <a href="javascript:;" class="name">Bob Nilson</a>
@@ -1045,7 +1045,7 @@
                                         </div>
                                     </div>
                                     <div class="post in">
-                                        <img class="avatar" alt="" src="{{ asset('/') }}assets/admin/layout/img/avatar2.jpg"/>
+                                        <img class="avatar" alt="" src="{{ asset('/') }}/assets/admin/layout/img/avatar2.jpg"/>
                                         <div class="message">
                                             <span class="arrow"></span>
                                             <a href="javascript:;" class="name">Ella Wong</a>
@@ -1055,7 +1055,7 @@
                                         </div>
                                     </div>
                                     <div class="post out">
-                                        <img class="avatar" alt="" src="{{ asset('/') }}assets/admin/layout/img/avatar3.jpg"/>
+                                        <img class="avatar" alt="" src="{{ asset('/') }}/assets/admin/layout/img/avatar3.jpg"/>
                                         <div class="message">
                                             <span class="arrow"></span>
                                             <a href="javascript:;" class="name">Bob Nilson</a>

@@ -1,6 +1,6 @@
 @extends('frontend.master')
 @section('stylesheet')
-    <link rel="stylesheet" href="{{ asset('/') }}assets/frontend/css/technology.css">
+    <link rel="stylesheet" href="{{ asset('/') }}/assets/frontend/css/technology.css">
 @endsection
 @section('content')
     <!-- ====================================================== TECHNOLOGY PART END ====================================================== -->
@@ -14,7 +14,7 @@
                         <h2><span>Technologies we admire; </span> professional inside and out</h2>
                         <p>We esteem every part of a system than represent your business; developing better and perfect applications touching each and every part of it. </p>
                         <div class="digital-overlay">
-                            <img src="{{ asset('/') }}assets/frontend/images/digital solution.png" alt="Digital-Solution">
+                            <img src="{{ asset('/') }}/assets/frontend/images/digital solution.png" alt="Digital-Solution">
                         </div>
                     </div>
                 </div>
@@ -2262,7 +2262,7 @@
                         <p>Doodle Inc. undertakes a wide range of international missions and R&D projects. We are well-known to our customers as a provider of advanced digital solutions in different parts of the world. Most of our clients are from North
                             America and Europe whom we have been helping with a dedicated offshore team, custom-web development, and full-fledged cloud solution.</p>
                         <div class="global-future-overlay">
-                            <img src="{{ asset('/') }}assets/frontend/images/global-future.png" alt="Global" class="img-fluid w-100">
+                            <img src="{{ asset('/') }}/assets/frontend/images/global-future.png" alt="Global" class="img-fluid w-100">
                         </div>
                     </div>
                 </div>
@@ -2315,7 +2315,7 @@
             <div class="row">
                 <div class="col-lg-6 col-xs-6 col-md-6">
                     <div class="tiny_footer_logo">
-                        <a href="index.html"><img class="img-responsive" src="{{ asset('/') }}assets/frontend/images/tiny_.png" alt="" srcset=""></a>
+                        <a href="index.html"><img class="img-responsive" src="{{ asset('/') }}/assets/frontend/images/tiny_.png" alt="" srcset=""></a>
                         <span>© Copyright 2021 Doodle Inc.</span>
                     </div>
                 </div>
