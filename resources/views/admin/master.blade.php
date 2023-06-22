@@ -1,41 +1,27 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
+    <title>BICM | Admin - Dashboard</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Toushin Ecomerce | @yield('title')</title>
-
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
     @include('admin.includes.stylesheet')
+    <link rel="shortcut icon" href="favicon.ico"/>
 </head>
-
-<body class="nav-md">
-
-<div class="container body">
-    <div class="main_container">
-        @include('admin.includes.sidebar')
-
-        <!-- top navigation -->
-        @include('admin.includes.top-nav')
-        <!-- /top navigation -->
-
-        <!-- page content -->
-        @yield('body')
-        <!-- /page content -->
-
-        <!-- footer content -->
-        @include('admin.includes.footer')
-        <!-- /footer content -->
-    </div>
+<body class="page-header-fixed page-quick-sidebar-over-content ">
+    @include('admin.includes.menu')
+<div class="clearfix">
 </div>
-
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        @include('admin.includes.sidebar')
+        @yield('content')
+    </div>
+    <!-- END CONTAINER -->
     @include('admin.includes.scripts')
-    @yield('customJs')
-
 </body>
+<!-- END BODY -->
 </html>

@@ -39,7 +39,7 @@
                                         <div class="row">
                                             <div class="col-lg-3 col-md-3">
                                                 <div class="logo">
-                                                    <img src="images/all icon v2/enterprise software.svg" alt="images">
+                                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
                                                 </div>
                                             </div>
                                             <div class="col-lg-9 col-md-9">
@@ -80,7 +80,7 @@
                                             <button>
                                                 Apply
                                                 <a href="career_form.html">
-                                                    <img src="images/career.png" alt="images" class="img-fluid">
+                                                    <img src="{{ asset('/') }}assets/frontend/images/career.png" alt="images" class="img-fluid">
                                                 </a>
                                             </button>
                                         </div>
@@ -101,7 +101,7 @@
                                         <div class="row">
                                             <div class="col-lg-3 col-md-3">
                                                 <div class="logo">
-                                                    <img src="images/all icon v2/enterprise software.svg" alt="images">
+                                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
                                                 </div>
                                             </div>
                                             <div class="col-lg-9 col-md-9">
@@ -142,7 +142,7 @@
                                             <button>
                                                 Apply
                                                 <a href="career_form.html">
-                                                    <img src="images/career.png" alt="images" class="img-fluid">
+                                                    <img src="{{ asset('/') }}assets/frontend/images/career.png" alt="images" class="img-fluid">
                                                 </a>
                                             </button>
                                         </div>
@@ -163,7 +163,7 @@
                                         <div class="row">
                                             <div class="col-lg-3 col-md-3">
                                                 <div class="logo">
-                                                    <img src="images/all icon v2/enterprise software.svg" alt="images">
+                                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
                                                 </div>
                                             </div>
                                             <div class="col-lg-9 col-md-9">
@@ -204,7 +204,7 @@
                                             <button>
                                                 Apply
                                                 <a href="career_form.html">
-                                                    <img src="images/career.png" alt="images" class="img-fluid">
+                                                    <img src="{{ asset('/') }}assets/frontend/images/career.png" alt="images" class="img-fluid">
                                                 </a>
                                             </button>
                                         </div>
@@ -225,7 +225,7 @@
                                         <div class="row">
                                             <div class="col-lg-3 col-md-3">
                                                 <div class="logo">
-                                                    <img src="images/all icon v2/enterprise software.svg" alt="images">
+                                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
                                                 </div>
                                             </div>
                                             <div class="col-lg-9 col-md-9">
@@ -266,7 +266,7 @@
                                             <button>
                                                 Apply
                                                 <a href="career_form.html">
-                                                    <img src="images/career.png" alt="images" class="img-fluid">
+                                                    <img src="{{ asset('/') }}assets/frontend/images/career.png" alt="images" class="img-fluid">
                                                 </a>
                                             </button>
                                         </div>
@@ -287,7 +287,7 @@
                                         <div class="row">
                                             <div class="col-lg-3 col-md-3">
                                                 <div class="logo">
-                                                    <img src="images/all icon v2/enterprise software.svg" alt="images">
+                                                    <img src="{{ asset('/') }}assets/frontend/images/all icon v2/enterprise software.svg" alt="images">
                                                 </div>
                                             </div>
                                             <div class="col-lg-9 col-md-9">
@@ -328,7 +328,7 @@
                                             <button>
                                                 Apply
                                                 <a href="career_form.html">
-                                                    <img src="images/career.png" alt="images" class="img-fluid">
+                                                    <img src="{{ asset('/') }}assets/frontend/images/career.png" alt="images" class="img-fluid">
                                                 </a>
                                             </button>
                                         </div>
@@ -373,7 +373,7 @@
                             the product development by consistent
                         </p>
                         <div class="img">
-                            <img src="images/trained.png" alt="img">
+                            <img src="{{ asset('/') }}assets/frontend/images/trained.png" alt="img">
                         </div>
 
                         <form action="">
@@ -408,7 +408,7 @@
             <div class="row">
                 <div class="col-lg-6 col-xs-6 col-md-6">
                     <div class="tiny_footer_logo">
-                        <a href="index.html"><img class="img-responsive" src="images/tiny_.png" alt="" srcset=""></a>
+                        <a href="index.html"><img class="img-responsive" src="{{ asset('/') }}assets/frontend/images/tiny_.png" alt="" srcset=""></a>
                         <span>© Copyright 2021 Doodle Inc.</span>
                     </div>
                 </div>

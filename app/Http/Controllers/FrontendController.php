@@ -23,4 +23,8 @@ class FrontendController extends Controller
     public function approch(){
         return view('frontend.approch.approch');
     }
+
+    public function diploma(){
+        return view('frontend.diploma.diploma');
+    }
 }
