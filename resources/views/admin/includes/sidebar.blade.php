@@ -46,13 +46,13 @@
             <li class="{{ (request()->is('course*')) ? 'active' : '' }}">
                 <a href="{{route('coursesPage')}}">
                     <i class="icon-badge"></i>
-                    <span class="title">Certification and Training</span>
+                    <span class="title">Certification and Training Course</span>
                 </a>
             </li>
-            <li>
-                <a href="javascript:;">
+            <li  class="{{ (request()->is('event*')) ? 'active' : '' }}">
+                <a href="{{route('eventsPage')}}">
                     <i class="icon-speech"></i>
-                    <span class="title">Research and Publication</span>
+                    <span class="title">Research and Publication Event</span>
                 </a>
             </li>
             <li>

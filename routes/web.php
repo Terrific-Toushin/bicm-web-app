@@ -6,6 +6,7 @@ use \App\Http\Controllers\FrontendController;
 use \App\Http\Controllers\ConfigController;
 use \App\Http\Controllers\MastersPageController;
 use \App\Http\Controllers\CoursePageController;
+use \App\Http\Controllers\EventPageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,9 +50,11 @@ Route::group(['middleware' => 'auth'],function (){
     Route::get('/course-edit-program/{id}', [CoursePageController::class, 'editCoursesProgram'])->name('editCoursesProgram');
     Route::post('/course-update-program', [CoursePageController::class, 'updateCoursesProgram'])->name('updateCoursesProgram');
 //    Event page route
-    Route::get('/events-page', [CoursePageController::class, 'index'])->name('eventsPage');
-    Route::post('/event-page', [CoursePageController::class, 'storeSetting'])->name('eventPage');
-    Route::get('/new-events', [CoursePageController::class, 'addEvent'])->name('newEvent');
-    Route::post('/add-events', [CoursePageController::class, 'storeEvent'])->name('addEvent');
+    Route::get('/events-page', [EventPageController::class, 'index'])->name('eventsPage');
+    Route::post('/event-page', [EventPageController::class, 'storeSetting'])->name('eventPage');
+    Route::get('/event-new-program', [EventPageController::class, 'addEventsProgram'])->name('newEventsProgram');
+    Route::post('/event-add-program', [EventPageController::class, 'storeEventsProgram'])->name('addEventsProgram');
+    Route::get('/event-edit-program/{id}', [EventPageController::class, 'editEventsProgram'])->name('editEventsProgram');
+    Route::post('/event-update-program', [EventPageController::class, 'updateEventsProgram'])->name('updateEventsProgram');
 });
 

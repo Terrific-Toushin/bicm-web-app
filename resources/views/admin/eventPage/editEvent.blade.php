@@ -28,11 +28,11 @@
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li>
-                        <a href="{{route('coursesPage')}}">Course Page</a>
+                        <a href="{{route('eventsPage')}}">Event Page</a>
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li>
-                        <a href="#">Update Course</a>
+                        <a href="#">Update Event</a>
                     </li>
                 </ul>
             </div>
@@ -40,11 +40,11 @@
             <!-- BEGIN PAGE CONTENT-->
             <div class="row">
                 <div class="col-md-12">
-                    <form class="form-horizontal form-row-seperated" method="POST" action="{{ route('updateCoursesProgram') }}" enctype="multipart/form-data" name="course">
+                    <form class="form-horizontal form-row-seperated" method="POST" action="{{ route('updateEventsProgram') }}" enctype="multipart/form-data" name="event">
                         <div class="portlet">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-shopping-cart"></i>Update course
+                                    <i class="fa fa-shopping-cart"></i>Update Event
                                 </div>
                             </div>
                             <div class="portlet-body">
@@ -69,11 +69,11 @@
                                                         <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" name="course_id" value="{{$course->course_id}}"/>
+                                                <input type="hidden" name="events_id" value="{{$event->events_id}}"/>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="col-md-2 control-label">Current Image</label>
-                                                <img src="{{asset($course->image)}}" style="width: 200px; height: 150px;">
+                                                <img src="{{asset($event->image)}}" style="width: 200px; height: 150px;">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -81,7 +81,7 @@
                                                         * </span>
                                             </label>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" name="tittle" value="{{$course->tittle}}"
+                                                <input type="text" class="form-control" name="tittle" value="{{$event->tittle}}"
                                                        placeholder="Page Tittle" autocomplete="off">
                                             </div>
                                         </div>
@@ -90,7 +90,7 @@
                                                         * </span>
                                             </label>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" name="schedule"  value="{{$course->schedule}}"
+                                                <input type="text" class="form-control" name="schedule"  value="{{$event->schedule}}"
                                                        placeholder="Schedule Date Range" autocomplete="off">
                                             </div>
                                         </div>
@@ -99,16 +99,25 @@
                                                         * </span>
                                             </label>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" name="duration"  value="{{$course->duration}}"
+                                                <input type="text" class="form-control" name="duration"  value="{{$event->duration}}"
                                                        placeholder="Duration Time" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Amount: <span class="required">
+                                            <label class="col-md-2 control-label">Fee: <span class="required">
                                                         * </span>
                                             </label>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" name="amount"  value="{{$course->amount}}"
+                                                <input type="text" class="form-control" name="amount"  value="{{$event->amount}}"
+                                                       placeholder="Amount" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Author: <span class="required">
+                                                        * </span>
+                                            </label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" name="author"  value="{{$event->author}}"
                                                        placeholder="Amount" autocomplete="off">
                                             </div>
                                         </div>
@@ -120,83 +129,61 @@
                                                 <select class="form-control input-medium select2me"
                                                         data-placeholder="Status..." name="status">
                                                     <option value=""></option>
-                                                    <option value="Y" {{$course->status == 'Y' ? 'selected' : ''}}>Show</option>
-                                                    <option value="N" {{$course->status == 'N' ? 'selected' : ''}}>Inactive</option>
+                                                    <option value="Y" {{$event->status == 'Y' ? 'selected' : ''}}>Show</option>
+                                                    <option value="N" {{$event->status == 'N' ? 'selected' : ''}}>Inactive</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$course->aboutShow == 'Y' ? 'checked' : ''}}
+                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$event->aboutShow == 'Y' ? 'checked' : ''}}
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="aboutShow" value="Y">
                                                 About </label>
                                             <div class="col-md-10">
                                                 <textarea class="ckeditor form-control" name="about"
-                                                          rows="4">{{$course->about}}</textarea>
+                                                          rows="4">{{$event->about}}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$course->pedagogyShow == 'Y' ? 'checked' : ''}}
+                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$event->pedagogyShow == 'Y' ? 'checked' : ''}}
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="pedagogyShow"
                                                                                          value="Y"> Pedagogy </label>
                                             <div class="col-md-10">
                                                 <textarea class="ckeditor form-control" name="pedagogy"
-                                                          rows="4">{{$course->pedagogy}}</textarea>
+                                                          rows="4">{{$event->pedagogy}}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$course->courseStructureShow == 'Y' ? 'checked' : ''}}
+                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$event->courseStructureShow == 'Y' ? 'checked' : ''}}
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="courseStructureShow"
-                                                                                         value="Y"> Course Structure
+                                                                                         value="Y"> Event Structure
                                             </label>
                                             <div class="col-md-10">
                                                 <textarea class="ckeditor form-control" name="courseStructure"
-                                                          rows="4">{{$course->courseStructure}}</textarea>
+                                                          rows="4">{{$event->courseStructure}}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$course->teachingMethodsShow == 'Y' ? 'checked' : ''}}
+                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$event->teachingMethodsShow == 'Y' ? 'checked' : ''}}
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="teachingMethodsShow"
                                                                                          value="Y"> Teaching Methods
                                             </label>
                                             <div class="col-md-10">
                                                 <textarea class="ckeditor form-control" name="teachingMethods"
-                                                          rows="4">{{$course->teachingMethods}}</textarea>
+                                                          rows="4">{{$event->teachingMethods}}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$course->amount == 'N' ? 'selected' : ''}}
-                                                                                         data-checkbox="icheckbox_flat-grey"
-                                                                                         name="gradingPolicyShow"
-                                                                                         value="Y"> Grading Policy
-                                            </label>
-                                            <div class="col-md-10">
-                                                <textarea class="ckeditor form-control" name="gradingPolicy"
-                                                          rows="4">{{$course->gradingPolicy}}</textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$course->feesChargesShow == 'Y' ? 'checked' : ''}}
-                                                                                         data-checkbox="icheckbox_flat-grey"
-                                                                                         name="feesChargesShow"
-                                                                                         value="Y"> Fees and Charges
-                                            </label>
-                                            <div class="col-md-10">
-                                                <textarea class="ckeditor form-control" name="feesCharges"
-                                                          rows="4">{{$course->feesCharges}}</textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$course->downloadShow == 'Y' ? 'checked' : ''}}
+                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$event->downloadShow == 'Y' ? 'checked' : ''}}
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="downloadShow"
                                                                                          value="Y"> Download </label>
                                             <div class="col-md-10">
                                                 <textarea class="ckeditor form-control" name="download"
-                                                          rows="4">{{$course->download}}</textarea>
+                                                          rows="4">{{$event->download}}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-actions">

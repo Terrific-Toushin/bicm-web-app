@@ -39,7 +39,7 @@
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li>
-                        <a href="{{route('coursesPage')}}">Course Page Edit</a>
+                        <a href="{{route('eventsPage')}}">Event Page Edit</a>
                     </li>
                 </ul>
             </div>
@@ -51,7 +51,7 @@
                         <div class="portlet">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-shopping-cart"></i>Course Page
+                                    <i class="fa fa-shopping-cart"></i>Event Page
                                 </div>
                             </div>
                             <div class="portlet-body">
@@ -63,13 +63,13 @@
                                         </li>
                                         <li>
                                             <a href="#tab_images" data-toggle="tab">
-                                                Course List</a>
+                                                Event List</a>
                                         </li>
                                     </ul>
                                     <div class="tab-content no-space">
                                         <div class="tab-pane active" id="tab_general">
                                             <div class="form-body">
-                                                <form method="POST" action="{{ route('coursePage') }}" enctype="multipart/form-data" name="courseSettings">
+                                                <form method="POST" action="{{ route('eventPage') }}" enctype="multipart/form-data" name="eventSettings">
                                                     @csrf
                                                     <div class="form-group">
                                                         <label class="col-md-2 control-label">Banner: <span class="required">
@@ -90,15 +90,15 @@
                                                                 </div>
                                                             </div>
 
-                                                            @if(!empty($courseSettings))
-                                                                <input type="hidden" class="form-control" name="mastersSettingId" value="{{$courseSettings->course_settings_id}}" placeholder="">
+                                                            @if(!empty($eventsSettings))
+                                                                <input type="hidden" class="form-control" name="mastersSettingId" value="{{$eventsSettings->events_settings_id}}" placeholder="">
                                                             @endif
 
                                                         </div>
-                                                        @if(!empty($courseSettings))
+                                                        @if(!empty($eventsSettings))
                                                             <div class="col-md-6">
                                                                 <label class="col-md-2 control-label">Current Banner</label>
-                                                                <img src="{{asset($courseSettings->banner)}}" style="width: 200px; height: 150px;">
+                                                                <img src="{{asset($eventsSettings->banner)}}" style="width: 200px; height: 150px;">
                                                             </div>
                                                         @endif
 
@@ -108,7 +108,7 @@
                                                         * </span>
                                                         </label>
                                                         <div class="col-md-10">
-                                                            <input type="text" class="form-control" name="tittle" value="{{!empty($courseSettings) ? $courseSettings->tittle : ''}}" placeholder="Page Tittle" autocomplete="off">
+                                                            <input type="text" class="form-control" name="tittle" value="{{!empty($eventsSettings) ? $eventsSettings->tittle : ''}}" placeholder="Page Tittle" autocomplete="off">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
@@ -116,7 +116,7 @@
                                                         * </span>
                                                         </label>
                                                         <div class="col-md-10">
-                                                            <textarea class="form-control" name="shortDescription">{{!empty($courseSettings) ? $courseSettings->short_description : ''}}</textarea>
+                                                            <textarea class="form-control" name="shortDescription">{{!empty($eventsSettings) ? $eventsSettings->short_description : ''}}</textarea>
                                                         </div>
                                                     </div>
                                                     <div class="form-actions">
@@ -131,8 +131,8 @@
                                             {{--                                                <i class="fa fa-warning fa-lg"></i> Image type and information need to be specified.--}}
                                             {{--                                            </div>--}}
                                             <div class="text-align-reverse margin-bottom-10">
-                                                <a href="{{route('newCoursesProgram')}}" class="btn yellow">
-                                                    <i class="fa fa-plus"></i> Add course </a>
+                                                <a href="{{route('newEventsProgram')}}" class="btn yellow">
+                                                    <i class="fa fa-plus"></i> Add Event </a>
                                             </div>
                                             <div class="row">
                                                 <div id="tab_images_uploader_filelist" class="col-md-6 col-sm-12">
@@ -165,20 +165,20 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                @foreach($courseInfo as $courses)
+                                                @foreach($eventInfo as $events)
                                                     <tr>
                                                         <td>
                                                             <a  href="#" class="fancybox-button" data-rel="fancybox-button">
-                                                                <img class="img-responsive"  src="{{asset($courses->image)}}" alt="">
+                                                                <img class="img-responsive"  src="{{asset($events->image)}}" alt="">
                                                             </a>
                                                         </td>
-                                                        <td>{{$courses->tittle}}</td>
-                                                        <td>{{$courses->schedule}}</td>
-                                                        <td>{{$courses->duration}}</td>
-                                                        <td>{{$courses->amount}}</td>
-                                                        <td>{{$courses->status == 'Y' ? "show" : "Hide" }}</td>
+                                                        <td>{{$events->tittle}}</td>
+                                                        <td>{{$events->schedule}}</td>
+                                                        <td>{{$events->duration}}</td>
+                                                        <td>{{$events->amount}}</td>
+                                                        <td>{{$events->status == 'Y' ? "show" : "Hide" }}</td>
                                                         <td>
-                                                            <a href="{{ route('editCoursesProgram', ['id' => $courses->course_id]) }}" class="btn default btn-sm">
+                                                            <a href="{{ route('editEventsProgram', ['id' => $events->events_id]) }}" class="btn default btn-sm">
                                                                 <i class="fa fa-edit"></i> Edit </a>
                                                             <a href="javascript:;" class="btn default btn-sm">
                                                                 <i class="fa fa-times"></i> Remove </a>

@@ -4,71 +4,124 @@ namespace App\Http\Controllers;
 
 use App\Models\Events;
 use App\Models\EventsSettings;
+use Illuminate\Http\Request;
 
 class EventPageController extends Controller
 {
-    public function index(){
-        return view('admin.eventPage.eventPage');
+    public function index()
+    {
+        $eventsSettings = EventsSettings::first();
+        $eventInfo = Events::orderBy('events_id','ASC')->get();
+        return view('admin.eventPage.eventPage',['eventsSettings'=>$eventsSettings,"eventInfo" => $eventInfo]);
     }
-    public function addEvent(){
-        return view('admin.masterPage.addcourseProgram');
+
+    public function addEventsProgram()
+    {
+        return view('admin.eventPage.addevent');
     }
-    public function storeEvent(Request $request){
+
+    public function editEventsProgram($id)
+    {
+        $event = Events::find($id);
+        return view('admin.eventPage.editevent',['event'=>$event]);
+    }
+
+    public function storeEventsProgram(Request $request)
+    {
         $image = $request->file('image');
         $imageName = $image->getClientOriginalName();
-        $directory = './frontEnd/assets/images/courses/';
-        $image->move($directory, $imageName);
-        $imgUrl = $directory.$imageName;
+        $directory = 'assets/frontend/images/events/';
+        $image->move('public/'.$directory, $imageName);
+        $imgUrl = $directory . $imageName;
 
-        $courseProgram=new Course;
-        $courseProgram->courseProgram_id          = $request->product_name;
-        $courseProgram->category_id               = $request->category_id;
-        $courseProgram->subCategory_id            = $request->subCategory_id;
-        $courseProgram->subCategoryContent_id     = $request->subCategoryContent_id;
-        $courseProgram->product_type              = $request->product_type;
-        $courseProgram->ratings                   = $request->ratings;
-        $courseProgram->price                     = $request->price;
-        $courseProgram->image                     = $imgUrl;
-        $courseProgram->newPrice                  = $request->newPrice;
-        $courseProgram->quantity                  = $request->quantity;
-        $courseProgram->description               = $request->description;
-        $courseProgram->product_specification     = $request->product_specification;
-        $courseProgram->promotion                 = $request->promotion;
-        $courseProgram->tags                      = $request->tags;
-        $courseProgram->colors                    = $request->colors;
-        $courseProgram->publication_status        = $request->publication_status;
-        if($courseProgram->save()){
-            return redirect()->route('coursePage')->with('success','Program info Save successfully');
-        }else
-            return redirect()->back()->with('failed','Program info Save Failed');
+        $event = new Events();
+        $event->events_id = floor(time() - 999999999);
+        $event->image = $imgUrl;
+        $event->tittle = $request->tittle;
+        $event->schedule = $request->schedule;
+        $event->duration = $request->duration;
+        $event->amount = $request->amount;
+        $event->author = $request->author;
+        $event->status = $request->status;
+        $event->aboutShow = isset($request->aboutShow) ? $request->aboutShow : 'N';
+        $event->about = $request->about;
+        $event->pedagogyShow = isset($request->pedagogyShow) ? $request->pedagogyShow : 'N';
+        $event->pedagogy = $request->pedagogy;
+        $event->courseStructureShow = isset($request->courseStructureShow) ? $request->courseStructureShow : 'N';
+        $event->courseStructure = $request->courseStructure;
+        $event->teachingMethodsShow = isset($request->teachingMethodsShow) ? $request->teachingMethodsShow : 'N';
+        $event->teachingMethods = $request->teachingMethods;
+        $event->downloadShow = isset($request->downloadShow) ? $request->downloadShow : 'N';
+        $event->download = $request->download;
+        if ($event->save()) {
+            return redirect(url('/event-page'))->with('success', 'event info Save successfully');
+        } else
+            return redirect()->back()->with('failed', 'event info Save Failed');
     }
-    public function storeSetting(Request $request){
-        $image = $request->file('image');
-        $imageName = $image->getClientOriginalName();
-        $directory = './frontEnd/assets/images/courses/';
-        $image->move($directory, $imageName);
-        $imgUrl = $directory.$imageName;
+    public function updateEventsProgram(Request $request)
+    {
+        $event = Events::find($request->events_id);
+        if($event){
+            $image = $request->file('image');
+            if ($image){
+                $imageName = $image->getClientOriginalName();
+                $directory = 'assets/frontend/images/events/';
+                $image->move('public/'.$directory, $imageName);
+                $imgUrl = $directory . $imageName;
+            }else{
+                $imgUrl = $event->image;
+            }
+        }
+        $event->image = $imgUrl;
+        $event->tittle = $request->tittle;
+        $event->schedule = $request->schedule;
+        $event->duration = $request->duration;
+        $event->amount = $request->amount;
+        $event->author = $request->author;
+        $event->status = $request->status;
+        $event->aboutShow = isset($request->aboutShow) ? $request->aboutShow : 'N';
+        $event->about = $request->about;
+        $event->pedagogyShow = isset($request->pedagogyShow) ? $request->pedagogyShow : 'N';
+        $event->pedagogy = $request->pedagogy;
+        $event->courseStructureShow = isset($request->courseStructureShow) ? $request->courseStructureShow : 'N';
+        $event->courseStructure = $request->courseStructure;
+        $event->teachingMethodsShow = isset($request->teachingMethodsShow) ? $request->teachingMethodsShow : 'N';
+        $event->teachingMethods = $request->teachingMethods;
+        $event->downloadShow = isset($request->downloadShow) ? $request->downloadShow : 'N';
+        $event->download = $request->download;
+        if ($event->save()) {
+            return redirect(url('/events-page'))->with('success', 'event info Update successfully');
+        } else
+            return redirect()->back()->with('failed', 'event info Update Failed');
+    }
 
-        $courseProgram=new Course;
-        $courseProgram->courseProgram_id          = $request->product_name;
-        $courseProgram->category_id               = $request->category_id;
-        $courseProgram->subCategory_id            = $request->subCategory_id;
-        $courseProgram->subCategoryContent_id     = $request->subCategoryContent_id;
-        $courseProgram->product_type              = $request->product_type;
-        $courseProgram->ratings                   = $request->ratings;
-        $courseProgram->price                     = $request->price;
-        $courseProgram->image                     = $imgUrl;
-        $courseProgram->newPrice                  = $request->newPrice;
-        $courseProgram->quantity                  = $request->quantity;
-        $courseProgram->description               = $request->description;
-        $courseProgram->product_specification     = $request->product_specification;
-        $courseProgram->promotion                 = $request->promotion;
-        $courseProgram->tags                      = $request->tags;
-        $courseProgram->colors                    = $request->colors;
-        $courseProgram->publication_status        = $request->publication_status;
-        if($courseProgram->save()){
-            return redirect()->route('coursePage')->with('success','Program info Save successfully');
-        }else
-            return redirect()->back()->with('failed','Program info Save Failed');
+    public function storeSetting(Request $request)
+    {
+        $image = $request->file('banner');
+        if ($image){
+            $imageName = $image->getClientOriginalName();
+            $directory = 'assets/frontend/images/eventPage/';
+            $image->move('public/'.$directory, $imageName);
+            $imgUrl = $directory . $imageName;
+        }
+        if (isset($request->mastersSettingId)){
+            $eventsSettings = EventsSettings::find($request->mastersSettingId);
+            if($image){
+                if(file_exists($eventsSettings->banner)){
+                    unlink($eventsSettings->banner);
+                }
+                $eventsSettings->banner = $imgUrl;
+            }
+        }else{
+            $eventsSettings = new EventsSettings();
+            $eventsSettings->events_settings_id = floor(time() - 999999999);
+            $eventsSettings->banner = $imgUrl;
+        }
+        $eventsSettings->tittle = $request->tittle;
+        $eventsSettings->short_description = $request->shortDescription;
+        if ($eventsSettings->save()) {
+            return redirect()->route('eventsPage')->with('success', 'Settings info Save successfully');
+        } else
+            return redirect()->back()->with('failed', 'Settings info Save Failed');
     }
 }

@@ -28,7 +28,7 @@
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li>
-                        <a href="{{route('coursesPage')}}">Courses Page</a>
+                        <a href="{{route('eventsPage')}}">Events Page</a>
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li>
@@ -40,11 +40,11 @@
             <!-- BEGIN PAGE CONTENT-->
             <div class="row">
                 <div class="col-md-12">
-                    <form class="form-horizontal form-row-seperated" method="POST" action="{{ route('addCoursesProgram') }}" enctype="multipart/form-data" name="coursesProgram">
+                    <form class="form-horizontal form-row-seperated" method="POST" action="{{ route('addEventsProgram') }}" enctype="multipart/form-data" name="EventsProgram">
                         <div class="portlet">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-shopping-cart"></i>New Course
+                                    <i class="fa fa-shopping-cart"></i>New Evetnt
                                 </div>
                             </div>
                             <div class="portlet-body">
@@ -87,11 +87,18 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Amount: <span class="required">
-                                                        * </span>
+                                            <label class="col-md-2 control-label">Registration Fee:
                                             </label>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" name="amount"
+                                                       placeholder="Amount">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Author Name:
+                                            </label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" name="author"
                                                        placeholder="Amount">
                                             </div>
                                         </div>
@@ -132,7 +139,7 @@
                                             <label class="control-label col-md-2"><input type="checkbox" class="icheck"
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="courseStructureShow"
-                                                                                         value="Y"> Course Structure
+                                                                                         value="Y"> Event Structure
                                             </label>
                                             <div class="col-md-10">
                                                 <textarea class="ckeditor form-control" name="courseStructure"
@@ -147,28 +154,6 @@
                                             </label>
                                             <div class="col-md-10">
                                                 <textarea class="ckeditor form-control" name="teachingMethods"
-                                                          rows="4"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
-                                                                                         data-checkbox="icheckbox_flat-grey"
-                                                                                         name="gradingPolicyShow"
-                                                                                         value="Y"> Grading Policy
-                                            </label>
-                                            <div class="col-md-10">
-                                                <textarea class="ckeditor form-control" name="gradingPolicy"
-                                                          rows="4"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
-                                                                                         data-checkbox="icheckbox_flat-grey"
-                                                                                         name="feesChargesShow"
-                                                                                         value="Y"> Fees and Charges
-                                            </label>
-                                            <div class="col-md-10">
-                                                <textarea class="ckeditor form-control" name="feesCharges"
                                                           rows="4"></textarea>
                                             </div>
                                         </div>
