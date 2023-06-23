@@ -57,7 +57,7 @@ class CoursePageController extends Controller
         $course->downloadShow = isset($request->downloadShow) ? $request->downloadShow : 'N';
         $course->download = $request->download;
         if ($course->save()) {
-            return redirect(url('/course-page'))->with('success', 'course info Save successfully');
+            return redirect(url('/courses-page'))->with('success', 'course info Save successfully');
         } else
             return redirect()->back()->with('failed', 'Course info Save Failed');
     }

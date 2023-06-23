@@ -154,7 +154,7 @@
                                                         Duration
                                                     </th>
                                                     <th width="7%">
-                                                        Amount
+                                                        Author
                                                     </th>
                                                     <th width="7%">
                                                         Status
@@ -175,7 +175,7 @@
                                                         <td>{{$events->tittle}}</td>
                                                         <td>{{$events->schedule}}</td>
                                                         <td>{{$events->duration}}</td>
-                                                        <td>{{$events->amount}}</td>
+                                                        <td>{{$events->author}}</td>
                                                         <td>{{$events->status == 'Y' ? "show" : "Hide" }}</td>
                                                         <td>
                                                             <a href="{{ route('editEventsProgram', ['id' => $events->events_id]) }}" class="btn default btn-sm">

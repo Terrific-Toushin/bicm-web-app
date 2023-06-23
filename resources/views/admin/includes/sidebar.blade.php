@@ -19,8 +19,8 @@
                     <span class="title">Dashboard</span>
                 </a>
             </li>
-            <li>
-                <a href="javascript:;">
+            <li class="{{ (request()->is('master*')) ? 'active' : '' }}">
+                <a href="{{route('homePage')}}">
                     <i class="icon-home"></i>
                     <span class="title">Home</span>
                 </a>

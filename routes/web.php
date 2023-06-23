@@ -7,6 +7,7 @@ use \App\Http\Controllers\ConfigController;
 use \App\Http\Controllers\MastersPageController;
 use \App\Http\Controllers\CoursePageController;
 use \App\Http\Controllers\EventPageController;
+use \App\Http\Controllers\HomePageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +36,19 @@ Route::get('/clear/cache', [ConfigController::class, 'clearCache']);
 
 Route::group(['middleware' => 'auth'],function (){
     Route::get('/admin-dashboard', [AdminDashboardController::class, 'index'])->name('adminDashboard');
+//    home page route
+    Route::get('/home-page', [HomePageController::class, 'index'])->name('homePage');
+    Route::get('/home-new-section/{id}', [HomePageController::class, 'newSection'])->name('newSection');
+    Route::get('/home-new-service/{id}', [HomePageController::class, 'newService'])->name('newService');
+    Route::get('/home-new-Overviews/{id}', [HomePageController::class, 'newOverview'])->name('newOverview');
+    Route::get('/home-new-why/{id}', [HomePageController::class, 'newWhy'])->name('newWhy');
+    Route::get('/home-new-project/{id}', [HomePageController::class, 'newProject'])->name('newProject');
+
+    Route::post('/home-settings-page', [HomePageController::class, 'storeHomeSetting'])->name('homeSettingPage');
+    Route::post('/home-services-page', [HomePageController::class, 'storeHomeService'])->name('homeServicePage');
+    Route::post('/home-Overviews-page', [HomePageController::class, 'storeHomeOverview'])->name('homeOverviewPage');
+    Route::post('/home-why-page', [HomePageController::class, 'storeHomeWhy'])->name('homeWhyPage');
+    Route::post('/home-project-page', [HomePageController::class, 'storeHomeProject'])->name('homeProjectPage');
 //    master page route
     Route::get('/masters-page', [MastersPageController::class, 'index'])->name('mastersPage');
     Route::post('/masters-page', [MastersPageController::class, 'storeSetting'])->name('masterPage');

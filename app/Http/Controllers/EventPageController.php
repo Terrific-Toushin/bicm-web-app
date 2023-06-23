@@ -17,7 +17,7 @@ class EventPageController extends Controller
 
     public function addEventsProgram()
     {
-        return view('admin.eventPage.addevent');
+        return view('admin.eventPage.addEvent');
     }
 
     public function editEventsProgram($id)
@@ -42,6 +42,7 @@ class EventPageController extends Controller
         $event->duration = $request->duration;
         $event->amount = $request->amount;
         $event->author = $request->author;
+        $event->shortDescription = $request->shortDescription;
         $event->status = $request->status;
         $event->aboutShow = isset($request->aboutShow) ? $request->aboutShow : 'N';
         $event->about = $request->about;
@@ -54,7 +55,7 @@ class EventPageController extends Controller
         $event->downloadShow = isset($request->downloadShow) ? $request->downloadShow : 'N';
         $event->download = $request->download;
         if ($event->save()) {
-            return redirect(url('/event-page'))->with('success', 'event info Save successfully');
+            return redirect(url('/events-page'))->with('success', 'event info Save successfully');
         } else
             return redirect()->back()->with('failed', 'event info Save Failed');
     }
@@ -78,6 +79,7 @@ class EventPageController extends Controller
         $event->duration = $request->duration;
         $event->amount = $request->amount;
         $event->author = $request->author;
+        $event->shortDescription = $request->shortDescription;
         $event->status = $request->status;
         $event->aboutShow = isset($request->aboutShow) ? $request->aboutShow : 'N';
         $event->about = $request->about;

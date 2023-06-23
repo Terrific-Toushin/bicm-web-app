@@ -122,6 +122,14 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <label class="col-md-2 control-label">Short Description: <span class="required">
+                                                        * </span>
+                                            </label>
+                                            <div class="col-md-10">
+                                                <textarea class="form-control" name="shortDescription">{{$event->shortDescription}}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <label class="col-md-2 control-label">Status: <span class="required">
                                                         * </span>
                                             </label>
