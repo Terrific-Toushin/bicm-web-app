@@ -31,7 +31,7 @@
                     <span class="title">About</span>
                 </a>
             </li>
-            <li class="{{ (request()->is('masters-page')) ? 'active' : '' }}">
+            <li class="{{ (request()->is('master*')) ? 'active' : '' }}">
                 <a href="{{route('mastersPage')}}">
                     <i class="icon-graduation"></i>
                     <span class="title">Master's Program</span>
@@ -43,8 +43,8 @@
                     <span class="title">Diploma</span>
                 </a>
             </li>
-            <li>
-                <a href="javascript:;">
+            <li class="{{ (request()->is('course*')) ? 'active' : '' }}">
+                <a href="{{route('coursesPage')}}">
                     <i class="icon-badge"></i>
                     <span class="title">Certification and Training</span>
                 </a>

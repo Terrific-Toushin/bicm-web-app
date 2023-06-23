@@ -42,9 +42,9 @@ Route::group(['middleware' => 'auth'],function (){
     Route::get('/masters-edit-program/{id}', [MastersPageController::class, 'editMastersProgram'])->name('editMastersProgram');
     Route::post('/masters-update-program', [MastersPageController::class, 'updateMastersProgram'])->name('updateMastersProgram');
 //    course page route
-    Route::get('/course-page', [CoursePageController::class, 'index'])->name('coursesPage');
+    Route::get('/courses-page', [CoursePageController::class, 'index'])->name('coursesPage');
     Route::post('/course-page', [CoursePageController::class, 'storeSetting'])->name('coursePage');
-    Route::get('/course-new-program', [CoursePageController::class, 'addCoursesProgram'])->name('coursesProgram');
+    Route::get('/course-new-program', [CoursePageController::class, 'addCoursesProgram'])->name('newCoursesProgram');
     Route::post('/course-add-program', [CoursePageController::class, 'storeCoursesProgram'])->name('addCoursesProgram');
     Route::get('/course-edit-program/{id}', [CoursePageController::class, 'editCoursesProgram'])->name('editCoursesProgram');
     Route::post('/course-update-program', [CoursePageController::class, 'updateCoursesProgram'])->name('updateCoursesProgram');
