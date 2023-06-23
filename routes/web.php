@@ -8,6 +8,8 @@ use \App\Http\Controllers\MastersPageController;
 use \App\Http\Controllers\CoursePageController;
 use \App\Http\Controllers\EventPageController;
 use \App\Http\Controllers\HomePageController;
+use \App\Http\Controllers\AboutPagesController;
+use \App\Http\Controllers\LibraryPagesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,6 +51,17 @@ Route::group(['middleware' => 'auth'],function (){
     Route::post('/home-Overviews-page', [HomePageController::class, 'storeHomeOverview'])->name('homeOverviewPage');
     Route::post('/home-why-page', [HomePageController::class, 'storeHomeWhy'])->name('homeWhyPage');
     Route::post('/home-project-page', [HomePageController::class, 'storeHomeProject'])->name('homeProjectPage');
+
+//    about page route
+    Route::get('/about-page', [AboutPagesController::class, 'index'])->name('aboutPage');
+    Route::get('/about-new-menu/{id}', [AboutPagesController::class, 'newAboutMenu'])->name('newAboutMenu');
+    Route::post('/about-settings-page', [AboutPagesController::class, 'storeAboutSetting'])->name('aboutSettingPage');
+
+//    library page route
+    Route::get('/library-page', [LibraryPagesController::class, 'index'])->name('libraryPage');
+    Route::get('/library-new-menu/{id}', [LibraryPagesController::class, 'newLibraryMenu'])->name('newLibraryMenu');
+    Route::post('/library-settings-page', [LibraryPagesController::class, 'storeLibrarySetting'])->name('librarySettingPage');
+
 //    master page route
     Route::get('/masters-page', [MastersPageController::class, 'index'])->name('mastersPage');
     Route::post('/masters-page', [MastersPageController::class, 'storeSetting'])->name('masterPage');

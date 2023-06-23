@@ -28,11 +28,11 @@
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li>
-                        <a href="{{route('coursesPage')}}">Courses Page</a>
+                        <a href="{{route('homePage')}}">Home Page</a>
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li>
-                        <a href="#">Add New Course</a>
+                        <a href="#">Section</a>
                     </li>
                 </ul>
             </div>
@@ -40,155 +40,76 @@
             <!-- BEGIN PAGE CONTENT-->
             <div class="row">
                 <div class="col-md-12">
-                    <form class="form-horizontal form-row-seperated" method="POST" action="{{ route('addCoursesProgram') }}" enctype="multipart/form-data" name="coursesProgram">
-                        <div class="portlet">
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    <i class="fa fa-shopping-cart"></i>New Course
-                                </div>
-                            </div>
-                            <div class="portlet-body">
-                                <div class="tabbable">
-                                    <div class="tab-content no-space">
-                                        @csrf
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Image: <span class="required">
-                                                        * </span>
-                                            </label>
-                                            <div class="col-md-10">
-                                                <input type="file" class="form-control" name="image" placeholder="" accept="image/*">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Tittle: <span class="required">
-                                                        * </span>
-                                            </label>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" name="tittle"
-                                                       placeholder="Page Tittle">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Schedule: <span class="required">
-                                                        * </span>
-                                            </label>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" name="schedule"
-                                                       placeholder="Schedule Date Range">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Duration: <span class="required">
-                                                        * </span>
-                                            </label>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" name="duration"
-                                                       placeholder="Duration Time">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Amount: <span class="required">
-                                                        * </span>
-                                            </label>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" name="amount"
-                                                       placeholder="Amount">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Status: <span class="required">
-                                                        * </span>
-                                            </label>
-                                            <div class="col-md-4">
-                                                <select class="form-control input-medium select2me"
-                                                        data-placeholder="Status..." name="status">
-                                                    <option value=""></option>
-                                                    <option value="Y">Show</option>
-                                                    <option value="N">Hide</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
-                                                                                         data-checkbox="icheckbox_flat-grey"
-                                                                                         name="aboutShow" value="Y">
-                                                About </label>
-                                            <div class="col-md-10">
-                                                <textarea class="ckeditor form-control" name="about"
-                                                          rows="4"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
-                                                                                         data-checkbox="icheckbox_flat-grey"
-                                                                                         name="pedagogyShow"
-                                                                                         value="Y"> Pedagogy </label>
-                                            <div class="col-md-10">
-                                                <textarea class="ckeditor form-control" name="pedagogy"
-                                                          rows="4"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
-                                                                                         data-checkbox="icheckbox_flat-grey"
-                                                                                         name="courseStructureShow"
-                                                                                         value="Y"> Course Structure
-                                            </label>
-                                            <div class="col-md-10">
-                                                <textarea class="ckeditor form-control" name="courseStructure"
-                                                          rows="4"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
-                                                                                         data-checkbox="icheckbox_flat-grey"
-                                                                                         name="teachingMethodsShow"
-                                                                                         value="Y"> Teaching Methods
-                                            </label>
-                                            <div class="col-md-10">
-                                                <textarea class="ckeditor form-control" name="teachingMethods"
-                                                          rows="4"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
-                                                                                         data-checkbox="icheckbox_flat-grey"
-                                                                                         name="gradingPolicyShow"
-                                                                                         value="Y"> Grading Policy
-                                            </label>
-                                            <div class="col-md-10">
-                                                <textarea class="ckeditor form-control" name="gradingPolicy"
-                                                          rows="4"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
-                                                                                         data-checkbox="icheckbox_flat-grey"
-                                                                                         name="feesChargesShow"
-                                                                                         value="Y"> Fees and Charges
-                                            </label>
-                                            <div class="col-md-10">
-                                                <textarea class="ckeditor form-control" name="feesCharges"
-                                                          rows="4"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
-                                                                                         data-checkbox="icheckbox_flat-grey"
-                                                                                         name="downloadShow"
-                                                                                         value="Y"> Download </label>
-                                            <div class="col-md-10">
-                                                <textarea class="ckeditor form-control" name="download"
-                                                          rows="4"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-actions">
-                                            <button type="submit" class="btn btn-success" style="float: right">Save
-                                            </button>
-                                        </div>
+                    <form  class="form-horizontal form-row-seperated" method="POST" action="{{ route('homeSettingPage') }}" enctype="multipart/form-data" name="homeSettings">
+                        @csrf
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Banner:</label>
+                            <div class="col-md-3">
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+
+                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+
+                                    <div>
+                                                                    <span class="btn default btn-file">
+                                                                        <span class="fileinput-new">Select image </span>
+                                                                        <span class="fileinput-exists">Change </span>
+                                                                        <input type="file" class="form-control" name="banner" placeholder="" accept="image/*">
+                                                                    </span>
+                                        <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
                                     </div>
                                 </div>
+
+                                @if(!empty($homeSettings))
+                                    <input type="hidden" class="form-control" name="home_settings_id" value="{{$homeSettings->home_settings_id}}" placeholder="">
+                                @endif
+
                             </div>
+                            @if(!empty($homeSettings->banner))
+                                <div class="col-md-6">
+                                    <label class="col-md-2 control-label">Current Banner</label>
+                                    <img src="{{asset($homeSettings->banner)}}" style="width: 200px; height: 150px;">
+                                </div>
+                            @endif
+
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Section Name: <span class="required">
+                                                        * </span>
+                            </label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="section_name" value="{{!empty($homeSettings) ? $homeSettings->section_name : ''}}" placeholder="Page section name" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Tittle: <span class="required">
+                                                        * </span>
+                            </label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="tittle" value="{{!empty($homeSettings) ? $homeSettings->tittle : ''}}" placeholder="Page Tittle" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Description:
+                            </label>
+                            <div class="col-md-10">
+                                <textarea class="form-control" name="description">{{!empty($homeSettings->description) ? $homeSettings->description : ''}}</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Status: <span class="required">
+                                                        * </span>
+                            </label>
+                            <div class="col-md-4">
+                                <select class="form-control input-medium select2me"
+                                        data-placeholder="Status..." name="status">
+                                    <option value=""></option>
+                                    <option value="Y" {{!empty($homeSettings->status) && $homeSettings->status == 'Y' ? 'selected' : ''}}>Show</option>
+                                    <option value="N" {{!empty($homeSettings->status) && $homeSettings->status == 'N' ? 'selected' : ''}}>Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-success" style="float: right">Save</button>
                         </div>
                     </form>
                 </div>

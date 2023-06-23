@@ -6,7 +6,7 @@ class ConfigController extends Controller
 {
     public function clearRoute()
     {
-        \Artisan::call('route:cache');
+        \Artisan::call('route:clear');
         return 'Routes cache cleared';
     }
     public function clearCache()

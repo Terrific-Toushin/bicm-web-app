@@ -19,14 +19,14 @@
                     <span class="title">Dashboard</span>
                 </a>
             </li>
-            <li class="{{ (request()->is('master*')) ? 'active' : '' }}">
+            <li class="{{ (request()->is('home*')) ? 'active' : '' }}">
                 <a href="{{route('homePage')}}">
                     <i class="icon-home"></i>
                     <span class="title">Home</span>
                 </a>
             </li>
-            <li>
-                <a href="javascript:;">
+            <li class="{{ (request()->is('about*')) ? 'active' : '' }}">
+                <a href="{{route('aboutPage')}}">
                     <i class="icon-speech"></i>
                     <span class="title">About</span>
                 </a>
@@ -37,19 +37,13 @@
                     <span class="title">Master's Program</span>
                 </a>
             </li>
-            <li>
-                <a href="javascript:;">
-                    <i class="icon-social-dropbox"></i>
-                    <span class="title">Diploma</span>
-                </a>
-            </li>
             <li class="{{ (request()->is('course*')) ? 'active' : '' }}">
                 <a href="{{route('coursesPage')}}">
                     <i class="icon-badge"></i>
                     <span class="title">Certification and Training Course</span>
                 </a>
             </li>
-            <li  class="{{ (request()->is('event*')) ? 'active' : '' }}">
+            <li class="{{ (request()->is('event*')) ? 'active' : '' }}">
                 <a href="{{route('eventsPage')}}">
                     <i class="icon-speech"></i>
                     <span class="title">Research and Publication Event</span>
@@ -57,6 +51,12 @@
             </li>
             <li>
                 <a href="javascript:;">
+                    <i class="icon-social-dropbox"></i>
+                    <span class="title">Diploma</span>
+                </a>
+            </li>
+            <li class="{{ (request()->is('library*')) ? 'active' : '' }}">
+                <a href="{{route('libraryPage')}}">
                     <i class="icon-book-open"></i>
                     <span class="title">D-Library</span>
                 </a>
@@ -72,24 +72,6 @@
                     <i class="icon-screen-tablet"></i>
                     <span class="title">Tender</span>
                 </a>
-            </li>
-
-            <li class="last ">
-                <a href="javascript:;">
-                    <i class="icon-pointer"></i>
-                    <span class="title">Maps</span>
-                    <span class="arrow "></span>
-                </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="maps_google.html">
-                            Google Maps</a>
-                    </li>
-                    <li>
-                        <a href="maps_vector.html">
-                            Vector Maps</a>
-                    </li>
-                </ul>
             </li>
         </ul>
         <!-- END SIDEBAR MENU -->
