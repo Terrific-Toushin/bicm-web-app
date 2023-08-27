@@ -1,278 +1,686 @@
 .navbar .dropdown-menu {
+
     margin-top: -16px !important;
+
 }
+
+
 
 .all-overflow {
+
     overflow: hidden !important;
+
 }
+
+
 
 #blog_archive .navbar-nav .nav-item .nav-link {
+
     color: #000;
+
 }
+
+
 
 .m-phon .phone {
+
     color: #000 !important;
+
 }
+
+
 
 .m-phon .phone path {
+
     fill: #000;
+
 }
 
+
+
 #blog_archive .container {
+
     max-width: 1380px;
+
 }
+
+
+
 
 
 /* =========================== BLOG_ARCHIVE CSS PART START =========================== */
 
+
+
 #blog-part {
+
     padding-top: 105px;
+
 }
+
+
 
 .blog-text {
+
     padding-bottom: 15px;
+
+    border-bottom: 2px dashed #4F8AD0;
+
 }
+
+
 
 #blog-part .controls {
+
     padding-top: 25px;
+
 }
 
-.blog-text h3 {
-    font-family: 'Poppins', sans-serif;
-    padding-top: 50px;
-    color: #000000;
-    font-size: 40px;
-    font-weight: 700;
-}
 
 #blog-part .controls button {
+
     font-family: 'Rubik', sans-serif;
+
     border: none;
+
     background: none;
+
     padding-right: 50px;
+
     color: #b3b3b3;
+
     font-size: 18px;
+
     font-weight: 500;
+
 }
 
-#blog-part .controls .mixitup-control-active {
-    color: #000000;
-}
 
-#blog-part .controls path {
-    fill: #b3b3b3;
-}
-
-#blog-part .controls .mixitup-control-active path {
-    fill: #000;
-}
-
-#blog-part .controls button svg {
-    margin-bottom: 5px;
-    margin-right: 8px;
-}
 
 #blog-part .row.blog-tab-container {
+
     margin-left: -25.5px;
+
     margin-right: -25.5px;
+
 }
+
+
 
 #blog-part .row.blog-tab-container .col-lg-4 {
+
     padding-left: 25.5px;
+
     padding-right: 25.5px;
+
 }
+
+
 
 .blog-tab {
+
     border-radius: 10px;
+
     -moz-box-shadow: 0 0 10px #ececec;
+
     -webkit-box-shadow: 0 0 10px #ececec;
+
     box-shadow: 0 0 10px #ececec;
+
     margin-bottom: 30px;
+
     margin-top: 30px;
+
 }
+
+
 
 .blog-tab h4 a {
+
     color: #4F81BD;
+
     text-decoration: none;
-    font-weight: 400;
+
     font-family: 'Rubik', sans-serif;
-    font-size: 16px;
+
 }
+
+
 
 .blog-tab h4 {
+
     font-family: 'Rubik', sans-serif;
+
     font-size: 16px;
+
     font-weight: 500;
+
     padding-top: 23px;
+
 }
+
+
 
 #blog-part .blog_number ul {
+
     padding: 0;
+
 }
+
+
 
 .blog-tab h4 span {
+
     color: #AAAAAA;
+
     font-size: 14px;
+
     font-weight: 400;
+
     float: right;
+
 }
+
+
 
 .blog-tab p a {
+
     text-decoration: none;
+
     color: #000000;
+
 }
+
+
 
 .blog-tab p {
+
     font-family: 'Rubik', sans-serif;
+
     font-size: 18px;
+
     font-weight: 400;
+
     line-height: 31px;
+
     padding-right: 20px;
+
     padding-top: 13px;
+
 }
+
+
 
 .blog_number {
+
     padding-top: 60px;
+
     text-align: center;
+
 }
+
+
 
 .blog_number ul {
+
     list-style-type: none;
+
 }
+
+
 
 .blog_number ul li {
+
     display: inline-block;
+
 }
+
+
 
 .blog_number ul li a {
+
     font-family: 'Poppins', sans-serif;
+
     font-weight: 600;
+
     font-size: 14px;
+
     color: #999999;
+
     padding: 5px 12px;
+
     margin-right: 10px;
+
     text-decoration: none;
+
 }
+
+
 
 .blog_number ul li a.active {
+
     color: #FFFFFF;
+
     background: #4F81BD;
+
     border-radius: 7px;
+
 }
 
+
+
 #blog_archive .inside_gap {
+
     height: 100px;
+
 }
+
+
+
 
 
 /* =========================== BLOG_ARCHIVE CSS PART END =========================== */
 
 
+
+
+
 /* ====================================================== MEDIA PART START ====================================================== */
 
+
+
 @media (min-width: 992px) and (max-width: 1199px) {
+
     #blog_archive .navbar-toggler i {
+
         color: #000 !important;
+
     }
+
     #blog_archive .navbar-nav .nav-item .nav-link {
+
         color: #FFF;
+
     }
+
 }
+
+
+
 
 
 /*  Medium devices (tablets, 768px and up) */
 
+
+
 @media (min-width: 768px) and (max-width: 991.98px) {
+
     #blog_archive .navbar-toggler i {
+
         color: #000 !important;
+
     }
+
     #blog_archive .navbar-nav .nav-item .nav-link {
+
         color: #FFF;
+
     }
+
     #blog-part {
+
         padding-top: 90px;
+
     }
+
     .blog-text h3 {
+
         font-size: 22px;
+
     }
+
     #blog-part .controls button {
+
         font-size: 16px;
+
         display: inline-flex;
+
         justify-content: center;
+
         align-items: center;
+
     }
+
     #blog-part .controls button svg {
+
         height: 12px;
+
         width: auto;
+
         margin-bottom: 1px;
+
     }
+
     .blog-tab p {
+
         font-size: 16px;
+
     }
+
     .blog-tab {
+
         padding-top: 40px;
+
     }
+
     .blog_number {
+
         padding-top: 60px;
+
         text-align: left;
+
         text-align: center;
+
     }
+
     #blog_archive .inside_gap {
+
         height: 80px;
+
     }
+
     #blog-part .controls {
+
         display: flex;
+
         overflow-x: scroll;
+
     }
+
     #blog-part .controls button {
+
         padding-right: 25px;
+
     }
+
 }
+
+
+
 
 
 /* Small devices (landscape phones, 576px and up) */
 
+
+
 @media (min-width: 320px) and (max-width: 767.98px) {
+
     #blog_archive .navbar-toggler i {
+
         color: #000 !important;
+
     }
+
     #blog_archive .navbar-nav .nav-item .nav-link {
+
         color: #FFF;
+
     }
+
     #blog-part {
+
         padding-top: 90px;
+
     }
+
     .blog-text h3 {
+
         font-size: 22px;
+
     }
+
     #blog-part .controls button {
+
         font-size: 16px;
+
         display: inline-flex;
+
         justify-content: center;
+
         align-items: center;
+
     }
+
     #blog-part .controls button svg {
+
         height: 12px;
+
         width: auto;
+
         margin-bottom: 1px;
+
     }
+
     .blog-tab p {
+
         font-size: 16px;
+
     }
+
  
+
     .blog_number {
+
         padding-top: 60px;
+
         text-align: left;
+
         text-align: center;
+
     }
+
     #blog_archive .inside_gap {
+
         height: 80px;
+
     }
+
     #blog-part .controls {
+
         display: flex;
+
         overflow-x: scroll;
+
     }
+
     #blog-part .controls button {
+
         padding-right: 25px;
+
     }
+
+}
+
+                           
+
+.blog-tab h4.courses_head{
+
+    padding: 10px 15px;
+
+    font-size: 18px;
+
+}
+
+
+
+p.date_time {
+
+    padding: 0 15px 10px;
+
+}
+
+p.date_time span {
+
+    display: flex;
+
+    color: #999;
+
+    align-items: center;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+p.date_time span:last-child{
+
+    margin-bottom: 0;
+
+}
+
+
+
+p.date_time span img{
+
+    margin-right: 10px;
+
+}
+
+
+
+.course_price{
+
+    border-top: 1px solid #4F8AD0;
+
+    padding: 10px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+
+.course_price span{
+
+    color: #4F81BD;
+
+    font-weight: bold;
+
+    font-size: 22px;
+
+}
+
+
+
+.course_price .enroll_now{
+
+    background: #4F8AD0;
+
+    color: #FFF;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    border-radius: 20px;
+
+    padding: 5px 15px
+
+}
+
+
+
+
+
+.controls ul li a{
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    margin-right: 5px;
+
+    padding: 0 8px;
+
+    font-size: 16px;
+
+    border-radius: 10px;
+
+    color: #4F8AD0;
+
+}
+
+
+
+.controls ul li a:hover{
+
+    text-decoration: none;
+
+}
+
+
+
+.controls ul li a.active{
+
+    background: #4F8AD0;
+
+    color: #fff !important;
+
+    position: relative;
+
+}
+
+.controls ul li a.active::after{
+
+    position: absolute;
+
+    content: "";
+
+    bottom: -7px;
+
+    width: 0px;
+
+    height: 0px;
+
+    border-left: 5px solid transparent;
+
+    border-right: 5px solid transparent;
+
+    border-top: 5px solid #4f8ad0;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+}
+
+
+
+
+
+.blog-tab-container .tab-content{
+
+    width: 100%;
+
+}
+
+
+
+.tab-pane.row.active{
+
+    display: flex !important;
+
 }

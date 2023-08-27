@@ -42,42 +42,65 @@
                 <div class="col-md-12">
                     <form  class="form-horizontal form-row-seperated" method="POST" action="{{ route('homeSettingPage') }}" enctype="multipart/form-data" name="homeSettings">
                         @csrf
-                        <div class="form-group">
-                            <label class="col-md-2 control-label">Banner:</label>
-                            <div class="col-md-3">
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
 
-                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                        @if(!empty($homeSettings) && $homeSettings->section_name == 'header')
+                            @php
+                                $banners = json_decode($homeSettings->banner,true);
+                            @endphp
+                            @if(!empty($homeSettings->banner) && is_array($banners))
 
-                                    <div>
+                                @foreach($banners as $key=>$banner)
+                                    <div class="col-md-3 mb-3">
+                                        <label class="control-label">{{$key+1}}</label>
+                                        <img class="col-md-2" src="{{asset($banner)}}" style="width: 200px; height: 150px;">
+                                    </div>
+                                @endforeach
+                            @endif
+                            <div class="form-group">
+                                <div class="col-md-10" id="image-inputs-container">
+                                    <label class="col-md-2 control-label">Slider Images:</label>
+                                    <div class="col-md-2 image-input">
+                                        <input type="file" name="banners[]" class="form-control-file" style="margin-top: 7px;">
+                                    </div>
+                                </div>
+                                <button type="button" class="col-md-2 btn btn-primary btn-sm" onclick="addImageInput()"  style="margin-top: 7px;">Add More Image</button>
+                            </div>
+                        @else
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Banner:</label>
+                                <div class="col-md-3">
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+
+                                        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+
+                                        <div>
                                                                     <span class="btn default btn-file">
                                                                         <span class="fileinput-new">Select image </span>
                                                                         <span class="fileinput-exists">Change </span>
                                                                         <input type="file" class="form-control" name="banner" placeholder="" accept="image/*">
                                                                     </span>
-                                        <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
+                                            <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
+                                        </div>
                                     </div>
                                 </div>
-
-                                @if(!empty($homeSettings))
-                                    <input type="hidden" class="form-control" name="home_settings_id" value="{{$homeSettings->home_settings_id}}" placeholder="">
+                                @if(!empty($homeSettings->banner))
+                                    <div class="col-md-6">
+                                        <label class="col-md-2 control-label">Current Banner</label>
+                                        <img src="{{asset($homeSettings->banner)}}" style="width: 200px; height: 150px;">
+                                    </div>
                                 @endif
 
                             </div>
-                            @if(!empty($homeSettings->banner))
-                                <div class="col-md-6">
-                                    <label class="col-md-2 control-label">Current Banner</label>
-                                    <img src="{{asset($homeSettings->banner)}}" style="width: 200px; height: 150px;">
-                                </div>
-                            @endif
-
-                        </div>
+                        @endif
+                        @if(!empty($homeSettings))
+                            <input type="hidden" class="form-control" name="home_settings_id" value="{{$homeSettings->home_settings_id}}" placeholder="">
+                        @endif
                         <div class="form-group">
                             <label class="col-md-2 control-label">Section Name: <span class="required">
                                                         * </span>
                             </label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="section_name" value="{{!empty($homeSettings) ? $homeSettings->section_name : ''}}" placeholder="Page section name" autocomplete="off">
+                                <input type="text" class="form-control" name="section_name" value="{{!empty($homeSettings) ? $homeSettings->section_name : ''}}" placeholder="Page section name" autocomplete="off" readonly>
                             </div>
                         </div>
                         <div class="form-group">
@@ -153,6 +176,20 @@
     <script type="text/javascript"
             src="{{ asset('/') }}/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js"></script>
     <script src="{{ asset('/') }}/assets/admin/pages/scripts/components-dropdowns.js"></script>
+    <script>
+        function addImageInput() {
+            const container = document.getElementById('image-inputs-container');
+            const imageInputDiv = document.createElement('div');
+            imageInputDiv.className = 'col-md-2 image-input';
+            const inputFile = document.createElement('input');
+            inputFile.type = 'file';
+            inputFile.name = 'banners[]';
+            inputFile.className = 'form-control-file';
+            inputFile.style = 'margin-top: 7px;';
+            imageInputDiv.appendChild(inputFile);
+            container.appendChild(imageInputDiv);
+        }
+    </script>
 @endsection
 
 @section('documentJquery')

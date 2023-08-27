@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Events;
 use App\Models\EventsSettings;
+use App\Models\Pages;
 use Illuminate\Http\Request;
 
 class EventPageController extends Controller
@@ -17,13 +18,15 @@ class EventPageController extends Controller
 
     public function addEventsProgram()
     {
-        return view('admin.eventPage.addEvent');
+        $pages = Pages::select('page_id','page_name','menu_tittle')->leftJoin('menus','menus.menu_id','=','pages.menu_id')->where('page_type','event')->where('pages.status','Y')->get();
+        return view('admin.eventPage.addEvent',['pages' => $pages]);
     }
 
     public function editEventsProgram($id)
     {
         $event = Events::find($id);
-        return view('admin.eventPage.editevent',['event'=>$event]);
+        $pages = Pages::select('page_id','page_name','menu_tittle')->leftJoin('menus','menus.menu_id','=','pages.menu_id')->where('page_type','event')->where('pages.status','Y')->get();
+        return view('admin.eventPage.editEvent',['event'=>$event, 'pages'=>$pages]);
     }
 
     public function storeEventsProgram(Request $request)
@@ -38,6 +41,7 @@ class EventPageController extends Controller
         $event->events_id = floor(time() - 999999999);
         $event->image = $imgUrl;
         $event->tittle = $request->tittle;
+        $event->page_id = $request->page_id;
         $event->schedule = $request->schedule;
         $event->duration = $request->duration;
         $event->amount = $request->amount;
@@ -75,6 +79,7 @@ class EventPageController extends Controller
         }
         $event->image = $imgUrl;
         $event->tittle = $request->tittle;
+        $event->page_id = $request->page_id;
         $event->schedule = $request->schedule;
         $event->duration = $request->duration;
         $event->amount = $request->amount;
@@ -120,6 +125,7 @@ class EventPageController extends Controller
             $eventsSettings->banner = $imgUrl;
         }
         $eventsSettings->tittle = $request->tittle;
+        $eventsSettings->page_id = $request->page_id;
         $eventsSettings->short_description = $request->shortDescription;
         if ($eventsSettings->save()) {
             return redirect()->route('eventsPage')->with('success', 'Settings info Save successfully');

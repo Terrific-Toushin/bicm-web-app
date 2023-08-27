@@ -27,8 +27,9 @@
 <script src="{{ asset('/') }}/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="{{ asset('/') }}/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="{{ asset('/') }}/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
-@yield('customJs')
 <script src="{{ asset('/') }}/assets/admin/pages/scripts/ecommerce-index.js"></script>
+
+@yield('customJs')
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
     jQuery(document).ready(function() {

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\MastersProgram;
+use App\Models\MastersForm;
 use App\Models\MastersSettings;
+use App\Models\Pages;
 use Illuminate\Http\Request;
 
 class MastersPageController extends Controller
@@ -17,13 +19,20 @@ class MastersPageController extends Controller
 
     public function addMastersProgram()
     {
-        return view('admin.masterPage.addMastersProgram');
+        $pages = Pages::select('page_id','page_name','menu_tittle')->leftJoin('menus','menus.menu_id','=','pages.menu_id')->where('page_type','master')->where('pages.status','Y')->get();
+        return view('admin.masterPage.addMastersProgram',['pages' => $pages]);
+    }
+
+    public function addMastersForm()
+    {
+        return view('admin.masterPage.addMastersForm');
     }
 
     public function editMastersProgram($id)
     {
         $mastersProgram = MastersProgram::find($id);
-        return view('admin.masterPage.editMastersProgram',['mastersProgram'=>$mastersProgram]);
+        $pages = Pages::select('page_id','page_name','menu_tittle')->leftJoin('menus','menus.menu_id','=','pages.menu_id')->where('page_type','master')->where('pages.status','Y')->get();
+        return view('admin.masterPage.editMastersProgram',['mastersProgram'=>$mastersProgram, 'pages' => $pages]);
     }
 
     public function storeMastersProgram(Request $request)
@@ -38,6 +47,7 @@ class MastersPageController extends Controller
         $mastersProgram->masters_program_id = floor(time() - 999999999);
         $mastersProgram->image = $imgUrl;
         $mastersProgram->tittle = $request->tittle;
+        $mastersProgram->page_id = $request->page_id;
         $mastersProgram->schedule = $request->schedule;
         $mastersProgram->duration = $request->duration;
         $mastersProgram->amount = $request->amount;
@@ -77,6 +87,7 @@ class MastersPageController extends Controller
             }
             $mastersProgram->image = $imgUrl;
             $mastersProgram->tittle = $request->tittle;
+            $mastersProgram->page_id = $request->page_id;
             $mastersProgram->schedule = $request->schedule;
             $mastersProgram->duration = $request->duration;
             $mastersProgram->amount = $request->amount;

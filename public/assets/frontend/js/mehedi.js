@@ -5,7 +5,7 @@
 
 
 
-// ---------------------------Paralax effect by tracking mouse directions------------------------------------ 
+// ---------------------------Paralax effect by tracking mouse directions------------------------------------
 $(".mh_projegct_images_frame, .digital-overlay, .global-future-overlay ").hover(function() {
     var moveableImage = $("img", this);
     var moveableText = $("p", this);
@@ -43,7 +43,7 @@ $(".mh_projegct_images_frame, .digital-overlay, .global-future-overlay ").hover(
         rect = $(this)[0].getBoundingClientRect();
     })
 });
-// ---------------------------Paralax effect by tracking mouse directions ended------------------------------------ 
+// ---------------------------Paralax effect by tracking mouse directions ended------------------------------------
 
 
 
@@ -56,7 +56,7 @@ $(".mh_projegct_images_frame, .digital-overlay, .global-future-overlay ").hover(
 // ---------------------------------Code for customizing slider dots----------------------------------
 $('.all_tand_t_elements').on('init', function(event, slick) {
     var dots = $('.slick-dots li');
-    //   console.log( 'Mehedi Hasan ' ); 
+    //   console.log( 'Mehedi Hasan ' );
     dots.each(function(k, v) {
         $(this).find('button').addClass('heading' + k);
     });
@@ -76,7 +76,7 @@ $('.all_tand_t_elements').on('init', function(event, slick) {
 
 $('.approach_slider').on('init', function(event, slick) {
     var dots = $('.slick-dots li');
-    //   console.log( 'Mehedi Hasan ' ); 
+    //   console.log( 'Mehedi Hasan ' );
     dots.each(function(k, v) {
         $(this).find('button').addClass('heading' + k);
     });
@@ -103,32 +103,32 @@ $('.approach_slider').on('init', function(event, slick) {
 
 
 // This code is for approach page  (right side fixed tabs) to detect if it crossed other sections or not ...
-// Collision js 
-function recthit(rectone, recttwo) {
-
-    var r1 = $(rectone);
-    var r2 = $(recttwo);
-
-    var r1x = r1.offset().left;
-    var r1w = r1.width();
-    var r1y = r1.offset().top;
-    var r1h = r1.height();
-
-    var r2x = r2.offset().left;
-    var r2w = r2.width();
-    var r2y = r2.offset().top;
-    var r2h = r2.height();
-
-    if (r1y + r1h < r2y ||
-        r1y > r2y + r2h ||
-        r1x > r2x + r2w ||
-        r1x + r1w < r2x) {
-        return false;
-    } else {
-        return true;
-    }
-
-}
+// Collision js
+// function recthit(rectone, recttwo) {
+//
+//     var r1 = $(rectone);
+//     var r2 = $(recttwo);
+//
+//     var r1x = r1.offset().left;
+//     var r1w = r1.width();
+//     var r1y = r1.offset().top;
+//     var r1h = r1.height();
+//
+//     var r2x = r2.offset().left;
+//     var r2w = r2.width();
+//     var r2y = r2.offset().top;
+//     var r2h = r2.height();
+//
+//     if (r1y + r1h < r2y ||
+//         r1y > r2y + r2h ||
+//         r1x > r2x + r2w ||
+//         r1x + r1w < r2x) {
+//         return false;
+//     } else {
+//         return true;
+//     }
+//
+// }
 
 $(document).scroll(function(e) {
 
@@ -162,7 +162,7 @@ $(document).scroll(function(e) {
 });
 // This code is for approach page  (right side fixed tabs) to detect if it crossed other sections or not ... Ended
 
-// Mobile Navbar js  started 
+// Mobile Navbar js  started
 $(".fa-bars").click(function() {
     $('#mob_menu').fadeIn(500);
     $('body').css({

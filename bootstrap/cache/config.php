@@ -263,6 +263,27 @@
     'max_age' => 0,
     'supports_credentials' => false,
   ),
+  'dashboard_constant' => 
+  array (
+    'PAGE_TYPE' => 
+    array (
+      'common' => 'Common Page',
+      'home' => 'Home Page',
+      'master' => 'Masters Program',
+      'courses' => 'Courses',
+      'event' => 'Event',
+    ),
+    'FIELD_TYPE' => 
+    array (
+      'FT' => 'text',
+      'FE' => 'email',
+      'FC' => 'date',
+      'FN' => 'number',
+      'TA' => 'textarea',
+      'FR' => 'radio',
+      'FS' => 'select',
+    ),
+  ),
   'database' => 
   array (
     'default' => 'mysql',
@@ -558,11 +579,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'mailhog',
-        'port' => '1025',
-        'encryption' => NULL,
-        'username' => NULL,
-        'password' => NULL,
+        'host' => 'smtp.gmail.com',
+        'port' => '465',
+        'encryption' => 'tls',
+        'username' => 'kamukmaya@gmail.com',
+        'password' => 'znhaljovdazaxwyb',
         'timeout' => NULL,
       ),
       'ses' => 
@@ -603,7 +624,7 @@
     ),
     'from' => 
     array (
-      'address' => NULL,
+      'address' => 'no-reply@bicm.bengalsols.com',
       'name' => 'BICM',
     ),
     'markdown' => 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\CourseSettings;
+use App\Models\Pages;
 use Illuminate\Http\Request;
 
 class CoursePageController extends Controller
@@ -17,13 +18,15 @@ class CoursePageController extends Controller
 
     public function addCoursesProgram()
     {
-        return view('admin.coursePage.addCourse');
+        $pages = Pages::select('page_id','page_name','menu_tittle')->leftJoin('menus','menus.menu_id','=','pages.menu_id')->where('page_type','courses')->where('pages.status','Y')->get();
+        return view('admin.coursePage.addCourse',['pages'=>$pages]);
     }
 
     public function editCoursesProgram($id)
     {
         $course = Course::find($id);
-        return view('admin.coursePage.editCourse',['course'=>$course]);
+        $pages = Pages::select('page_id','page_name','menu_tittle')->leftJoin('menus','menus.menu_id','=','pages.menu_id')->where('page_type','courses')->where('pages.status','Y')->get();
+        return view('admin.coursePage.editCourse',['course'=>$course, 'pages'=>$pages]);
     }
 
     public function storeCoursesProgram(Request $request)
@@ -38,6 +41,7 @@ class CoursePageController extends Controller
         $course->course_id = floor(time() - 999999999);
         $course->image = $imgUrl;
         $course->tittle = $request->tittle;
+        $course->page_id = $request->page_id;
         $course->schedule = $request->schedule;
         $course->duration = $request->duration;
         $course->amount = $request->amount;
@@ -77,6 +81,7 @@ class CoursePageController extends Controller
         }
         $course->image = $imgUrl;
         $course->tittle = $request->tittle;
+        $course->page_id = $request->page_id;
         $course->schedule = $request->schedule;
         $course->duration = $request->duration;
         $course->amount = $request->amount;

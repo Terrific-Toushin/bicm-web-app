@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\AdminDashboardController;
-use \App\Http\Controllers\FrontendController;
+use \App\Http\Controllers\FrontendControllers;
 use \App\Http\Controllers\ConfigController;
 use \App\Http\Controllers\MastersPageController;
 use \App\Http\Controllers\CoursePageController;
@@ -10,6 +10,10 @@ use \App\Http\Controllers\EventPageController;
 use \App\Http\Controllers\HomePageController;
 use \App\Http\Controllers\AboutPagesController;
 use \App\Http\Controllers\LibraryPagesController;
+use \App\Http\Controllers\MenuController;
+use \App\Http\Controllers\PagesController;
+use \App\Http\Controllers\FormController;
+use \App\Http\Controllers\SideBarController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,14 +29,29 @@ use \App\Http\Controllers\LibraryPagesController;
 //    return view('welcome');
 //});
 
-Route::get('/', [FrontendController::class, 'index'])->name('home');
-Route::get('/home', [FrontendController::class, 'index']);
-Route::get('/service', [FrontendController::class, 'service'])->name('service');
-Route::get('/masters-program', [FrontendController::class, 'mastersProgram'])->name('mastersProgram');
-Route::get('/certification-training', [FrontendController::class, 'certificationTraining'])->name('certificationTraining');
-Route::get('/technology', [FrontendController::class, 'technology'])->name('technology');
-Route::get('/approch', [FrontendController::class, 'approch'])->name('approch');
-Route::get('/diploma', [FrontendController::class, 'diploma'])->name('diploma');
+Route::get('/', [FrontendControllers::class, 'index'])->name('home');
+Route::get('/home', [FrontendControllers::class, 'index']);
+Route::get('/pages/{url}', [FrontendControllers::class, 'pageDetails'])->name('pageDetails');
+Route::get('/pages/program-details/{page_type}/{page_id}', [FrontendControllers::class, 'programDetails'])->name('programDetails');
+Route::get('/pages/course-details/{page_id}', [FrontendControllers::class, 'courseDetails'])->name('courseDetails');
+Route::get('/pages/event-details/{page_id}', [FrontendControllers::class, 'eventDetails'])->name('eventsDetails');
+Route::get('/pages/program-apply/{page_id}/{program_id}', [FrontendControllers::class, 'programForm'])->name('programForm');
+Route::get('/service', [FrontendControllers::class, 'service'])->name('service');
+Route::get('/masters-program', [FrontendControllers::class, 'mastersProgram'])->name('mastersProgram');
+Route::get('/certification-training', [FrontendControllers::class, 'certificationTraining'])->name('certificationTraining');
+Route::get('/technology', [FrontendControllers::class, 'technology'])->name('technology');
+Route::get('/approch', [FrontendControllers::class, 'approch'])->name('approch');
+Route::get('/diploma', [FrontendControllers::class, 'diploma'])->name('diploma');
+Route::post('/store-form-data', [FrontendControllers::class, 'storeFormData'])->name('storeFormData');
+Route::post('/store-contact-data', [FrontendControllers::class, 'storeContactData'])->name('storeContactData');
+Route::get('/verify/{id}/{hash}', [FrontendControllers::class, 'verify'])->name('verification.verify');
+Route::get('/student-login', [FrontendControllers::class, 'studentLogin'])->name('studentLogin');
+Route::post('/student-login-check', [FrontendControllers::class, 'checkStudentLogin'])->name('checkStudentLogin');
+Route::get('/student-forget-login', [FrontendControllers::class, 'studentForgetLogin'])->name('studentForgetLogin');
+Route::post('/student-password-reset', [FrontendControllers::class, 'resetStudentPassword'])->name('resetStudentPassword');
+Route::get('/student-signUp', [FrontendControllers::class, 'studentSignUp'])->name('studentSignUp');
+Route::get('/student-dashboard', [FrontendControllers::class, 'studentDashboard'])->name('studentDashboard');
+Route::post('/student-new', [FrontendControllers::class, 'studentNew'])->name('studentNew');
 Route::get('/clear/route', [ConfigController::class, 'clearRoute']);
 Route::get('/clear/cache', [ConfigController::class, 'clearCache']);
 
@@ -57,6 +76,34 @@ Route::group(['middleware' => 'auth'],function (){
     Route::get('/about-new-menu/{id}', [AboutPagesController::class, 'newAboutMenu'])->name('newAboutMenu');
     Route::post('/about-settings-page', [AboutPagesController::class, 'storeAboutSetting'])->name('aboutSettingPage');
 
+//    side bar route
+    Route::get('/side-bar', [SideBarController::class, 'index'])->name('sideBar');
+    Route::get('/side-bar-new/{id}', [SideBarController::class, 'newSideBar'])->name('newSideBar');
+    Route::post('/side-bar-settings', [SideBarController::class, 'storeSideBar'])->name('storeSideBar');
+    Route::post('/program-menu', [SideBarController::class, 'programMenu'])->name('programMenu');
+
+//    page route
+    Route::get('/pages-all', [PagesController::class, 'index'])->name('allPages');
+    Route::get('/page-details/{id}', [PagesController::class, 'detailsPage'])->name('pageDetails');
+    Route::delete('/page-delete/{id}', [PagesController::class, 'destroy'])->name('deletePage');
+    Route::post('/page-settings', [PagesController::class, 'storePagesSetting'])->name('pageSettings');
+    Route::post('/page-menu', [PagesController::class, 'getMenu'])->name('pageMenu');
+
+//    create form wizard
+    Route::get('/form-create', [FormController::class, 'createForm'])->name('createForm');
+    Route::get('/form-list', [FormController::class, 'formList'])->name('formList');
+    Route::get('/form-details/{id}', [FormController::class, 'detailsForm'])->name('detailsForm');
+    Route::get('/form-details-json/{id}', [FormController::class, 'detailsFormJson'])->name('detailsFormJson');
+    Route::get('/form-edit/{id}', [FormController::class, 'editForm'])->name('editForm');
+    Route::post('/form-add', [FormController::class, 'addForm'])->name('addForm');
+
+//    menu page route
+    Route::get('/menu-all', [MenuController::class, 'index'])->name('allMenu');
+    Route::get('/menu-create/{id}/{parentId}', [MenuController::class, 'newMenu'])->name('newMenu');
+    Route::delete('/menu-delete/{id}', [MenuController::class, 'destroy'])->name('deleteMenu');
+    Route::get('/menu-details/{parentId}', [MenuController::class, 'detailsMenu'])->name('detailsMenu');
+    Route::post('/menu-update', [MenuController::class, 'storeMenu'])->name('updateMenu');
+
 //    library page route
     Route::get('/library-page', [LibraryPagesController::class, 'index'])->name('libraryPage');
     Route::get('/library-new-menu/{id}', [LibraryPagesController::class, 'newLibraryMenu'])->name('newLibraryMenu');
@@ -66,6 +113,7 @@ Route::group(['middleware' => 'auth'],function (){
     Route::get('/masters-page', [MastersPageController::class, 'index'])->name('mastersPage');
     Route::post('/masters-page', [MastersPageController::class, 'storeSetting'])->name('masterPage');
     Route::get('/masters-new-program', [MastersPageController::class, 'addMastersProgram'])->name('newMastersProgram');
+    Route::get('/masters-new-form', [MastersPageController::class, 'addMastersForm'])->name('newMastersForm');
     Route::post('/masters-add-program', [MastersPageController::class, 'storeMastersProgram'])->name('addMastersProgram');
     Route::get('/masters-edit-program/{id}', [MastersPageController::class, 'editMastersProgram'])->name('editMastersProgram');
     Route::post('/masters-update-program', [MastersPageController::class, 'updateMastersProgram'])->name('updateMastersProgram');

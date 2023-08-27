@@ -95,6 +95,13 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-md-2 control-label">Class:
+                            </label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="class" value="{{!empty($homeProject->class) ? $homeProject->class : ''}}" placeholder="content class" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-md-2 control-label">Status: <span class="required">
                                                         * </span>
                             </label>

@@ -22,65 +22,33 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item Engagement_Dropdown{{ (request()->is('service*')) ? 'active' : '' }}">
-                    <a class="nav-link" href="#">About</a>
-                    <div class="engagement_dropdown">
-                        <ul>
-                            <li><a href="#">Mission & Vision</a></li>
-                            <li><a href="#">Board of Directors</a></li>
-                            <li><a href="#">Faculty Members</a></li>
-                            <li><a href="#">Registrar’s Office</a></li>
-                            <li><a href="#">Resources</a></li>
-                            <li><a href="#">Webmail</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item {{ (request()->is('masters-program')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{route('mastersProgram')}}">Master’s Program</a>
-                </li>
-                <li class="nav-item {{ (request()->is('diploma*')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{route('diploma')}}">Diploma</a>
-                </li>
+                @foreach($backDataMenu['backMenus'] as $backMenu)
+                    @if($backMenu['url'] == 'home')
+                        <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}">
+                            <a class="nav-link" href="{{route('home')}}">{{$backMenu['menu_tittle']}} <span class="sr-only">(current)</span></a>
+                        </li>
+                    @else
+                        <li class="nav-item Engagement_Dropdown{{ (request()->is('pages/'.$backMenu['url'].'*')) ? 'active' : '' }}">
+                            <a class="nav-link" href="{{url('pages/'.$backMenu['url'])}}">{{$backMenu['menu_tittle']}}</a>
+                            @if($backMenu['sub_menu'] == 'Y')
+                                <div class="engagement_dropdown">
+                                    <ul>
+                                        @foreach($backMenu['subMenuDetails'] as $subMenu)
+                                            <li><a href="{{url('pages/'.$subMenu['url'])}}">{{$subMenu['menu_tittle']}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                        </li>
+                    @endif
+                @endforeach
 
-                <li class="nav-item Engagement_Dropdown {{ (request()->is('certificationTraining')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{route('certificationTraining')}}">Certification and Training</a>
-                    <div class="engagement_dropdown">
-                        <ul>
-                            <li><a href="#">Certificate Courses</a></li>
-                            <li><a href="#">Certification Program</a></li>
-                            <li><a href="#">Online Course</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item Engagement_Dropdown padding {{ (request()->is('resource*')) ? 'active' : '' }}">
-                    <a class="nav-link" href="">Research and Publication</a>
-                    <div class="engagement_dropdown">
-                        <ul>
-                            <li><a href="#">Working Papers</a></li>
-                            <li><a href="#">Policy Papers</a></li>
-                            <li><a href="#">Faculty Publication</a></li>
-                            <li><a href="#">Financial Market Review</a></li>
-                            <li><a href="#">BICM Jounral</a></li>
-                            <li><a href="#">Research Seminar Series</a></li>
-                            <li><a href="#">ICSFI 2021</a></li>
-                            <li><a href="#">BICM RESEARCH GRANT</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item Engagement_Dropdown padding {{ (request()->is('Company*')) ? 'active' : '' }}">
-                    <a class="nav-link" href="#">D-Library</a>
-                </li>
-                <li class="nav-item Engagement_Dropdown padding {{ (request()->is('Company*')) ? 'active' : '' }}">
-                    <a class="nav-link" href="#">Online Service</a>
-                </li>
-                <li class="nav-item Engagement_Dropdown padding {{ (request()->is('Company*')) ? 'active' : '' }}">
-                    <a class="nav-link" href="#">Tender</a>
-                </li>
             </ul>
+        </div>
+        <div class="topHeader">
+            <div class="login_signupButt">
+                <p><a href="{{url('student-login')}}">Login</a> Or <a href="{{url('student-signUp')}}">Sign Up</a></p>
+            </div>
         </div>
     </div>
 </nav>
@@ -111,57 +79,27 @@
     </div>
     <nav class="nav mob_nav_" role="navigation">
         <ul class="nav__list">
-            <li><a href="{{route('home')}}">Home</a></li>
-            <li>
-                <input id="group-20" type="checkbox" hidden />
-                <label for="group-20"><span class=""><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.46875 8.9375C6.75 9.21875 7.21875 9.21875 7.5 8.9375L13.5938 2.875C13.875 2.5625 13.875 2.09375 13.5938 1.8125L12.875 1.09375C12.5938 0.8125 12.125 0.8125 11.8125 1.09375L7 5.90625L2.15625 1.09375C1.84375 0.8125 1.375 0.8125 1.09375 1.09375L0.375 1.8125C0.09375 2.09375 0.09375 2.5625 0.375 2.875L6.46875 8.9375Z" fill="#BBBBBB"/>
-                    </svg>
-                    </span> <p>About </p></label>
-                <ul class="sub-group-list">
-                    <li><a href="#">Mission & Vision</a></li>
-                    <li><a href="#">Board of Directors</a></li>
-                    <li><a href="#">Faculty Members</a></li>
-                    <li><a href="#">Registrar’s Office</a></li>
-                    <li><a href="#">Resources</a></li>
-                    <li><a href="#">Webmail</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </li>
-            <li><a class="nav-link" href="{{route('mastersProgram')}}">Masters’s Program</a></li>
-            <li><a href="{{route('diploma')}}">Diploma</a></li>
-            <li>
-                <input id="group-200" type="checkbox" hidden />
-                <label for="group-200"><span class=""><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.46875 8.9375C6.75 9.21875 7.21875 9.21875 7.5 8.9375L13.5938 2.875C13.875 2.5625 13.875 2.09375 13.5938 1.8125L12.875 1.09375C12.5938 0.8125 12.125 0.8125 11.8125 1.09375L7 5.90625L2.15625 1.09375C1.84375 0.8125 1.375 0.8125 1.09375 1.09375L0.375 1.8125C0.09375 2.09375 0.09375 2.5625 0.375 2.875L6.46875 8.9375Z" fill="#BBBBBB"/>
-                    </svg>
-                    </span> <p>Certification and Training </p></label>
-                <ul class="sub-group-list">
-                    <li><a href="#">Certificate Courses</a></li>
-                    <li><a href="#">Certification Program</a></li>
-                    <li><a href="#">Online Course</a></li>
-                </ul>
-            </li>
-            <li>
-                <input id="group-201" type="checkbox" hidden />
-                <label for="group-201"><span class=""><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.46875 8.9375C6.75 9.21875 7.21875 9.21875 7.5 8.9375L13.5938 2.875C13.875 2.5625 13.875 2.09375 13.5938 1.8125L12.875 1.09375C12.5938 0.8125 12.125 0.8125 11.8125 1.09375L7 5.90625L2.15625 1.09375C1.84375 0.8125 1.375 0.8125 1.09375 1.09375L0.375 1.8125C0.09375 2.09375 0.09375 2.5625 0.375 2.875L6.46875 8.9375Z" fill="#BBBBBB"/>
-                    </svg>
-                    </span> <p>Research and Publication </p></label>
-                <ul class="sub-group-list">
-                    <li><a href="#">Working Papers</a></li>
-                    <li><a href="#">Policy Papers</a></li>
-                    <li><a href="#">Faculty Publication</a></li>
-                    <li><a href="#">Financial Market Review</a></li>
-                    <li><a href="#">BICM Jounral</a></li>
-                    <li><a href="#">Research Seminar Series</a></li>
-                    <li><a href="#">ICSFI 2021</a></li>
-                    <li><a href="#">BICM RESEARCH GRANT</a></li>
-                </ul>
-            </li>
-            <li><a class="nav-link" href="{{route('mastersProgram')}}">D-Library</a></li>
-            <li><a class="nav-link" href="{{route('mastersProgram')}}">Online Service</a></li>
-            <li><a class="nav-link" href="{{route('mastersProgram')}}">Tender</a></li>
+            @foreach($backDataMenu['backMenus'] as $backMenu)
+                @if($backMenu['url'] == 'home')
+                    <li><a href="{{route('home')}}">Home</a></li>
+                @else
+                    @if($backMenu['sub_menu'] == 'Y')
+                        <li>
+                            <input id="group-200" type="checkbox" hidden />
+                            <label for="group-200"><span class=""><svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.46875 8.9375C6.75 9.21875 7.21875 9.21875 7.5 8.9375L13.5938 2.875C13.875 2.5625 13.875 2.09375 13.5938 1.8125L12.875 1.09375C12.5938 0.8125 12.125 0.8125 11.8125 1.09375L7 5.90625L2.15625 1.09375C1.84375 0.8125 1.375 0.8125 1.09375 1.09375L0.375 1.8125C0.09375 2.09375 0.09375 2.5625 0.375 2.875L6.46875 8.9375Z" fill="#BBBBBB"/></svg></span>
+                                <p>{{$backMenu['menu_tittle']}}</p>
+                            </label>
+                            <ul class="sub-group-list">
+                                @foreach($backMenu['subMenuDetails'] as $subMenu)
+                                    <li><a href="{{url('pages/'.$subMenu['url'])}}">{{$subMenu['menu_tittle']}}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+                    @else
+                        <li><a class="nav-link" href="{{url('pages/'.$backMenu['url'])}}">{{$backMenu['menu_tittle']}}</a></li>
+                    @endif
+                @endif
+            @endforeach
         </ul>
     </nav>
 </section>

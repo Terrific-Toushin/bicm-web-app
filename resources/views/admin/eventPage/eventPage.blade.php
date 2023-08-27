@@ -58,74 +58,12 @@
                                 <div class="tabbable">
                                     <ul class="nav nav-tabs">
                                         <li class="active">
-                                            <a href="#tab_general" data-toggle="tab">
-                                                General </a>
-                                        </li>
-                                        <li>
                                             <a href="#tab_images" data-toggle="tab">
                                                 Event List</a>
                                         </li>
                                     </ul>
                                     <div class="tab-content no-space">
-                                        <div class="tab-pane active" id="tab_general">
-                                            <div class="form-body">
-                                                <form method="POST" action="{{ route('eventPage') }}" enctype="multipart/form-data" name="eventSettings">
-                                                    @csrf
-                                                    <div class="form-group">
-                                                        <label class="col-md-2 control-label">Banner: <span class="required">
-                                                        * </span>
-                                                        </label>
-                                                        <div class="col-md-3">
-                                                            <div class="fileinput fileinput-new" data-provides="fileinput">
-
-                                                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
-
-                                                                <div>
-                                                                    <span class="btn default btn-file">
-                                                                        <span class="fileinput-new">Select image </span>
-                                                                        <span class="fileinput-exists">Change </span>
-                                                                        <input type="file" class="form-control" name="banner" placeholder="" accept="image/*">
-                                                                    </span>
-                                                                    <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput">Remove </a>
-                                                                </div>
-                                                            </div>
-
-                                                            @if(!empty($eventsSettings))
-                                                                <input type="hidden" class="form-control" name="mastersSettingId" value="{{$eventsSettings->events_settings_id}}" placeholder="">
-                                                            @endif
-
-                                                        </div>
-                                                        @if(!empty($eventsSettings))
-                                                            <div class="col-md-6">
-                                                                <label class="col-md-2 control-label">Current Banner</label>
-                                                                <img src="{{asset($eventsSettings->banner)}}" style="width: 200px; height: 150px;">
-                                                            </div>
-                                                        @endif
-
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-md-2 control-label">Tittle: <span class="required">
-                                                        * </span>
-                                                        </label>
-                                                        <div class="col-md-10">
-                                                            <input type="text" class="form-control" name="tittle" value="{{!empty($eventsSettings) ? $eventsSettings->tittle : ''}}" placeholder="Page Tittle" autocomplete="off">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-md-2 control-label">Short Description: <span class="required">
-                                                        * </span>
-                                                        </label>
-                                                        <div class="col-md-10">
-                                                            <textarea class="form-control" name="shortDescription">{{!empty($eventsSettings) ? $eventsSettings->short_description : ''}}</textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-actions">
-                                                        <button type="submit" class="btn btn-success" style="float: right">Save</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane" id="tab_images">
+                                        <div class="tab-pane active" id="tab_images">
                                             {{--                                            <div class="alert alert-success margin-bottom-10">--}}
                                             {{--                                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>--}}
                                             {{--                                                <i class="fa fa-warning fa-lg"></i> Image type and information need to be specified.--}}

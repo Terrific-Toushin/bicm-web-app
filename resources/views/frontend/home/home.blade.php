@@ -2,82 +2,133 @@
 
 @section('content')
     <!-- =========================== BANNER PART START =========================== -->
-    <section id="banner">
-        <video autoplay muted loop class="myVideo" id="myVideo">
-            <source src="https://www.thedoodleinc.com/images/home-video-banner.mp4" type="video/mp4">
-        </video>
-        <div class="container">
-            <div class="">
-                <div class="col-lg-12">
-                    <div class="banner-text">
-                        <h1>Your Trusted <span>Partner in Multiplatform</span> Development</h1>
-                        <div class="web_mob_cloud">
-                            <a href="#">Web</a>
-                            <a href="#">Mobile</a>
-                            <a href="#">Cloud</a>
+    <section id="new-banner" style="padding-top: 42px;">
+        <div class="slider-container">
+            <div class="slider">
+                @php
+                    $banners = json_decode($header->banner,true);
+                @endphp
+                @if(!empty($header->banner) && is_array($banners))
+                    @foreach($banners as $key=>$banner)
+                        <div class="slide">
+                            <img src="{{asset($banner)}}" alt="...">
+{{--                            <div class="slide-text">Slide 1 Text</div>--}}
                         </div>
-                        <div class="banner-email">
-                            <div class="form">
-                                <form action="">
-                                    <input type="text" placeholder="Email Address..." class="form-control subscribe">
-                                    <button class="banner-overlay">
-                                        <span>Get Started</span>
-                                        <div class="banner-arrow">
-                                            <svg width="9" height="9" viewBox="0 0 9 9" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <g clip-path="url(#clip0)">
-                                                    <path
-                                                        d="M8.50116 4.178L5.51578 1.19254C5.43056 1.10732 5.31698 1.06055 5.19587 1.06055C5.07463 1.06055 4.96111 1.10739 4.87589 1.19254L4.60484 1.46366C4.51969 1.54875 4.47278 1.6624 4.47278 1.78357C4.47278 1.90468 4.51969 2.02216 4.60484 2.10725L6.34647 3.85271H0.813236C0.563759 3.85271 0.366638 4.04801 0.366638 4.29756V4.68085C0.366638 4.93039 0.563759 5.14539 0.813236 5.14539H6.36623L4.60491 6.9006C4.51976 6.98582 4.47285 7.09637 4.47285 7.21755C4.47285 7.33859 4.51976 7.45076 4.60491 7.53591L4.87596 7.80616C4.96118 7.89138 5.0747 7.93782 5.19594 7.93782C5.31705 7.93782 5.43063 7.89077 5.51585 7.80555L8.50123 4.82017C8.58665 4.73468 8.63363 4.62056 8.63329 4.49925C8.63356 4.37754 8.58665 4.26335 8.50116 4.178Z"
-                                                        fill="#444444"/>
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0">
-                                                        <rect width="8.26667" height="8.26667" fill="white"
-                                                              transform="translate(0.366638 0.366211)"/>
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </div>
-                                    </button>
-                                </form>
-                            </div>
-
-                            <p>Let’s discuss your project</p>
-                        </div>
-                        <div id="myBtn" onclick="myFunction()" class="banner-video-player">
-                            <svg role="button" width="190" height="190" viewBox="0 0 190 190" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <g filter="url(#filter0_d)">
-                                    <circle cx="95" cy="95" r="45" fill="#4F81BD"/>
-                                </g>
-                                <path
-                                    d="M83 85C83 83.8954 83.8954 83 85 83H90C91.1046 83 92 83.8954 92 85V105C92 106.105 91.1046 107 90 107H85C83.8954 107 83 106.105 83 105V85Z"
-                                    fill="white"/>
-                                <path
-                                    d="M98 85C98 83.8954 98.8954 83 100 83H105C106.105 83 107 83.8954 107 85V105C107 106.105 106.105 107 105 107H100C98.8954 107 98 106.105 98 105V85Z"
-                                    fill="white"/>
-                                <defs>
-                                    <filter id="filter0_d" x="0" y="0" width="190" height="190"
-                                            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                        <feColorMatrix in="SourceAlpha" type="matrix"
-                                                       values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-                                        <feOffset/>
-                                        <feGaussianBlur stdDeviation="25"/>
-                                        <feColorMatrix type="matrix"
-                                                       values="0 0 0 0 0.956863 0 0 0 0 0.501961 0 0 0 0 0.223529 0 0 0 0.4 0"/>
-                                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow"
-                                                 result="shape"/>
-                                    </filter>
-                                </defs>
-                            </svg>
-                        </div>
-                    </div>
+                    @endforeach
+                @endif
+            </div>
+            <div class="slider-controls">
+                <div class="slider-control prev-slide">
+                    <i class="fa fa-chevron-left"></i>
+                </div>
+                <div class="slider-dots">
+                    <!-- Dots will be added dynamically using JavaScript -->
+                </div>
+                <div class="slider-control next-slide">
+                    <i class="fa fa-chevron-right"></i>
                 </div>
             </div>
         </div>
+
     </section>
+{{--    <section id="banner">--}}
+{{--        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">--}}
+{{--            <div class="carousel-inner">--}}
+{{--                @php--}}
+{{--                    $banners = json_decode($header->banner,true);--}}
+{{--                @endphp--}}
+{{--                @if(!empty($header->banner) && is_array($banners))--}}
+{{--                    @foreach($banners as $key=>$banner)--}}
+{{--                        <div class="carousel-item @if($key == 0) active @endif">--}}
+{{--                            <img src="{{asset($banner)}}" class="d-block w-100" alt="...">--}}
+{{--                        </div>--}}
+{{--                    @endforeach--}}
+{{--                @endif--}}
+{{--            </div>--}}
+{{--            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">--}}
+{{--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
+{{--                <span class="visually-hidden">Previous</span>--}}
+{{--            </button>--}}
+{{--            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">--}}
+{{--                <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
+{{--                <span class="visually-hidden">Next</span>--}}
+{{--            </button>--}}
+{{--        </div>--}}
+{{--        <video autoplay muted loop class="myVideo" id="myVideo">--}}
+{{--            <source src="https://www.thedoodleinc.com/images/home-video-banner.mp4" type="video/mp4">--}}
+{{--        </video>--}}
+{{--        <div class="container">--}}
+{{--            <div class="">--}}
+{{--                <div class="col-lg-12">--}}
+{{--                    <div class="banner-text">--}}
+{{--                        <h1>{!!$header->tittle!!}</h1>--}}
+{{--                        <div class="web_mob_cloud">--}}
+{{--                            <a href="#">Web</a>--}}
+{{--                            <a href="#">Mobile</a>--}}
+{{--                            <a href="#">Cloud</a>--}}
+{{--                        </div>--}}
+{{--                        <div class="banner-email">--}}
+{{--                            <div class="form">--}}
+{{--                                <form action="">--}}
+{{--                                    <input type="text" placeholder="Email Address..." class="form-control subscribe">--}}
+{{--                                    <button class="banner-overlay">--}}
+{{--                                        <span>Get Started</span>--}}
+{{--                                        <div class="banner-arrow">--}}
+{{--                                            <svg width="9" height="9" viewBox="0 0 9 9" fill="none"--}}
+{{--                                                 xmlns="http://www.w3.org/2000/svg">--}}
+{{--                                                <g clip-path="url(#clip0)">--}}
+{{--                                                    <path--}}
+{{--                                                        d="M8.50116 4.178L5.51578 1.19254C5.43056 1.10732 5.31698 1.06055 5.19587 1.06055C5.07463 1.06055 4.96111 1.10739 4.87589 1.19254L4.60484 1.46366C4.51969 1.54875 4.47278 1.6624 4.47278 1.78357C4.47278 1.90468 4.51969 2.02216 4.60484 2.10725L6.34647 3.85271H0.813236C0.563759 3.85271 0.366638 4.04801 0.366638 4.29756V4.68085C0.366638 4.93039 0.563759 5.14539 0.813236 5.14539H6.36623L4.60491 6.9006C4.51976 6.98582 4.47285 7.09637 4.47285 7.21755C4.47285 7.33859 4.51976 7.45076 4.60491 7.53591L4.87596 7.80616C4.96118 7.89138 5.0747 7.93782 5.19594 7.93782C5.31705 7.93782 5.43063 7.89077 5.51585 7.80555L8.50123 4.82017C8.58665 4.73468 8.63363 4.62056 8.63329 4.49925C8.63356 4.37754 8.58665 4.26335 8.50116 4.178Z"--}}
+{{--                                                        fill="#444444"/>--}}
+{{--                                                </g>--}}
+{{--                                                <defs>--}}
+{{--                                                    <clipPath id="clip0">--}}
+{{--                                                        <rect width="8.26667" height="8.26667" fill="white"--}}
+{{--                                                              transform="translate(0.366638 0.366211)"/>--}}
+{{--                                                    </clipPath>--}}
+{{--                                                </defs>--}}
+{{--                                            </svg>--}}
+{{--                                        </div>--}}
+{{--                                    </button>--}}
+{{--                                </form>--}}
+{{--                            </div>--}}
+
+{{--                            <p>Let’s discuss your project</p>--}}
+{{--                        </div>--}}
+{{--                        <div id="myBtn" onclick="myFunction()" class="banner-video-player">--}}
+{{--                            <svg role="button" width="190" height="190" viewBox="0 0 190 190" fill="none"--}}
+{{--                                 xmlns="http://www.w3.org/2000/svg">--}}
+{{--                                <g filter="url(#filter0_d)">--}}
+{{--                                    <circle cx="95" cy="95" r="45" fill="#4F81BD"/>--}}
+{{--                                </g>--}}
+{{--                                <path--}}
+{{--                                    d="M83 85C83 83.8954 83.8954 83 85 83H90C91.1046 83 92 83.8954 92 85V105C92 106.105 91.1046 107 90 107H85C83.8954 107 83 106.105 83 105V85Z"--}}
+{{--                                    fill="white"/>--}}
+{{--                                <path--}}
+{{--                                    d="M98 85C98 83.8954 98.8954 83 100 83H105C106.105 83 107 83.8954 107 85V105C107 106.105 106.105 107 105 107H100C98.8954 107 98 106.105 98 105V85Z"--}}
+{{--                                    fill="white"/>--}}
+{{--                                <defs>--}}
+{{--                                    <filter id="filter0_d" x="0" y="0" width="190" height="190"--}}
+{{--                                            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">--}}
+{{--                                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>--}}
+{{--                                        <feColorMatrix in="SourceAlpha" type="matrix"--}}
+{{--                                                       values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>--}}
+{{--                                        <feOffset/>--}}
+{{--                                        <feGaussianBlur stdDeviation="25"/>--}}
+{{--                                        <feColorMatrix type="matrix"--}}
+{{--                                                       values="0 0 0 0 0.956863 0 0 0 0 0.501961 0 0 0 0 0.223529 0 0 0 0.4 0"/>--}}
+{{--                                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>--}}
+{{--                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow"--}}
+{{--                                                 result="shape"/>--}}
+{{--                                    </filter>--}}
+{{--                                </defs>--}}
+{{--                            </svg>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!-- =========================== BANNER PART END =========================== -->
 
 
@@ -89,30 +140,11 @@
                 <div class="first_row">
                     <div class="row">
                         <div class="col-lg-8 col-sm-12" data-aos="fade-up">
-                            <h2>Technologies we shape with; </h2>
-                            <h2>effectual and advance </h2>
+                            {!! $service->tittle !!}
 
                             <p>
-                                We’re globally acclaimed in developing custom software that solves the problem of
-                                individuals. Utilizing the seamless technology with variations, we make our client
-                                cheerful.
+                                {!! $service->description !!}
                             </p>
-                        </div>
-
-                        <!-- Artificial Intelligence -->
-                        <div class="col-lg-4  col-sm-12" data-aos="fade-up">
-                            <div class="mh_tech_box">
-                                <div class="tech_img">
-                                    <img
-                                        src="{{ asset('/') }}/assets/frontend/images/all icon v2/artificial-intelligence.svg"
-                                        alt="images">
-                                </div>
-
-                                <h5>Artificial Intelligence</h5>
-                                <p>
-                                    AI-based algorithms & automated operation for scalable solutions.
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -120,100 +152,21 @@
                 <div class="tech_rows">
                     <div class="row">
                         <!-- Internet -->
-                        <div class="col-lg-4 col-sm-12" data-aos="fade-up">
-                            <div class="mh_tech_box">
-                                <div class="tech_img">
-                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/internet of things.svg"
-                                         alt="images">
+                        @foreach($homeService as $services)
+                            <div class="col-lg-4 col-sm-12" data-aos="fade-up">
+                                <div class="mh_tech_box">
+                                    <div class="tech_img">
+                                        <img src="{{asset($services->image)}}"
+                                             alt="images">
+                                    </div>
+
+                                    <h5>{!! $services->tittle !!}</h5>
+                                    <p>
+                                        {!! $services->shortDescription !!}
+                                    </p>
                                 </div>
-
-                                <h5>Internet of Things</h5>
-                                <p>
-                                    IoT devices to make a real-time, efficient, and robust infrastructure.
-                                </p>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-12" data-aos="fade-up">
-
-                            <!-- Cloud Computing -->
-                            <div class="mh_tech_box">
-                                <div class="tech_img">
-                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/cloud computing.svg"
-                                         alt="images">
-                                </div>
-
-                                <h5>Cloud Computing</h5>
-                                <p>
-                                    An on demand computing system with reducing power for upfront cost.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-12" data-aos="fade-up">
-
-                            <!-- Big Data -->
-                            <div class="mh_tech_box">
-                                <div class="tech_img">
-                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/big data.svg"
-                                         alt="images">
-                                </div>
-
-
-                                <h5>Big Data</h5>
-                                <p>
-                                    Analyzing business intelligences and for creating better business opportunities.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tech_rows">
-                    <div class="row">
-                        <div class="col-lg-4">
-
-                            <!-- BlockChain -->
-                            <div class="mh_tech_box height">
-                                <div class="tech_img">
-                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/blockchain.svg"
-                                         alt="images">
-                                </div>
-
-                                <h5>BlockChain</h5>
-                                <p>
-                                    Secured data, automated key operations, detailed database, reduces cost, and
-                                    increases efficiency.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <!-- Augmented -->
-                            <div class="mh_tech_box height">
-                                <div class="tech_img">
-                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/augmented reality.svg"
-                                         alt="images">
-                                </div>
-
-                                <h5>Augmented Reality</h5>
-                                <p>
-                                    Greater & interactive user experience with increased efficiency.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <!-- Virtual -->
-                            <div class="mh_tech_box height">
-                                <div class="tech_img">
-                                    <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/virtual reality.svg"
-                                         alt="images">
-                                </div>
-
-                                <h5>Virtual Reality</h5>
-                                <p>
-                                    Unlike traditional interface experience going beyond, having simulated practice
-                                    using computer technology.
-                                </p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -226,102 +179,27 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="header_part">
-                            <h3>Technologies we shape with;</h3>
-                            <h3>effectual and advance</h3>
+                            {!! $service->tittle !!}
                             <p>
-                                We’re globally acclaimed in developing custom software that solves the problem of
-                                individuals. Utilizing the seamless technology with variations, we make our client
-                                cheerful.
+                                {!! $service->description !!}
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="mob_advance_technology">
+                    @foreach($homeService as $services)
+                        <div class="slider_item">
 
-                    <div class="slider_item">
+                            <div class="logo">
+                                <img src="{{asset($services->image)}}"
+                                     alt="images">
+                            </div>
 
-                        <div class="logo">
-                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/artificial-intelligence.svg"
-                                 alt="images">
+                            <h4>{!! $services->tittle !!}</h4>
+                            <p>{!! $services->shortDescription !!}</p>
+
                         </div>
-
-                        <h4>Artificial Intelligence</h4>
-                        <p>AI-based algorithms & automated operation for scalable solutions.</p>
-
-                    </div>
-
-                    <div class="slider_item">
-
-                        <div class="logo">
-                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/internet of things.svg"
-                                 alt="images">
-                        </div>
-
-                        <h4>Internet of Things</h4>
-                        <p>IoT devices to make a real-time, efficient, and robust infrastructure.</p>
-
-                    </div>
-
-                    <div class="slider_item">
-
-                        <div class="logo">
-                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/cloud computing.svg"
-                                 alt="images">
-                        </div>
-
-                        <h4>Cloud Computing</h4>
-                        <p>An on demand computing system with reducing power for upfront cost.</p>
-
-                    </div>
-
-                    <div class="slider_item">
-
-                        <div class="logo">
-                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/big data.svg" alt="images">
-                        </div>
-
-                        <h4>Big Data</h4>
-                        <p>Analyzing business intelligences and for creating better business opportunities.</p>
-
-                    </div>
-
-                    <div class="slider_item">
-
-                        <div class="logo">
-                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/blockchain.svg" alt="images">
-                        </div>
-
-                        <h4>BlockChain</h4>
-                        <p class="padding">Secured data, automated key operations, detailed database, reduces cost, and
-                            increases efficiency.</p>
-
-                    </div>
-
-                    <div class="slider_item">
-
-                        <div class="logo">
-                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/augmented reality.svg"
-                                 alt="images">
-                        </div>
-
-                        <h4>Augmented Reality</h4>
-                        <p>Greater & interactive user experience with increased efficiency.</p>
-
-                    </div>
-
-                    <div class="slider_item">
-
-                        <div class="logo">
-                            <img src="{{ asset('/') }}/assets/frontend/images/all icon v2/virtual reality.svg"
-                                 alt="images">
-                        </div>
-
-                        <h4>Virtual Reality</h4>
-                        <p class="padding">Unlike traditional interface experience going beyond, having simulated
-                            practice using computer technology.</p>
-
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -334,9 +212,8 @@
         <section id="mh_read_block">
             <div class="container">
                 <div class="mh_read_blog_heading text-center">
-                    <h1>Overview BICM</h1>
-                    <p>We share experiences and stories of our journey! We share knowledge too! Go through to know deep.
-                    </p>
+                    <h1>{!! $overview->tittle !!}</h1>
+                    <p>{!! $overview->description !!}</p>
                     <a href="blog_archive.html" class="link_span">
                         <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -349,46 +226,21 @@
                 </div>
                 <div class="mh_blog_images">
                     <div class="row custome_row">
-                        <div class="col-lg-4 col-md-4 custome-col" data-aos="fade-up"
-                             data-aos-anchor-placement="bottom-bottom">
-                            <a href="blog_single.html"><img class="img-responsive"
-                                                            src="{{ asset('/') }}/assets/frontend/images/blog1.png"
-                                                            alt="" srcset=""></a>
-                            <div class="mh_blog_images_cat">
-                                <h6><span class="cat_name"><a href="blog_single.html">Technology</a></span> <span
-                                        class="pull-right read_status">5 min
+                        @foreach($homeOverview as $overviews)
+                            <div class="col-lg-4 col-md-4 custome-col" data-aos="fade-up"
+                                 data-aos-anchor-placement="bottom-bottom">
+                                <a href="blog_single.html"><img class="img-responsive"
+                                                                src="{{asset($overviews->image)}}"
+                                                                alt="" srcset=""></a>
+                                <div class="mh_blog_images_cat">
+                                    <h6><span class="cat_name"><a href="blog_single.html">{!! $overviews->tittle !!}</a></span> <span
+                                            class="pull-right read_status">5 min
                                         read</span></h6>
-                                <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work
-                                        Strategy</a></p>
+                                    <p><a href="blog_single.html">{!! $overviews->shortDescription !!}y</a></p>
+                                </div>
+                                <div class="mh_blog_images_details"></div>
                             </div>
-                            <div class="mh_blog_images_details"></div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 custome-col" data-aos="fade-up"
-                             data-aos-anchor-placement="bottom-bottom">
-                            <a href="blog_single.html"><img class="img-responsive"
-                                                            src="{{ asset('/') }}/assets/frontend/images/blog2.png"
-                                                            alt="" srcset=""></a>
-                            <div class="mh_blog_images_cat">
-                                <h6><span class="cat_name"><a href="blog_single.html">Technology</a></span> <span
-                                        class="pull-right read_status">8 min
-                                    read</span></h6>
-                                <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work
-                                        Strategy</a></p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 custome-col" data-aos="fade-up"
-                             data-aos-anchor-placement="bottom-bottom">
-                            <a href="blog_single.html"><img class="img-responsive"
-                                                            src="{{ asset('/') }}/assets/frontend/images/blog3.png"
-                                                            alt="" srcset=""></a>
-                            <div class="mh_blog_images_cat">
-                                <h6><span class="cat_name"><a href="blog_single.html">Technology</a></span> <span
-                                        class="pull-right read_status">10 min
-                                    read</span></h6>
-                                <p><a href="blog_single.html">High Time for Cyberlaw Enforcement and a Future of Work
-                                        Strategy</a></p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -401,57 +253,26 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-12">
-                        <h1>Why BICM?</h1>
+                        <h1>{!! $why->tittle !!}</h1>
                         <ul class="mh_why_us_tabs nav nav-tabs mob_tab">
-                            <li class="nav-item">
-                                <a class="active" href="#Robust" data-toggle="tab"><i class="fa fa-circle li_dots"></i>
-                                    Robust Solution</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#Dedicated" data-toggle="tab"><i class="fa fa-circle li_dots"></i> Dedicated
-                                    Resource
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#Transparent" data-toggle="tab"><i class="fa fa-circle li_dots"></i>
-                                    Transparent Pricing
-                                </a>
-                            </li>
+                            @foreach($homeWhy as $whys)
+                                <li class="nav-item">
+                                    <a class="{{$whys->aboutShow == 'Y' ? 'active' : ''}}" href="#{{$whys->url}}" data-toggle="tab"><i class="fa fa-circle li_dots"></i>
+                                        {!! $whys->tittle !!}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12 mh_why_us_details ">
                         <div class="tab-content">
-                            <div id="Robust" class="tab-pane active">
-                                <h1>
-                                    We are optimizer of uncertainty
-                                </h1>
-                                <p>
-                                    We don’t count for chances. We’re well researched and trained in optimizing
-                                    industrial and individual system issues even they are in a degree of uncertainty. We
-                                    apply robust solution method in solving any typical or unknown problem that arises.
-                                </p>
-                            </div>
-
-                            <div id="Dedicated" class="tab-pane fade">
-                                <h1>
-                                    Skilled, dedicated team ready to go anytime!
-                                </h1>
-                                <p>
-                                    All of our resources including personnel, are specially picked and ready to serve
-                                    the best to the clients on demand- anytime you want! We are skilled, experienced and
-                                    technologically sound.
-                                </p>
-                            </div>
-                            <div id="Transparent" class="tab-pane fade">
-                                <h1>
-                                    Serving more while pricing less
-                                </h1>
-                                <p>
-                                    We maintain a clear pricing agreement depending on your requirements and features.
-                                    Assurance of no changes in prices is being given until you demand changes in
-                                    features.
-                                </p>
-                            </div>
+                            @foreach($homeWhy as $whys)
+                                <div id="{{$whys->url}}" class="tab-pane {{$whys->aboutShow == 'Y' ? 'active' : ''}}">
+                                    <h1>
+                                        {!! $whys->shortDescription !!}
+                                    </h1>
+                                        {!! $whys->about !!}
+                                </div>
+                            @endforeach
                         </div>
 
                     </div>
@@ -467,8 +288,8 @@
                 <div class="mh_about_project_">
                     <div class="row">
                         <div class="col-lg-8">
-                            <h1>Our Recent Projects </h1>
-                            <p>Explore some of our recently finished projects.
+                            <h1>{!! $project->tittle !!}</h1>
+                            <p>{!! $project->description !!}
                             </p>
                             <a href="recent_projects.html" class="link_span">
                                 <svg width="11" height="10" viewBox="0 0 11 10" fill="none"
@@ -490,30 +311,12 @@
 
                 <div class="mh_projegct_images">
                     <div class="row">
-                        <div class="col-lg-8 col-md-8 mh_projegct_images_frame" data-aos="flip-up">
-                            <a href="single_recent_projects.html"><img class="img-responsive"
-                                                                       src="{{ asset('/') }}/assets/frontend/images/1.png"
-                                                                       alt="" srcset=""></a>
-                            <p class="mh_caption">nexhex branding logo | ( N + H + Connection ) Modern Logo design</p>
-                        </div>
-                        <div class="col-lg-4 col-md-4 mh_projegct_images_frame" data-aos="flip-up">
-                            <a href="single_recent_projects.html"><img class="img-responsive "
-                                                                       src="{{ asset('/') }}/assets/frontend/images/2.png"
-                                                                       alt="" srcset=""></a>
-                            <p class="mh_caption">Music Apps for Likeopedia</p>
-                        </div>
-                        <div class="col-lg-4 col-md-4 mh_projegct_images_frame" data-aos="flip-up">
-                            <a href="single_recent_projects.html"><img class="img-responsive "
-                                                                       src="{{ asset('/') }}/assets/frontend/images/3.png"
-                                                                       alt="" srcset=""></a>
-                            <p class="mh_caption">Music Apps for Likeopedia</p>
-                        </div>
-                        <div class="col-lg-8 col-md-8 mh_projegct_images_frame" data-aos="flip-up">
-                            <a href="single_recent_projects.html"><img class="img-responsive "
-                                                                       src="{{ asset('/') }}/assets/frontend/images/4.png"
-                                                                       alt="" srcset=""></a>
-                            <p class="mh_caption">nexhex branding logo | ( N + H + Connection ) Modern Logo design</p>
-                        </div>
+                        @foreach($homeProject as $projects)
+                            <div class="{{$projects->class}} mh_projegct_images_frame" data-aos="flip-up">
+                                <a href="single_recent_projects.html"><img class="img-responsive" src="{{ asset($projects->image) }}" alt="" srcset=""></a>
+                                <p class="mh_caption">{!! $projects->shortDescription !!}</p>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

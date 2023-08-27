@@ -91,10 +91,10 @@
                                     </ul>
                                     <div class="tab-content no-space">
                                         <div class="tab-pane active" id="tab_general">
-                                            <div class="text-align-reverse margin-bottom-10">
-                                                <a href="{{route('newSection', ['id' => 'new'])}}" class="btn yellow">
-                                                    <i class="fa fa-plus"></i> Add Section </a>
-                                            </div>
+{{--                                            <div class="text-align-reverse margin-bottom-10">--}}
+{{--                                                <a href="{{route('newSection', ['id' => 'new'])}}" class="btn yellow">--}}
+{{--                                                    <i class="fa fa-plus"></i> Add Section </a>--}}
+{{--                                            </div>--}}
                                             <table class="table table-bordered table-hover">
                                                 <thead>
                                                 <tr role="row" class="heading">

@@ -87,6 +87,7 @@ h6 {
     height: 90px;
 }
 
+
 .black {
     display: none;
 }
@@ -220,6 +221,45 @@ h6 {
     color: #4F81BD;
 }
 
+nav.navbar.navbar-expand-xl {
+    display: flow;
+    padding: 0 0 .5rem;
+    height: 122px;
+}
+
+nav.navbar{
+    background: #fff;
+}
+
+.topHeader {
+    height: 32px;
+    border-bottom: 1px solid #ececec73;
+    padding: 0 10px;
+    background: #4f81bd;
+}
+
+.login_signupButt {
+    height: 30px;
+    float: left;
+    margin-top: 2px;
+    width: 100%;
+}
+
+.login_signupButt p {
+    text-align: right;
+    color: #fff;
+    font-size: 12px;
+    line-height: 30px;
+    height: 32px;
+}
+
+.login_signupButt p a{
+    margin: 0 4px;
+    border-radius: 5px;
+    background: #fff;
+    color: #2687c9;
+    padding: 5px;
+}
 
 /* =========================== CSS NAVBER PART END =========================== */
 
@@ -335,6 +375,9 @@ h6 {
 
 #tiny_footer {
     padding: 40px 0;
+    box-shadow: 0 0 10px #4f81bd30;
+    -moz-box-shadow: 0 0 10px #4f81bd30;
+    -webkit-box-shadow: 0 0 10px #4f81bd30;
 }
 
 .tiny_footer_logo {

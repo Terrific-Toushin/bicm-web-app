@@ -79,18 +79,37 @@ class HomePageController extends Controller
 
     public function storeHomeSetting(Request $request)
     {
-        $image = $request->file('banner');
-        if ($image){
-            $imageName = $image->getClientOriginalName();
-            $directory = 'assets/frontend/images/homePage/';
-            $image->move('public/'.$directory, $imageName);
-            $imgUrl = $directory . $imageName;
+        if ($request->hasFile('banners')) {
+            foreach ($request->file('banners') as $key=>$image) {
+                $imageName = $image->getClientOriginalName();
+                $directory = 'assets/frontend/images/homePage/';
+                $image->move('public/'.$directory, $imageName);
+                $imgNewUrl[$key] = $directory . $imageName;
+            }
+            $imgUrl = json_encode($imgNewUrl);
+        }else{
+            $image = $request->file('banner');
+            if ($image){
+                $imageName = $image->getClientOriginalName();
+                $directory = 'assets/frontend/images/homePage/';
+                $image->move('public/'.$directory, $imageName);
+                $imgUrl = $directory . $imageName;
+            }
         }
+
         if (isset($request->home_settings_id)){
             $homeSettings = HomeSettings::find($request->home_settings_id);
             if($image){
                 if(file_exists($homeSettings->banner)){
                     unlink($homeSettings->banner);
+                }
+                $homeSettings->banner = $imgUrl;
+            }elseif ($request->hasFile('banners')){
+                $sliders = json_decode($homeSettings->banner,true);
+                foreach ($sliders as $slider){
+                    if(file_exists($slider)){
+                        unlink($slider);
+                    }
                 }
                 $homeSettings->banner = $imgUrl;
             }
@@ -235,6 +254,7 @@ class HomePageController extends Controller
         }
         $homeProject->tittle = $request->tittle;
         $homeProject->shortDescription = $request->shortDescription;
+        $homeProject->class = $request->class;
         $homeProject->status = $request->status;
         $homeProject->aboutShow = $request->aboutShow;
         $homeProject->about = $request->about;

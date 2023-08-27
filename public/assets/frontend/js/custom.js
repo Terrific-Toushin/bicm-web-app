@@ -24,7 +24,7 @@ $('.redirector_').click(function(){
   var window_width = $(window).width();
   var location = $(this).attr('href');
   if(window_width < 968 ){
-      
+
   }else{
       window.location.href = location;
   }
@@ -51,12 +51,12 @@ function myFunction() {
 
   } else {
     video.pause();
-    //Buton pause button will be rendered 
+    //Buton pause button will be rendered
     btn.innerHTML = '<svg role="button" width="190" height="190" viewBox="0 0 190 190" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#filter0_d)"><circle cx="95" cy="95" r="45" fill="#4F81BD"></circle></g><path d="M89.1517 81.0276C87.465 79.9308 85.2578 81.1689 85.2578 83.2118V106.788C85.2578 108.831 87.465 110.069 89.1517 108.973L107.28 97.1843C108.845 96.167 108.845 93.8332 107.28 92.8159L89.1517 81.0276Z" fill="white"></path><defs><filter id="filter0_d" x="0" y="0" width="190" height="190" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix><feOffset></feOffset><feGaussianBlur stdDeviation="25"></feGaussianBlur><feColorMatrix type="matrix" values="0 0 0 0 0.956863 0 0 0 0 0.501961 0 0 0 0 0.223529 0 0 0 0.4 0"></feColorMatrix><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend></filter></defs></svg>';
 
   }
 }
-//Changing video buttons svg with on click --------------------------------- ended 
+//Changing video buttons svg with on click --------------------------------- ended
 
 
 
@@ -235,7 +235,7 @@ $(function () {
     ]
   });
 
-  
+
 
   // MOBILE APPROCH
 
@@ -275,18 +275,18 @@ $('.mob_collaboration-slider').slick({
   ]
 });
 
-  
-	
 
 
-  // ============= preloader Pare js   ============= 
+
+
+  // ============= preloader Pare js   =============
 
   $(window).on('load', function () {
     $('.preloader').delay(500).fadeOut(1000);
   });
 
   // Blog Slider
-  
+
   $('.blog-slider').slick({
     slidesToShow: 2,
     slidesToScroll: 1,
@@ -330,39 +330,39 @@ $('.mob_collaboration-slider').slick({
 
 
   //  ====== Type JS
-  $(".typed").typed({
-    strings: ["Web Designer.", "Freelancer.", "Frontend-Developer."],
-    // Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
-    stringsElement: null,
-    // typing speed
-    typeSpeed: 30,
-    // time before typing starts
-    startDelay: 1200,
-    // backspacing speed
-    backSpeed: 20,
-    // time before backspacing
-    backDelay: 700,
-    // loop
-    loop: true,
-    // false = infinite
-    loopCount: 5,
-    // show cursor
-    showCursor: false,
-    // character for cursor
-    cursorChar: "|",
-    // attribute to type (null == text)
-    attr: null,
-    // either html or text
-    contentType: 'html',
-    // call when done callback function
-    callback: function () {},
-    // starting callback function before each string
-    preStringTyped: function () {},
-    //callback for every typed string
-    onStringTyped: function () {},
-    // callback for reset
-    resetCallback: function () {}
-  });
+  // $(".typed").typed({
+  //   strings: ["Web Designer.", "Freelancer.", "Frontend-Developer."],
+  //   // Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
+  //   stringsElement: null,
+  //   // typing speed
+  //   typeSpeed: 30,
+  //   // time before typing starts
+  //   startDelay: 1200,
+  //   // backspacing speed
+  //   backSpeed: 20,
+  //   // time before backspacing
+  //   backDelay: 700,
+  //   // loop
+  //   loop: true,
+  //   // false = infinite
+  //   loopCount: 5,
+  //   // show cursor
+  //   showCursor: false,
+  //   // character for cursor
+  //   cursorChar: "|",
+  //   // attribute to type (null == text)
+  //   attr: null,
+  //   // either html or text
+  //   contentType: 'html',
+  //   // call when done callback function
+  //   callback: function () {},
+  //   // starting callback function before each string
+  //   preStringTyped: function () {},
+  //   //callback for every typed string
+  //   onStringTyped: function () {},
+  //   // callback for reset
+  //   resetCallback: function () {}
+  // });
 
 
 });
@@ -383,15 +383,15 @@ $( ".subscribe" ).on('keydown', function() {
   }
 
 });
-//Button active deactive with on key press for subscribe email  in banner sectionns------------------- ended 
+//Button active deactive with on key press for subscribe email  in banner sectionns------------------- ended
 
 
 
 
-// Java script code for amazing stuff section 
+// Java script code for amazing stuff section
 // By default active one geting bborder
 // If hovered active border removed and and hoveral elements border--------------------------------------------------------
-// will be active , for unhover action will be vise versa 
+// will be active , for unhover action will be vise versa
 
 $('.amazing-staff-slider-item').hover(function(){
 
@@ -415,3 +415,60 @@ $('.amazing-staff-slider-item').hover(function(){
 })
 
 
+/*custom slider js start*/
+
+const slider = document.querySelector('.slider');
+let currentIndex = 0;
+
+function goToSlide(index) {
+    currentIndex = index;
+    const slideWidth = document.querySelector('.slide').clientWidth;
+    const translateX = -currentIndex * slideWidth;
+    slider.style.transform = `translateX(${translateX}px)`;
+}
+
+const prevSlideBtn = document.querySelector('.prev-slide');
+const nextSlideBtn = document.querySelector('.next-slide');
+const sliderDots = document.querySelector('.slider-dots');
+const slides = document.querySelectorAll('.slide');
+
+// Create dot indicators based on the number of slides
+for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('slider-dot');
+    sliderDots.appendChild(dot);
+    dot.addEventListener('click', () => goToSlide(i));
+}
+
+const dots = document.querySelectorAll('.slider-dot');
+
+prevSlideBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    goToSlide(currentIndex);
+});
+
+nextSlideBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    goToSlide(currentIndex);
+});
+
+function updateDots() {
+    dots.forEach((dot, index) => {
+        if (index === currentIndex) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+
+// Automatic slide change
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % slider.children.length;
+    goToSlide(currentIndex);
+}, 9000);  // Change slide every 9 seconds
+
+// Initial slide
+goToSlide(currentIndex);
+/*custom slider js End*/

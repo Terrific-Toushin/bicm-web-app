@@ -86,6 +86,20 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <label class="col-md-2 control-label">Page Name: <span class="required">
+                                                        * </span>
+                                            </label>
+                                            <div class="col-md-10">
+                                                <select class="form-control input-medium select2me"
+                                                        data-placeholder="Page..." name="page_id">
+                                                    <option value=""></option>
+                                                    @foreach($pages as $page)
+                                                        <option value="{{$page->page_id}}" {{$course->page_id == $page->page_id ? 'selected' : ''}}>{{$page->menu_tittle}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <label class="col-md-2 control-label">Schedule: <span class="required">
                                                         * </span>
                                             </label>
