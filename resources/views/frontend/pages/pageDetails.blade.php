@@ -3,6 +3,24 @@
 <link rel="stylesheet" href="{{ asset('/') }}/assets/frontend/css/blog_archive.css">
 <link rel="stylesheet" href="{{ asset('/') }}/assets/frontend/css/blog_single.css">
 @section('content')
+    @php
+        function convertStringToArray($string) {
+            $result = [];
+            $parts = explode(',', $string);
+
+            foreach ($parts as $part) {
+                $values = explode('##', $part);
+                if (count($values) === 2) {
+                    $result[] = [
+                        "value" => $values[0],
+                        "label" => ucfirst($values[1])
+                    ];
+                }
+            }
+
+            return $result;
+        }
+    @endphp
     <section id="pageBannerPart">
         <div class="banner_images">
             @if(!empty($pageDetails->banner))
@@ -14,7 +32,7 @@
             @endif
         </div>
     </section>
-    <section id="digital-solution" style="margin-top: 8%;">
+    <section id="blog-part">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 m-auto">
@@ -125,6 +143,7 @@
                                                     $name = '';
                                                     $inputType = $contentDetails['inputType'];
                                                 @endphp
+
                                                 @foreach($contentDetails['formList'] as $forms)
                                                     @if($name != $forms->name)
                                                         @php $name = $forms->name @endphp
@@ -263,7 +282,7 @@
                 <div class="col-lg-6 col-xs-6 col-md-6">
                     <div class="tiny_footer_logo">
                         <a href="index.html"><img class="img-responsive" src="{{ asset('/') }}/assets/frontend/images/tiny_.png" alt="" srcset=""></a>
-                        <span>© Copyright 2023 BICM.</span>
+                        <span>© Copyright 2024 BICM.</span>
                     </div>
                 </div>
                 <div class="col-lg-6 col-xs-6 col-md-6">

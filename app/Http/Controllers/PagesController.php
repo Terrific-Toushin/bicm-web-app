@@ -31,9 +31,11 @@ class PagesController extends Controller
         if($id != 'new'){
             $pageSettings = Pages::find($id);
             $pageMenus = Menus::select('menu_id','menu_tittle')->where('status','Y')->where('parent_id',$pageSettings->parent_id)->orderBy('sort_order')->get();
+            $this->createDBAccessLog('Page Updated View','PUV',$id,'Page View Form');
         }else{
             $pageSettings = null;
             $pageMenus = null;
+            $this->createDBAccessLog('New Page Created view','NPV',$id,'Page View Form');
         }
         $mainMenu = Menus::selectRaw('GROUP_CONCAT(DISTINCT  parent_id) as menuId')->where('status','Y')->where('parent_id','!=','0')->first();
         $arrayMenu = explode(',',$mainMenu->menuId);
@@ -55,9 +57,10 @@ class PagesController extends Controller
             }else{
                 session()->flash('error', 'Page not found.');
             }
-            return redirect()->route('allPages')->with('success', 'Page deleted successfully.');
+            $this->createDBAccessLog('Delete Page','DPV',$id,'Delete Page');
+            return redirect()->route('allPages')->with('message', 'Page deleted successfully.');
         } else {
-            return redirect()->route('allPages')->with('error', 'Page not found.');
+            return redirect()->route('allPages')->with('message', 'Page not found.');
         }
     }
 
@@ -114,11 +117,13 @@ class PagesController extends Controller
                 }
                 $pageSettings->banner = $bannerUrl;
             }
+            $this->createDBAccessLog('Page Update','PU',$request,'Page Update');
         }else{
             $pageSettings = new Pages();
             $pageSettings->page_id = floor(time() - 999999999);
             $pageSettings->banner = isset($bannerUrl) ? $bannerUrl : '';
             $pageSettings->image = isset($imgUrl) ? $imgUrl : '';
+            $this->createDBAccessLog('New Page Created','PU',$request,'New Page Created');
         }
         $pageSettings->parent_id = $request->parent_id;
         $pageSettings->menu_id = $request->menu_id;

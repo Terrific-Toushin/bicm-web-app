@@ -9,7 +9,8 @@ use DB;
 class FormController extends Controller
 {
     public function createForm(){
-        return view('admin.forms.createForm');
+        $inputTypes = config("dashboard_constant.FIELD_SHOW_TYPE");
+        return view('admin.forms.createForm')->with(compact(('inputTypes')));
     }
     public function formList(){
         $fromGroups = FormGroup::orderBy('created_at','ASC')->get();
@@ -19,18 +20,34 @@ class FormController extends Controller
 
     public function detailsFormJson($id){
         $query = FormGroup::leftJoin("ev_form_group_fields", "ev_form_groups.id", "=", "ev_form_group_fields.group_id");
-        $data = $query->select("ev_form_groups.id", "name", "status", "ev_form_groups.created_at", "ev_form_group_fields.id as group_field_id", "group_id", "flabel", "fname", "fid",
+        $data["data"] = $query->select("ev_form_groups.id", "name", "status", "ev_form_groups.created_at", "ev_form_group_fields.id as group_field_id", "group_id", "flabel", "fname", "fid",
             "ftype","foption_value", "fdefault_value", "fmax_char", "forder", "frequired", "fclass", "ev_form_group_fields.created_at")
             ->where("ev_form_groups.id", $id)
             ->orderBy("ev_form_group_fields.forder","ASC")
             ->get();
+        $data["inputTypes"] = config("dashboard_constant.FIELD_TYPE");
         return response()->json($data);
     }
 
 
     public function detailsForm($id){
         $fromGroupFields = FormGroupField::where('group_id',$id)->orderBy('created_at','ASC')->get();
-        return view('admin.forms.formDetails')->with(compact('id'));
+        $inputTypes = config("dashboard_constant.FIELD_SHOW_TYPE");
+        return view('admin.forms.formDetails')->with(compact('id','inputTypes'));
+    }
+
+
+    public function deleteForm($id){
+        $form = FormGroup::find($id);
+
+        // Delete the item
+            if($form->delete()){
+                FormGroupField::where('group_id',$id)->delete();
+                session()->flash('success', 'Form deleted successfully.');
+            }else{
+                session()->flash('error', 'Form not found.');
+            }
+            return redirect()->route('formList')->with('message', 'Form deleted successfully.');
     }
 
 

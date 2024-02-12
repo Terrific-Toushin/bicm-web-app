@@ -18,6 +18,7 @@ class AboutPagesController extends Controller
     {
         if($id != 'new'){
             $aboutSettings = AboutSettings::find($id);
+//            $this->createDBAccessLog('');
         }else{
             $aboutSettings = null;
         }
@@ -53,8 +54,8 @@ class AboutPagesController extends Controller
         $aboutSettings->url = $request->url;
         $aboutSettings->status = $request->status;
         if ($aboutSettings->save()) {
-            return redirect()->route('aboutPage')->with('success', 'Menu info Save successfully');
+            return redirect()->route('aboutPage')->with('message', 'Menu info Save successfully');
         } else
-            return redirect()->back()->with('failed', 'Menu info Save Failed');
+            return redirect()->back()->with('message', 'Menu info Save Failed');
     }
 }

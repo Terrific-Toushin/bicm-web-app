@@ -22,23 +22,7 @@
     <!-- END PAGE LEVEL STYLES -->
 @endsection
 @section('content')
-    @if(session('successmessage'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{session('successmessage')}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
-    @if (count($errors) > 0)
-        <div class = "alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+
     <div class="page-content-wrapper">
         <div class="page-content">
             <div class="page-bar">
@@ -54,6 +38,23 @@
                 </ul>
             </div>
             <!-- END PAGE HEADER-->
+            @if(session('message'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{session('message')}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+            @if (count($errors) > 0)
+                <div class = "alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <!-- BEGIN PAGE CONTENT-->
             <div class="row">
                 <div class="col-md-12">
@@ -82,12 +83,22 @@
                                                     <td>{{$formgroup->status == 'Y' ? "show" : "Hide" }}</td>
                                                     <td>{{$formgroup->created_at}}</td>
                                                     <td>
-                                                        <a href="{{route('detailsForm', ['id' => $formgroup->id])}}" class="text-info" data-toggle="m-tooltip"  title="Edit">
-                                                            <i class='fa fa-edit'></i>
-                                                        </a>
-                                                        {{--                                                    <a @click.prevent="deleteFormGroup(formgroup.id, data.data, index, pagination)"  class="text-danger delete-item" href="#" data-toggle="m-tooltip" title="Delete">--}}
-                                                        {{--                                                        <i class='fa fa-trash'></i>--}}
-                                                        {{--                                                    </a>--}}
+                                                        <div class="row">
+                                                            <div class="col-md-2">
+                                                                <a href="{{route('detailsForm', ['id' => $formgroup->id])}}" class="text-info" data-toggle="m-tooltip"  title="Edit">
+                                                                    <i class='fa fa-edit'></i>
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <form action="{{ route('deleteForm', ['id' => $formgroup->id]) }}" method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit" class="btn default btn-sm" style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;" onclick="return confirm('Are you sure you want to delete this form?')"><i class="fa fa-trash"></i></button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+
+
                                                     </td>
                                                 </tr>
                                             @endforeach

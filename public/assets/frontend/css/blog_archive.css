@@ -503,15 +503,6 @@
 
                            
 
-.blog-tab h4.courses_head{
-
-    padding: 10px 15px;
-
-    font-size: 18px;
-
-}
-
-
 
 p.date_time {
 
@@ -519,35 +510,6 @@ p.date_time {
 
 }
 
-p.date_time span {
-
-    display: flex;
-
-    color: #999;
-
-    align-items: center;
-
-    font-weight: 600;
-
-    margin-bottom: 8px;
-
-}
-
-
-
-p.date_time span:last-child{
-
-    margin-bottom: 0;
-
-}
-
-
-
-p.date_time span img{
-
-    margin-right: 10px;
-
-}
 
 
 

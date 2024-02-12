@@ -182,7 +182,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$mastersProgram->amount == 'N' ? 'selected' : ''}}
+                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$mastersProgram->gradingPolicyShow == 'Y' ? 'checked' : ''}}
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="gradingPolicyShow"
                                                                                          value="Y"> Grading Policy

@@ -51,8 +51,8 @@ class LibraryPagesController extends Controller
         $librarySettings->url = $request->url;
         $librarySettings->status = $request->status;
         if ($librarySettings->save()) {
-            return redirect()->route('libraryPage')->with('success', 'Menu info Save successfully');
+            return redirect()->route('libraryPage')->with('message', 'Menu info Save successfully');
         } else
-            return redirect()->back()->with('failed', 'Menu info Save Failed');
+            return redirect()->back()->with('message', 'Menu info Save Failed');
     }
 }

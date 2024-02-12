@@ -25,8 +25,10 @@ class MenuController extends Controller
     {
         if($id != 'new'){
             $menus = Menus::find($id);
+            $this->createDBAccessLog('Update Menu Page','MNP',$parentId,$id);
         }else{
             $menus = null;
+            $this->createDBAccessLog('Create New Menu','CNM',$parentId,$id);
         }
         $allMenu = Menus::where('sub_menu','Y')->orderBy('menu_id','ASC')->get();
         $menuPosition['0'] = implode(',',Menus::select('sort_order')->where('parent_id','0')->orderBy('menu_id','ASC')->pluck('sort_order')->toArray());
@@ -48,9 +50,10 @@ class MenuController extends Controller
             }else{
                 session()->flash('error', 'Menu not found.');
             }
-            return redirect()->route('allMenu')->with('success', 'Menu deleted successfully.');
+            $this->createDBAccessLog('Delete Menu','DTM',$id,'Destroyed');
+            return redirect()->route('allMenu')->with('message', 'Menu deleted successfully.');
         } else {
-            return redirect()->route('allMenu')->with('error', 'Menu not found.');
+            return redirect()->route('allMenu')->with('message', 'Menu not found.');
         }
     }
 
@@ -71,10 +74,12 @@ class MenuController extends Controller
         ])->validate();
 
         if (isset($request->menu_id)){
+            $this->createDBAccessLog('Menu Updated','MUS',$request,'Menu Updated');
             $menus = Menus::find($request->menu_id);
         }else{
             $menus = new Menus();
             $menus->menu_id = floor(time() - 999999999);
+            $this->createDBAccessLog('New Menu Created','NMC',$request,'New Menu Created');
         }
         $menus->menu_tittle = $request->menu_tittle;
         $menus->parent_id = $request->parent_id;
@@ -83,8 +88,8 @@ class MenuController extends Controller
         $menus->url = $request->url;
         $menus->status = $request->status;
         if ($menus->save()) {
-            return to_route('allMenu')->with('success', 'Menu info Save successfully');
+            return to_route('allMenu')->with('message', 'Menu info Save successfully');
         } else
-            return redirect()->back()->with('failed', 'Menu info Save Failed');
+            return redirect()->back()->with('message', 'Menu info Save Failed');
     }
 }

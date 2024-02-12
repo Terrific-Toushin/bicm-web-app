@@ -52,7 +52,7 @@
                                                         * </span>
                             </label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="menu_tittle" value="{{!empty($menus) ? $menus->menu_tittle : ''}}" placeholder="Menu Name" autocomplete="off">
+                                <input type="text" class="form-control" name="menu_tittle" value="{{!empty($menus) ? $menus->menu_tittle : ''}}" placeholder="Menu Name" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -103,7 +103,8 @@
                             <label class="col-md-2 control-label">Url:
                             </label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" name="url" value="{{!empty($menus->url) ? $menus->url : ''}}" placeholder="Page end url" autocomplete="off">
+{{--                                <input id="myUrlInput" type="text" class="form-control" name="url" value="{{!empty($menus->url) ? $menus->url : ''}}" pattern="[^/&]*" placeholder="Page end url" autocomplete="off" onblur="urlValidation()">--}}
+                                <input id="myUrlInput" type="text" class="form-control" name="url" value="{{!empty($menus->url) ? $menus->url : ''}}" placeholder="Page end url" autocomplete="off">
                             </div>
                         </div>
                         <div class="form-group">
@@ -189,6 +190,17 @@
                 }
             }else {
                 positionData.setCustomValidity("");
+            }
+        }
+
+        function urlValidation(){
+            var inputField = document.getElementById('myUrlInput');
+            var forbiddenCharacters = /[&/]/g; // Regular expression for '&' and '/'
+
+            if (forbiddenCharacters.test(inputField.value)) {
+                inputField.setCustomValidity("Please avoid '/' and '&' characters.");
+            } else {
+                inputField.setCustomValidity("");
             }
         }
     </script>

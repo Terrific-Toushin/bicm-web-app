@@ -64,7 +64,7 @@
                         </a>
                     </li>
                     <li class="{{ (request()->is('/page-details/new')) ? 'active' : '' }}">
-                        <a href="{{route('pageDetails', ['id' => 'new'])}}">
+                        <a href="{{route('detailsPage', ['id' => 'new'])}}">
                             <i class="icon-puzzle"></i>
                             <span class="title">ADD Page</span>
                         </a>
@@ -82,7 +82,7 @@
                             </li>
                         @else
                             <li class="{{ (request()->is('page-details*')) ? 'active' : '' }}">
-                                <a href="{{route('pageDetails', ['id' => $backMainPages['page_id']])}}">
+                                <a href="{{route('detailsPage', ['id' => $backMainPages['page_id']])}}">
                                     <i class="icon-puzzle"></i>
                                     <span class="title">{{$backMainPages['page_name']}}</span>
                                 </a>
@@ -97,28 +97,72 @@
 {{--                    <span class="title">Common Page</span>--}}
 {{--                </a>--}}
 {{--            </li>--}}
-            <li class="{{ (request()->is('master*')) ? 'active' : '' }}">
-                <a href="{{route('mastersPage')}}">
-                    <i class="icon-graduation"></i>
-                    <span class="title">Master's Program</span>
+            <li class="{{ (request()->is('student*')) ? 'active' : '' }}">
+                <a href="javascript:;">
+                    <i class="icon-anchor"></i>
+                    <span class="title">Student</span>
+                    <span class="arrow "></span>
                 </a>
+                <ul class="sub-menu">
+                    <li class="{{ (request()->is('/student-add*')) ? 'active' : '' }}">
+                        <a href="{{route('addStudent',['id'=>'new'])}}">
+                            <i class="icon-speech"></i>
+                            <span class="title">Add Student</span>
+                        </a>
+                    </li>
+                    <li class="{{ (request()->is('/student-list*')) ? 'active' : '' }}">
+                        <a href="{{route('studentList')}}">
+                            <i class="icon-speech"></i>
+                            <span class="title">Student List</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
-            <li class="{{ (request()->is('course*')) ? 'active' : '' }}">
-                <a href="{{route('coursesPage')}}">
-                    <i class="icon-badge"></i>
-                    <span class="title">Course</span>
+            <li class="{{ (request()->is('master*')) ? 'active' : ((request()->is('course*')) ? 'active' : '' ) }}">
+                <a href="javascript:;">
+                    <i class="icon-anchor"></i>
+                    <span class="title">All Courses</span>
+                    <span class="arrow "></span>
                 </a>
+                <ul class="sub-menu">
+                    <li class="{{ (request()->is('master*')) ? 'active' : '' }}">
+                        <a href="{{route('mastersPage')}}">
+                            <i class="icon-graduation"></i>
+                            <span class="title">Master's Program</span>
+                        </a>
+                    </li>
+                    <li class="{{ (request()->is('course*')) ? 'active' : '' }}">
+                        <a href="{{route('coursesPage')}}">
+                            <i class="icon-badge"></i>
+                            <span class="title">Course</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
+
             <li class="{{ (request()->is('event*')) ? 'active' : '' }}">
                 <a href="{{route('eventsPage')}}">
                     <i class="icon-speech"></i>
                     <span class="title">Event</span>
                 </a>
             </li>
+
+            <li class="{{ (request()->is('upload*')) ? 'active' : '' }}">
+                <a href="{{route('fileList')}}">
+                    <i class="icon-cloud-upload"></i>
+                    <span class="title">Upload File</span>
+                </a>
+            </li>
             <li class="{{ (request()->is('side*')) ? 'active' : '' }}">
                 <a href="{{route('sideBar')}}">
                     <i class="icon-bar-chart"></i>
                     <span class="title">Side Bar</span>
+                </a>
+            </li>
+            <li class="{{ (request()->is('list*')) ? 'active' : '' }}">
+                <a href="{{route('listItem')}}">
+                    <i class="icon-list"></i>
+                    <span class="title">List Item</span>
                 </a>
             </li>
             <li class="{{ (request()->is('form*')) ? 'active' : '' }}">
@@ -138,6 +182,54 @@
                         <a href="{{route('formList')}}">
                             <i class="icon-speech"></i>
                             <span class="title">Form List</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="{{ (request()->is('user*')) ? 'active' : '' }}">
+                <a href="javascript:;">
+                    <i class="icon-anchor"></i>
+                    <span class="title">System User</span>
+                    <span class="arrow "></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="{{ (request()->is('/user-add*')) ? 'active' : '' }}">
+                        <a href="{{route('addUser',['id'=>'new'])}}">
+                            <i class="icon-speech"></i>
+                            <span class="title">Add User</span>
+                        </a>
+                    </li>
+                    <li class="{{ (request()->is('/user-list*')) ? 'active' : '' }}">
+                        <a href="{{route('userList')}}">
+                            <i class="icon-speech"></i>
+                            <span class="title">User's List</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="{{ (request()->is('report*')) ? 'active' : '' }}">
+                <a href="javascript:;">
+                    <i class="icon-anchor"></i>
+                    <span class="title">Report</span>
+                    <span class="arrow "></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="{{ (request()->is('/report-research-application*')) ? 'active' : '' }}">
+                        <a href="{{route('researchList')}}">
+                            <i class="icon-speech"></i>
+                            <span class="title">Research Application</span>
+                        </a>
+                    </li>
+                    <li class="{{ (request()->is('/report-audit-log*')) ? 'active' : '' }}">
+                        <a href="{{route('getAuditLogData')}}">
+                            <i class="icon-speech"></i>
+                            <span class="title">Audit Log</span>
+                        </a>
+                    </li>
+                    <li class="{{ (request()->is('/report-payment-log*')) ? 'active' : '' }}">
+                        <a href="{{route('getPaymentDetails')}}">
+                            <i class="icon-speech"></i>
+                            <span class="title">Payment Details</span>
                         </a>
                     </li>
                 </ul>

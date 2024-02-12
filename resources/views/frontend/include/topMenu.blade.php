@@ -5,6 +5,21 @@
 <!-- ========== PRE-LOADER END ========== -->
 <!-- =========================== NAVBER PART START =========================== -->
 <nav class="navbar navbar-expand-xl">
+    <div class="topHeader">
+        @if (Session::has('student_id'))
+            <div class="logout_signupButt">
+                <form method="POST" action="{{ route('studentLogout') }}">
+                    @csrf
+                    <p><a href="{{route('studentDashboard')}}">My Profile</a>  <button type="submit">Logout</button></p>
+                </form>
+            </div>
+        @else
+            <div class="login_signupButt">
+                <p><a href="{{url('student-login')}}">Login</a> Or <a href="{{url('student-signUp')}}">Sign Up</a></p>
+            </div>
+        @endif
+
+    </div>
     <div class="container">
         <div class="logo-area">
             <div class="logo">
@@ -28,13 +43,17 @@
                             <a class="nav-link" href="{{route('home')}}">{{$backMenu['menu_tittle']}} <span class="sr-only">(current)</span></a>
                         </li>
                     @else
-                        <li class="nav-item Engagement_Dropdown{{ (request()->is('pages/'.$backMenu['url'].'*')) ? 'active' : '' }}">
+                        <li class="nav-item Engagement_Dropdown {{ (request()->is('pages/'.$backMenu['url'].'*')) ? 'active' : '' }}">
                             <a class="nav-link" href="{{url('pages/'.$backMenu['url'])}}">{{$backMenu['menu_tittle']}}</a>
                             @if($backMenu['sub_menu'] == 'Y')
                                 <div class="engagement_dropdown">
                                     <ul>
                                         @foreach($backMenu['subMenuDetails'] as $subMenu)
-                                            <li><a href="{{url('pages/'.$subMenu['url'])}}">{{$subMenu['menu_tittle']}}</a></li>
+                                            @if(Str::startsWith($subMenu['url'], 'https://'))
+                                                <li><a href="{{ $subMenu['url'] }}" onclick="window.open('{{ $subMenu['url'] }}', '_blank'); return false;">{{$subMenu['menu_tittle']}}</a></li>
+                                            @else
+                                                <li><a href="{{url('pages/'.$subMenu['url'])}}">{{$subMenu['menu_tittle']}}</a></li>
+                                            @endif
                                         @endforeach
                                     </ul>
                                 </div>
@@ -44,11 +63,6 @@
                 @endforeach
 
             </ul>
-        </div>
-        <div class="topHeader">
-            <div class="login_signupButt">
-                <p><a href="{{url('student-login')}}">Login</a> Or <a href="{{url('student-signUp')}}">Sign Up</a></p>
-            </div>
         </div>
     </div>
 </nav>

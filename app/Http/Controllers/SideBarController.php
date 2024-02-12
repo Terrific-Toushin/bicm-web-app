@@ -79,8 +79,8 @@ class SideBarController extends Controller
         $aboutSettings->status = $request->status;
         if ($aboutSettings->save()) {
             session()->flash('success', 'SideBar updated successfully.');
-            return redirect()->route('sideBar')->with('success', 'Side Bar info Save successfully');
+            return redirect()->route('sideBar')->with('message', 'Side Bar info Save successfully');
         } else
-            return redirect()->back()->with('failed', 'Side Bar info Save Failed');
+            return redirect()->back()->with('message', 'Side Bar info Save Failed');
     }
 }

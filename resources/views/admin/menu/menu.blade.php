@@ -3,33 +3,23 @@
       href="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
 @section('styleSheet')
     <!-- BEGIN PAGE LEVEL STYLES -->
-    <link rel="stylesheet" type="text/css"
-          href="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="{{ asset('/') }}/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="{{ asset('/') }}/assets/global/plugins/jquery-tags-input/jquery.tagsinput.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="{{ asset('/') }}/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/jquery-tags-input/jquery.tagsinput.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/typeahead/typeahead.css">
-    <link rel="stylesheet" type="text/css"
-          href="{{ asset('/') }}/assets/global/plugins/bootstrap-select/bootstrap-select.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-select/bootstrap-select.min.css"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/select2/select2.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="{{ asset('/') }}/assets/global/plugins/jquery-multi-select/css/multi-select.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/jquery-multi-select/css/multi-select.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
     <!-- END PAGE LEVEL STYLES -->
 @endsection
 @section('content')
-    @if(session('message'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{session('message')}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
     @if(Session::has('success'))
         <script type="text/javascript">
             $.bootstrapGrowl('{{ Session::get('success') }}', {
@@ -66,15 +56,7 @@
             });
         </script>
     @endif
-    @if (count($errors) > 0)
-        <div class = "alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+
     <div class="page-content-wrapper">
         <div class="page-content">
             <div class="page-bar">
@@ -90,6 +72,23 @@
                 </ul>
             </div>
             <!-- END PAGE HEADER-->
+            @if(session('message'))
+                <div class="alert alert-success alert-dismissible show" role="alert">
+                    {{session('message')}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+            @if (count($errors) > 0)
+                <div class = "alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <!-- BEGIN PAGE CONTENT-->
             <div class="row">
                 <div class="col-md-12">
@@ -108,71 +107,74 @@
                                                 Main Menu </a>
                                         </li>
                                     </ul>
-                                    <div class="tab-content no-space">
+                                    <div class="tab-content">
                                         <div class="tab-pane active" id="tab_general">
                                             <div class="text-align-reverse margin-bottom-10">
                                                 <a href="{{route('newMenu', ['id' => 'new','parentId' => '0'])}}" class="btn yellow">
                                                     <i class="fa fa-plus"></i> Add Menu </a>
                                             </div>
-                                            <table class="table table-bordered table-hover">
-                                                <thead>
-                                                <tr role="row" class="heading">
-                                                    <th width="15%">
-                                                        Name
-                                                    </th>
-                                                    <th width="8%">
-                                                        category
-                                                    </th>
-                                                    <th width="8%">
-                                                        position
-                                                    </th>
-                                                    <th width="8%">
-                                                        url
-                                                    </th>
-                                                    <th width="7%">
-                                                        Status
-                                                    </th>
-                                                    <th width="10%">
-                                                        Action
-                                                    </th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                @foreach($menus as $menu)
-                                                    @if($menu['menu_tittle'] != 'Home')
-                                                        <tr>
-                                                            <td>{{$menu['menu_tittle']}}</td>
-                                                            <td>{{$menu['parent_id'] == 0 ? 'Main menu' : $menus[$menu['parent_id']]['menu_tittle']}}</td>
-                                                            <td>{{$menu['sort_order']}}</td>
-                                                            <td>{{$menu['url']}}</td>
-                                                            <td>{{$menu['status'] == 'Y' ? "show" : "Hide" }}</td>
+                                            <div class="table-responsive">
+                                                <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                                    <thead>
+                                                    <tr role="row" class="heading">
+                                                        <th>
+                                                            Name
+                                                        </th>
+                                                        <th>
+                                                            category
+                                                        </th>
+                                                        <th>
+                                                            position
+                                                        </th>
+                                                        <th>
+                                                            url
+                                                        </th>
+                                                        <th>
+                                                            Status
+                                                        </th>
+                                                        <th>
+                                                            Action
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    @foreach($menus as $menu)
+                                                        @if($menu['menu_tittle'] != 'Home')
+                                                            <tr>
+                                                                <td>{{$menu['menu_tittle']}}</td>
+                                                                <td>{{$menu['parent_id'] == 0 ? 'Main menu' : $menus[$menu['parent_id']]['menu_tittle']}}</td>
+                                                                <td>{{$menu['sort_order']}}</td>
+                                                                <td>{{$menu['url']}}</td>
+                                                                <td>{{$menu['status'] == 'Y' ? "show" : "Hide" }}</td>
 
-                                                            <td>
-                                                                <div class="row">
-                                                                    <div class="col-md-4">
-                                                                        <a href="{{ route('newMenu', ['id' => $menu['menu_id'],'parentId' => '0']) }}"
-                                                                           class="btn default btn-sm">
-                                                                            <i class="fa fa-edit"></i> Edit </a>
+                                                                <td>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4">
+                                                                            <a href="{{ route('newMenu', ['id' => $menu['menu_id'],'parentId' => '0']) }}"
+                                                                               class="btn default btn-sm">
+                                                                                <i class="fa fa-edit"></i> Edit </a>
+                                                                        </div>
+                                                                        <div class="col-md-8">
+                                                                            <form action="{{ route('deleteMenu', ['id' => $menu['menu_id']]) }}" method="POST">
+                                                                                @csrf
+                                                                                @method('DELETE')
+                                                                                <button type="submit" class="btn default btn-sm" onclick="return confirm('Are you sure you want to delete this menu?')"><i class="fa fa-trash"></i> Delete</button>
+                                                                            </form>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="col-md-8">
-                                                                        <form action="{{ route('deleteMenu', ['id' => $menu['menu_id']]) }}" method="POST">
-                                                                            @csrf
-                                                                            @method('DELETE')
-                                                                            <button type="submit" class="btn default btn-sm" onclick="return confirm('Are you sure you want to delete this menu?')"><i class="fa fa-trash"></i> Delete</button>
-                                                                        </form>
-                                                                    </div>
-                                                                </div>
 
 
-{{--                                                                <a href="{{ route('deleteMenu', ['id' => $menu['menu_id']]) }}"--}}
-{{--                                                                   class="btn default btn-sm">--}}
-{{--                                                                    <i class="fa fa-trash"></i> Delete </a>--}}
-                                                            </td>
-                                                        </tr>
-                                                    @endif
-                                                @endforeach
-                                                </tbody>
-                                            </table>
+                                                                    {{--                                                                <a href="{{ route('deleteMenu', ['id' => $menu['menu_id']]) }}"--}}
+                                                                    {{--                                                                   class="btn default btn-sm">--}}
+                                                                    {{--                                                                    <i class="fa fa-trash"></i> Delete </a>--}}
+                                                                </td>
+                                                            </tr>
+                                                        @endif
+                                                    @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -218,7 +220,17 @@
     <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/select2/select2.min.js"></script>
     <script type="text/javascript"
             src="{{ asset('/') }}/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js"></script>
+
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
     <script src="{{ asset('/') }}/assets/admin/pages/scripts/components-dropdowns.js"></script>
     <script type="text/javascript"
             src="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+    <script src="{{ asset('/') }}/assets/admin/pages/scripts/table-advanced.js"></script>
+@endsection
+@section('documentJquery')
+    TableAdvanced.init();
 @endsection

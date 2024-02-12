@@ -23,7 +23,7 @@
                 <div class="col-lg-6 col-xs-6 col-md-6">
                     <div class="tiny_footer_logo">
                         <a href="index.html"><img class="img-responsive" src="{{ asset('/') }}/assets/frontend/images/tiny_.png" alt="" srcset=""></a>
-                        <span>© Copyright 2023 BICM.</span>
+                        <span>© Copyright 2024 BICM.</span>
                     </div>
                 </div>
                 <div class="col-lg-6 col-xs-6 col-md-6">

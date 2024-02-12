@@ -32,6 +32,7 @@ class MastersPageController extends Controller
     {
         $mastersProgram = MastersProgram::find($id);
         $pages = Pages::select('page_id','page_name','menu_tittle')->leftJoin('menus','menus.menu_id','=','pages.menu_id')->where('page_type','master')->where('pages.status','Y')->get();
+        $this->createDBAccessLog('Edit Master Page View','MPV',$id,'Edit Master Page View');
         return view('admin.masterPage.editMastersProgram',['mastersProgram'=>$mastersProgram, 'pages' => $pages]);
     }
 
@@ -67,9 +68,10 @@ class MastersPageController extends Controller
         $mastersProgram->downloadShow = isset($request->downloadShow) ? $request->downloadShow : 'N';
         $mastersProgram->download = $request->download;
         if ($mastersProgram->save()) {
-            return redirect(url('/masters-page'))->with('success', 'Program info Save successfully');
+            $this->createDBAccessLog('New Master Page','NMP',$request,'New Master Page');
+            return redirect(url('/masters-page'))->with('message', 'Program info Save successfully');
         } else
-            return redirect()->back()->with('failed', 'Program info Save Failed');
+            return redirect()->back()->with('message', 'Program info Save Failed');
     }
     public function updateMastersProgram(Request $request)
         {
@@ -107,9 +109,10 @@ class MastersPageController extends Controller
             $mastersProgram->downloadShow = isset($request->downloadShow) ? $request->downloadShow : 'N';
             $mastersProgram->download = $request->download;
             if ($mastersProgram->save()) {
-                return redirect(url('/masters-page'))->with('success', 'Program info Update successfully');
+                $this->createDBAccessLog('Update Master Page','UMP',$request,'Update Master Page');
+                return redirect(url('/masters-page'))->with('message', 'Program info Update successfully');
             } else
-                return redirect()->back()->with('failed', 'Program info Update Failed');
+                return redirect()->back()->with('message', 'Program info Update Failed');
         }
 
     public function storeSetting(Request $request)
@@ -137,8 +140,9 @@ class MastersPageController extends Controller
         $mastersProgram->tittle = $request->tittle;
         $mastersProgram->short_description = $request->shortDescription;
         if ($mastersProgram->save()) {
-            return redirect()->route('mastersPage')->with('success', 'Settings info Save successfully');
+            $this->createDBAccessLog('Master Page Settings','MPS',$request,'Master Page Settings');
+            return redirect()->route('mastersPage')->with('message', 'Settings info Save successfully');
         } else
-            return redirect()->back()->with('failed', 'Program info Save Failed');
+            return redirect()->back()->with('message', 'Program info Save Failed');
     }
 }

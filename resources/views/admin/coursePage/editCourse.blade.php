@@ -99,31 +99,124 @@
                                                 </select>
                                             </div>
                                         </div>
+{{--                                        <div class="form-group">--}}
+{{--                                            <label class="col-md-2 control-label">Course Type: <span class="required">*</span>--}}
+{{--                                            </label>--}}
+{{--                                            <div class="col-md-10">--}}
+{{--                                                <ul class="list-inline">--}}
+{{--                                                    @foreach($courseTypes as $idx=>$courseType)--}}
+{{--                                                        <li class="list-inline-item">--}}
+{{--                                                            <label class="m-checkbox m-checkbox--solid m-checkbox--state-success">--}}
+{{--                                                                <input data-vv-as="Form Group" name="courseTypes[]" type="checkbox" class="form-control m-input" value="{{ $idx }}" {{!empty($course->courseTypes) && ($course->courseTypes != "null") && array_search($idx, json_decode($course->courseTypes,true)) !== false ? 'checked' : ''}}>--}}
+{{--                                                                <span></span> {{$courseType}}--}}
+{{--                                                            </label>--}}
+{{--                                                        </li>--}}
+{{--                                                    @endforeach--}}
+{{--                                                </ul>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Schedule: <span class="required">
-                                                        * </span>
-                                            </label>
+                                            <label class="col-md-2 control-label">Date: </label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" name="courseDate"  value="{{$course->courseDate}}"
+                                                       placeholder="Date Range" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Start Date: </label>
+                                            <div class="col-md-3">
+                                                <input type="date" class="form-control" data-date-format="YYYY-MM-DD"  name="startDate"  value="{{$course->startDate}}"
+                                                       placeholder="dd-mm-yyyy" max="2050-12-31" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">End Date: </label>
+                                            <div class="col-md-3">
+                                                <input type="date" class="form-control" data-date-format="YYYY-MM-DD" name="endDate"  value="{{$course->endDate}}"
+                                                       placeholder="dd-mm-yyyy" max="2050-12-31" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">No. of Classes/ Sessions: </label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" name="classes"  value="{{$course->classes}}"
+                                                       placeholder="No. of Classes/ Sessions" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Weekly Schedule: </label>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" name="schedule"  value="{{$course->schedule}}"
                                                        placeholder="Schedule Date Range" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Duration: <span class="required">
+                                            <label class="col-md-2 control-label">Total Hours: <span class="required">
                                                         * </span>
                                             </label>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" name="duration"  value="{{$course->duration}}"
-                                                       placeholder="Duration Time" autocomplete="off">
+                                                       placeholder="Duration Time in hour" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Last Date of Registration: <span class="required">
+                                                        * </span>
+                                            </label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" name="lastDate"  value="{{$course->lastDate}}"
+                                                       placeholder="Last Registration Date" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Amount: <span class="required">
                                                         * </span>
                                             </label>
-                                            <div class="col-md-10">
+                                            <div class="col-md-8">
                                                 <input type="text" class="form-control" name="amount"  value="{{$course->amount}}"
                                                        placeholder="Amount" autocomplete="off">
+{{--                                                <div id="inputFields">--}}
+{{--                                                    <!-- Initial input fields with no "Remove" button -->--}}
+{{--                                                    @if($course->amount)--}}
+{{--                                                        @php $amountArray = json_decode($course->amount); $i = 0; @endphp--}}
+{{--                                                        @foreach($amountArray as $amountKey => $amountValue)--}}
+{{--                                                            <div class="row">--}}
+{{--                                                                <div class="col-md-5"><input type="text" class="col-md-6 form-control" name="amountName[]" placeholder="Amount Type" value="{{$amountValue}}" required /></div>--}}
+{{--                                                                <div class="col-md-5"><input type="number" class="col-md-6 form-control" name="amount[]" placeholder="amount" value="{{$amountKey}}" required /></div>--}}
+{{--                                                                @if($i > 0)--}}
+{{--                                                                    <div class="col-md-2"><button type="button" class="btn btn-danger" onclick="removeFields(this)">Remove</button></div>--}}
+{{--                                                                @endif--}}
+{{--                                                            </div>--}}
+{{--                                                            @php $i++; @endphp--}}
+{{--                                                        @endforeach--}}
+
+{{--                                                    @else--}}
+{{--                                                        <div class="row">--}}
+{{--                                                            <div class="col-md-5"><input type="text" class="col-md-6 form-control" name="amountName[]" placeholder="Amount Type" required /></div>--}}
+{{--                                                            <div class="col-md-5"><input type="number" class="col-md-6 form-control" name="amount[]" placeholder="amount" required /></div>--}}
+{{--                                                        </div>--}}
+{{--                                                    @endif--}}
+
+{{--                                                </div>--}}
+                                            </div>
+{{--                                            <div class="col-md-2">--}}
+{{--                                                <button type="button" class="btn btn-primary" onclick="addFields()">Add More</button>--}}
+{{--                                            </div>--}}
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">venue :
+                                            </label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" name="venue"  value="{{$course->venue}}"
+                                                       placeholder="Venue Address" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">short Description :
+                                            </label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" name="shortDescription"  value="{{$course->shortDescription}}"
+                                                       placeholder="short Description" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -140,75 +233,89 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$course->aboutShow == 'Y' ? 'checked' : ''}}
+                                            <label class="control-label col-md-2"><input id="aboutCheck" type="checkbox" class="icheck" {{$course->aboutShow == 'Y' ? 'checked' : ''}}
                                                                                          data-checkbox="icheckbox_flat-grey"
-                                                                                         name="aboutShow" value="Y">
+                                                                                         name="aboutShow" value="Y" onclick="toggleDiv('aboutCheck','aboutDiv')">
                                                 About </label>
-                                            <div class="col-md-10">
+                                            <div id="aboutDiv" class="col-md-10" style="display: {{$course->aboutShow == 'Y' ? 'block' : 'none'}}">
+                                                <input type="text" class="form-control" name="aboutHeading"  value="{{$course->aboutHeading}}"
+                                                       placeholder="About Heading" autocomplete="off">
                                                 <textarea class="ckeditor form-control" name="about"
                                                           rows="4">{{$course->about}}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$course->pedagogyShow == 'Y' ? 'checked' : ''}}
+                                            <label class="control-label col-md-2"><input id="pedagogyCheck" type="checkbox" class="icheck" {{$course->pedagogyShow == 'Y' ? 'checked' : ''}}
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="pedagogyShow"
-                                                                                         value="Y"> Pedagogy </label>
-                                            <div class="col-md-10">
+                                                                                         value="Y" onclick="toggleDiv('pedagogyCheck','pedagogyDiv')"> Pedagogy </label>
+                                            <div id="pedagogyDiv" class="col-md-10" style="display: {{$course->pedagogyShow == 'Y' ? 'block' : 'none'}}">
+                                                <input type="text" class="form-control" name="pedagogyHeading"  value="{{$course->pedagogyHeading}}"
+                                                       placeholder="Pedagogy Heading" autocomplete="off">
                                                 <textarea class="ckeditor form-control" name="pedagogy"
                                                           rows="4">{{$course->pedagogy}}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$course->courseStructureShow == 'Y' ? 'checked' : ''}}
+                                            <label class="control-label col-md-2"><input id="courseStructureCheck" type="checkbox" class="icheck" {{$course->courseStructureShow == 'Y' ? 'checked' : ''}}
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="courseStructureShow"
-                                                                                         value="Y"> Course Structure
+                                                                                         value="Y" onclick="toggleDiv('courseStructureCheck','courseStructureDiv')"> Course Structure
                                             </label>
-                                            <div class="col-md-10">
+                                            <div id="courseStructureDiv" class="col-md-10" style="display: {{$course->courseStructureShow == 'Y' ? 'block' : 'none'}}">
+                                                <input type="text" class="form-control" name="courseHeading"  value="{{$course->courseHeading}}"
+                                                       placeholder="Course Heading" autocomplete="off">
                                                 <textarea class="ckeditor form-control" name="courseStructure"
                                                           rows="4">{{$course->courseStructure}}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$course->teachingMethodsShow == 'Y' ? 'checked' : ''}}
+                                            <label class="control-label col-md-2"><input id="teachingMethodsCheck" type="checkbox" class="icheck" {{$course->teachingMethodsShow == 'Y' ? 'checked' : ''}}
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="teachingMethodsShow"
-                                                                                         value="Y"> Teaching Methods
+                                                                                         value="Y" onclick="toggleDiv('teachingMethodsCheck','teachingMethodsDiv')"> Teaching Methods
                                             </label>
-                                            <div class="col-md-10">
+                                            <div id="teachingMethodsDiv" class="col-md-10" style="display: {{$course->teachingMethodsShow == 'Y' ? 'block' : 'none'}}">
+                                                <input type="text" class="form-control" name="teachingHeading"  value="{{$course->teachingHeading}}"
+                                                       placeholder="Teaching Methods Heading" autocomplete="off">
                                                 <textarea class="ckeditor form-control" name="teachingMethods"
                                                           rows="4">{{$course->teachingMethods}}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$course->amount == 'N' ? 'selected' : ''}}
+                                            <label class="control-label col-md-2"><input id="gradingPolicyCheck" type="checkbox" class="icheck" {{$course->gradingPolicyShow == 'N' ? 'selected' : ''}}
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="gradingPolicyShow"
-                                                                                         value="Y"> Grading Policy
+                                                                                         value="Y"  onclick="toggleDiv('gradingPolicyCheck','gradingPolicyDiv')"> Grading Policy
                                             </label>
-                                            <div class="col-md-10">
+                                            <div id="gradingPolicyDiv" class="col-md-10" style="display: {{$course->gradingPolicyShow == 'Y' ? 'block' : 'none'}}">
+                                                <input type="text" class="form-control" name="gradingPolicyHeading"  value="{{$course->gradingPolicyHeading}}"
+                                                       placeholder="Grading Policy Heading" autocomplete="off">
                                                 <textarea class="ckeditor form-control" name="gradingPolicy"
                                                           rows="4">{{$course->gradingPolicy}}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$course->feesChargesShow == 'Y' ? 'checked' : ''}}
+                                            <label class="control-label col-md-2"><input id="feesChargesCheck" type="checkbox" class="icheck" {{$course->feesChargesShow == 'Y' ? 'checked' : ''}}
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="feesChargesShow"
-                                                                                         value="Y"> Fees and Charges
+                                                                                         value="Y" onclick="toggleDiv('feesChargesCheck','feesChargesDiv')"> Fees and Charges
                                             </label>
-                                            <div class="col-md-10">
+                                            <div id="feesChargesDiv" class="col-md-10" style="display: {{$course->feesChargesShow == 'Y' ? 'block' : 'none'}}">
+                                                <input type="text" class="form-control" name="feesChargesHeading"  value="{{$course->feesChargesHeading}}"
+                                                       placeholder="Fees and Charges Heading" autocomplete="off">
                                                 <textarea class="ckeditor form-control" name="feesCharges"
                                                           rows="4">{{$course->feesCharges}}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck" {{$course->downloadShow == 'Y' ? 'checked' : ''}}
+                                            <label class="control-label col-md-2"><input id="downloadCheck" type="checkbox" class="icheck" {{$course->downloadShow == 'Y' ? 'checked' : ''}}
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="downloadShow"
-                                                                                         value="Y"> Download </label>
-                                            <div class="col-md-10">
+                                                                                         value="Y" onclick="toggleDiv('downloadCheck','downloadDiv')"> Download </label>
+                                            <div id="downloadDiv" class="col-md-10" style="display: {{$course->downloadShow == 'Y' ? 'block' : 'none'}}">
+                                                <input type="text" class="form-control" name="downloadHeading"  value="{{$course->downloadHeading}}"
+                                                       placeholder="Download Heading" autocomplete="off">
                                                 <textarea class="ckeditor form-control" name="download"
                                                           rows="4">{{$course->download}}</textarea>
                                             </div>
@@ -263,6 +370,39 @@
     <script type="text/javascript"
             src="{{ asset('/') }}/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js"></script>
     <script src="{{ asset('/') }}/assets/admin/pages/scripts/components-dropdowns.js"></script>
+    <script>
+        function toggleDiv(checkboxId,div) {
+            var checkbox = document.getElementById(checkboxId);
+            var div = document.getElementById(div);
+
+            if (checkbox.checked) {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        }
+
+        function addFields() {
+            var inputFields = document.getElementById("inputFields");
+
+            var newFields = document.createElement("div");
+            newFields.classList.add("row");
+            newFields.innerHTML = `
+        <div class="col-md-5"><input type="text" class="form-control" name="amountName[]" placeholder="Amount Type" required /></div>
+        <div class="col-md-5"><input type="number" class="form-control" name="amount[]" placeholder="Amount" required /></div>
+        <div class="col-md-2"><button type="button" class="btn btn-danger" onclick="removeFields(this)">Remove</button></div>
+    `;
+
+            inputFields.appendChild(newFields);
+        }
+
+        function removeFields(button) {
+            var inputFields = document.getElementById("inputFields");
+            var parentDiv = button.closest(".row");
+            inputFields.removeChild(parentDiv);
+        }
+
+    </script>
 @endsection
 
 @section('documentJquery')

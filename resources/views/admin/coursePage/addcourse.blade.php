@@ -81,31 +81,108 @@
                                                 </select>
                                             </div>
                                         </div>
+{{--                                        <div class="form-group">--}}
+{{--                                            <label class="col-md-2 control-label">Course Type: <span class="required">*</span>--}}
+{{--                                            </label>--}}
+{{--                                            <div class="col-md-10">--}}
+{{--                                                <ul class="list-inline">--}}
+{{--                                                    @foreach($courseTypes as $idx=>$courseType)--}}
+{{--                                                        <li class="list-inline-item">--}}
+{{--                                                            <label class="m-checkbox m-checkbox--solid m-checkbox--state-success">--}}
+{{--                                                                <input data-vv-as="Form Group" name="courseTypes[]" type="checkbox" class="form-control m-input" value="{{ $idx }}" >--}}
+{{--                                                                <span></span> {{$courseType}}--}}
+{{--                                                            </label>--}}
+{{--                                                        </li>--}}
+{{--                                                    @endforeach--}}
+{{--                                                </ul>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Schedule: <span class="required">
-                                                        * </span>
-                                            </label>
+                                            <label class="col-md-2 control-label">Date: </label>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" name="schedule"
-                                                       placeholder="Schedule Date Range">
+                                                <input type="text" class="form-control" name="courseDate"  value=""
+                                                       placeholder="Date Range" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Duration: <span class="required">
+                                            <label class="col-md-2 control-label">Start Date: </label>
+                                            <div class="col-md-10">
+                                                <input type="date" class="form-control" name="startDate"  value=""
+                                                       placeholder="Course Start Date" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">End Date: </label>
+                                            <div class="col-md-10">
+                                                <input type="date" class="form-control" name="endDate"  value=""
+                                                       placeholder="Course End Date" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">No. of Classes/ Sessions: </label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" name="classes"  value=""
+                                                       placeholder="No. of Classes/ Sessions" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Weekly Schedule: </label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" name="schedule"  value=""
+                                                       placeholder="Schedule Date Range" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Total Hours: <span class="required">
                                                         * </span>
                                             </label>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" name="duration"
-                                                       placeholder="Duration Time">
+                                                <input type="text" class="form-control" name="duration"  value=""
+                                                       placeholder="Duration Time in hour" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Last Date of Registration: <span class="required">
+                                                        * </span>
+                                            </label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" name="lastDate"  value=""
+                                                       placeholder="Last Registration Date" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Amount: <span class="required">
                                                         * </span>
                                             </label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" name="amount"  value="{{$course->amount}}"
+                                                                                                       placeholder="Amount" autocomplete="off">
+{{--                                                <div id="inputFields">--}}
+{{--                                                    <!-- Initial input fields with no "Remove" button -->--}}
+{{--                                                    <div class="row">--}}
+{{--                                                        <div class="col-md-5"><input type="text" class="col-md-6 form-control" name="amountName[]" placeholder="Amount Type" required /></div>--}}
+{{--                                                        <div class="col-md-5"><input type="number" class="col-md-6 form-control" name="amount[]" placeholder="amount" required /></div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+                                            </div>
+{{--                                            <div class="col-md-2">--}}
+{{--                                                <button type="button" class="btn btn-primary" onclick="addFields()">Add More</button>--}}
+{{--                                            </div>--}}
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">venue :
+                                            </label>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" name="amount"
-                                                       placeholder="Amount">
+                                                <input type="text" class="form-control" name="venue"  value=""
+                                                       placeholder="Venue Address" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">short Description :
+                                            </label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" name="shortDescription"  value=""
+                                                       placeholder="short Description" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -122,75 +199,82 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
+                                            <label class="control-label col-md-2"><input id="aboutCheck" type="checkbox" class="icheck"
                                                                                          data-checkbox="icheckbox_flat-grey"
-                                                                                         name="aboutShow" value="Y">
+                                                                                         name="aboutShow" value="Y" onclick="toggleDiv('aboutCheck','aboutDiv')">
                                                 About </label>
-                                            <div class="col-md-10">
+                                            <div id="aboutDiv" class="col-md-10" style="display: none">
+                                                <input type="text" class="form-control" name="aboutHeading" placeholder="About Heading" autocomplete="off">
                                                 <textarea class="ckeditor form-control" name="about"
                                                           rows="4"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
+                                            <label class="control-label col-md-2"><input id="pedagogyCheck" type="checkbox" class="icheck"
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="pedagogyShow"
-                                                                                         value="Y"> Pedagogy </label>
-                                            <div class="col-md-10">
+                                                                                         value="Y" onclick="toggleDiv('pedagogyCheck','pedagogyDiv')"> Pedagogy </label>
+                                            <div id="pedagogyDiv" class="col-md-10" style="display: none">
+                                                <input type="text" class="form-control" name="pedagogyHeading" placeholder="Heading" autocomplete="off">
                                                 <textarea class="ckeditor form-control" name="pedagogy"
                                                           rows="4"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
+                                            <label class="control-label col-md-2"><input id="courseStructureCheck" type="checkbox" class="icheck"
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="courseStructureShow"
-                                                                                         value="Y"> Course Structure
+                                                                                         value="Y" onclick="toggleDiv('courseStructureCheck','courseStructureDiv')"> Course Structure
                                             </label>
-                                            <div class="col-md-10">
+                                            <div id="courseStructureDiv" class="col-md-10" style="display: none">
+                                                <input type="text" class="form-control" name="courseHeading" placeholder="Heading" autocomplete="off">
                                                 <textarea class="ckeditor form-control" name="courseStructure"
                                                           rows="4"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
+                                            <label class="control-label col-md-2"><input id="teachingMethodsCheck" type="checkbox" class="icheck"
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="teachingMethodsShow"
-                                                                                         value="Y"> Teaching Methods
+                                                                                         value="Y" onclick="toggleDiv('teachingMethodsCheck','teachingMethodsDiv')"> Teaching Methods
                                             </label>
-                                            <div class="col-md-10">
+                                            <div id="teachingMethodsDiv" class="col-md-10" style="display: none">
+                                                <input type="text" class="form-control" name="teachingHeading" placeholder="Heading" autocomplete="off">
                                                 <textarea class="ckeditor form-control" name="teachingMethods"
                                                           rows="4"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
+                                            <label class="control-label col-md-2"><input id="gradingPolicyCheck" type="checkbox" class="icheck"
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="gradingPolicyShow"
-                                                                                         value="Y"> Grading Policy
+                                                                                         value="Y" onclick="toggleDiv('gradingPolicyCheck','gradingPolicyDiv')"> Grading Policy
                                             </label>
-                                            <div class="col-md-10">
+                                            <div id="gradingPolicyDiv" class="col-md-10" style="display: none">
+                                                <input type="text" class="form-control" name="gradingPolicyHeading" placeholder="Heading" autocomplete="off">
                                                 <textarea class="ckeditor form-control" name="gradingPolicy"
                                                           rows="4"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
+                                            <label class="control-label col-md-2"><input id="feesChargesCheck" type="checkbox" class="icheck"
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="feesChargesShow"
-                                                                                         value="Y"> Fees and Charges
+                                                                                         value="Y" onclick="toggleDiv('feesChargesCheck','feesChargesDiv')"> Fees and Charges
                                             </label>
-                                            <div class="col-md-10">
+                                            <div id="feesChargesDiv" class="col-md-10" style="display: none">
+                                                <input type="text" class="form-control" name="feesChargesHeading" placeholder="Heading" autocomplete="off">
                                                 <textarea class="ckeditor form-control" name="feesCharges"
                                                           rows="4"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"><input type="checkbox" class="icheck"
+                                            <label class="control-label col-md-2"><input id="downloadCheck" type="checkbox" class="icheck"
                                                                                          data-checkbox="icheckbox_flat-grey"
                                                                                          name="downloadShow"
-                                                                                         value="Y"> Download </label>
-                                            <div class="col-md-10">
+                                                                                         value="Y" onclick="toggleDiv('downloadCheck','downloadDiv')"> Download </label>
+                                            <div id="downloadDiv" class="col-md-10" style="display: none">
+                                                <input type="text" class="form-control" name="downloadHeading" placeholder="Heading" autocomplete="off">
                                                 <textarea class="ckeditor form-control" name="download"
                                                           rows="4"></textarea>
                                             </div>
@@ -245,6 +329,37 @@
     <script type="text/javascript"
             src="{{ asset('/') }}/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js"></script>
     <script src="{{ asset('/') }}/assets/admin/pages/scripts/components-dropdowns.js"></script>
+    <script>
+        function toggleDiv(checkboxId,div) {
+            var checkbox = document.getElementById(checkboxId);
+            var div = document.getElementById(div);
+
+            if (checkbox.checked) {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        }
+        function addFields() {
+            var inputFields = document.getElementById("inputFields");
+
+            var newFields = document.createElement("div");
+            newFields.classList.add("row");
+            newFields.innerHTML = `
+        <div class="col-md-5"><input type="text" class="form-control" name="amountName[]" placeholder="Amount Type" required /></div>
+        <div class="col-md-5"><input type="number" class="form-control" name="amount[]" placeholder="Amount" required /></div>
+        <div class="col-md-2"><button type="button" class="btn btn-danger" onclick="removeFields(this)">Remove</button></div>
+    `;
+
+            inputFields.appendChild(newFields);
+        }
+
+        function removeFields(button) {
+            var inputFields = document.getElementById("inputFields");
+            var parentDiv = button.closest(".row");
+            inputFields.removeChild(parentDiv);
+        }
+    </script>
 @endsection
 
 @section('documentJquery')

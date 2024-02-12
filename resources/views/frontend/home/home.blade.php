@@ -131,6 +131,28 @@
 {{--    </section>--}}
     <!-- =========================== BANNER PART END =========================== -->
 
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+{{--                    <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>--}}
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="{{asset($header->popImage)}}" class="img-fluid" alt="Full Body Image">
+                </div>
+                <!-- You can omit the modal-footer if you don't need it -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- Additional buttons or actions can be added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <aside id="mh">
         <!-- creating gap started  -->
@@ -159,8 +181,7 @@
                                         <img src="{{asset($services->image)}}"
                                              alt="images">
                                     </div>
-
-                                    <h5>{!! $services->tittle !!}</h5>
+                                    <a href="{{$services->url? url($services->url) :'#'}}" ><h5>{!! $services->tittle !!}</h5></a>
                                     <p>
                                         {!! $services->shortDescription !!}
                                     </p>
@@ -214,13 +235,13 @@
                 <div class="mh_read_blog_heading text-center">
                     <h1>{!! $overview->tittle !!}</h1>
                     <p>{!! $overview->description !!}</p>
-                    <a href="blog_archive.html" class="link_span">
+                    <a href="page/about" class="link_span">
                         <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M10.6453 4.7496L6.73847 0.842661C6.62695 0.731137 6.47831 0.669922 6.31982 0.669922C6.16115 0.669922 6.0126 0.731225 5.90108 0.842661L5.54636 1.19746C5.43493 1.30881 5.37354 1.45754 5.37354 1.61611C5.37354 1.7746 5.43493 1.92835 5.54636 2.03969L7.82556 4.32391H0.584444C0.257965 4.32391 0 4.5795 0 4.90606V5.40766C0 5.73422 0.257965 6.01558 0.584444 6.01558H7.85142L5.54645 8.31255C5.43502 8.42408 5.37363 8.56876 5.37363 8.72734C5.37363 8.88574 5.43502 9.03253 5.54645 9.14397L5.90116 9.49762C6.01269 9.60915 6.16124 9.66992 6.31991 9.66992C6.4784 9.66992 6.62703 9.60836 6.73856 9.49683L10.6454 5.58998C10.7572 5.47811 10.8187 5.32876 10.8182 5.17001C10.8186 5.01073 10.7572 4.8613 10.6453 4.7496Z"
                                 fill="#4F81BD"/>
                         </svg>
-                        More Resources
+                        More OVerview
                     </a>
 
                 </div>
@@ -236,7 +257,7 @@
                                     <h6><span class="cat_name"><a href="blog_single.html">{!! $overviews->tittle !!}</a></span> <span
                                             class="pull-right read_status">5 min
                                         read</span></h6>
-                                    <p><a href="blog_single.html">{!! $overviews->shortDescription !!}y</a></p>
+                                    <p><a href="blog_single.html">{!! $overviews->shortDescription !!}</a></p>
                                 </div>
                                 <div class="mh_blog_images_details"></div>
                             </div>

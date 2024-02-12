@@ -43,6 +43,8 @@ class EventPageController extends Controller
         $event->tittle = $request->tittle;
         $event->page_id = $request->page_id;
         $event->schedule = $request->schedule;
+        $event->month = $request->month;
+        $event->year = $request->year;
         $event->duration = $request->duration;
         $event->amount = $request->amount;
         $event->author = $request->author;
@@ -59,9 +61,9 @@ class EventPageController extends Controller
         $event->downloadShow = isset($request->downloadShow) ? $request->downloadShow : 'N';
         $event->download = $request->download;
         if ($event->save()) {
-            return redirect(url('/events-page'))->with('success', 'event info Save successfully');
+            return redirect(url('/events-page'))->with('message', 'event info Save successfully');
         } else
-            return redirect()->back()->with('failed', 'event info Save Failed');
+            return redirect()->back()->with('message', 'event info Save Failed');
     }
     public function updateEventsProgram(Request $request)
     {
@@ -81,6 +83,8 @@ class EventPageController extends Controller
         $event->tittle = $request->tittle;
         $event->page_id = $request->page_id;
         $event->schedule = $request->schedule;
+        $event->month = $request->month;
+        $event->year = $request->year;
         $event->duration = $request->duration;
         $event->amount = $request->amount;
         $event->author = $request->author;
@@ -97,9 +101,9 @@ class EventPageController extends Controller
         $event->downloadShow = isset($request->downloadShow) ? $request->downloadShow : 'N';
         $event->download = $request->download;
         if ($event->save()) {
-            return redirect(url('/events-page'))->with('success', 'event info Update successfully');
+            return redirect(url('/events-page'))->with('message', 'event info Update successfully');
         } else
-            return redirect()->back()->with('failed', 'event info Update Failed');
+            return redirect()->back()->with('message', 'event info Update Failed');
     }
 
     public function storeSetting(Request $request)
@@ -128,8 +132,8 @@ class EventPageController extends Controller
         $eventsSettings->page_id = $request->page_id;
         $eventsSettings->short_description = $request->shortDescription;
         if ($eventsSettings->save()) {
-            return redirect()->route('eventsPage')->with('success', 'Settings info Save successfully');
+            return redirect()->route('eventsPage')->with('message', 'Settings info Save successfully');
         } else
-            return redirect()->back()->with('failed', 'Settings info Save Failed');
+            return redirect()->back()->with('message', 'Settings info Save Failed');
     }
 }

@@ -15,6 +15,9 @@
     <link rel="stylesheet" type="text/css"
           href="{{ asset('/') }}/assets/global/plugins/bootstrap-select/bootstrap-select.min.css"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/select2/select2.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
     <link rel="stylesheet" type="text/css"
           href="{{ asset('/') }}/assets/global/plugins/jquery-multi-select/css/multi-select.css"/>
     <link rel="stylesheet" type="text/css"
@@ -89,86 +92,88 @@
                                     <div class="tab-content no-space">
                                         <div class="tab-pane active" id="tab_general">
                                             <div class="text-align-reverse margin-bottom-10">
-                                                <a href="{{route('pageDetails', ['id' => 'new'])}}" class="btn yellow">
+                                                <a href="{{route('detailsPage', ['id' => 'new'])}}" class="btn yellow">
                                                     <i class="fa fa-plus"></i> Create Page </a>
                                             </div>
-                                            <table class="table table-bordered table-hover">
-                                                <thead>
-                                                <tr role="row" class="heading">
-                                                    <th width="8%">
-                                                        Banner
-                                                    </th>
-                                                    <th width="10%">
-                                                        Page Name
-                                                    </th>
-                                                    <th width="10%">
-                                                        Parent Menu
-                                                    </th>
-                                                    <th width="15%">
-                                                        Menu Name
-                                                    </th>
-                                                    <th width="15%">
-                                                        Page Type
-                                                    </th>
-                                                    <th width="8%">
-                                                        Form
-                                                    </th>
-                                                    <th width="7%">
-                                                        Sidebar
-                                                    </th>
-                                                    <th width="7%">
-                                                        status
-                                                    </th>
-                                                    <th width="15%">
-                                                        Action
-                                                    </th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                @foreach($pageSettings as $pages)
-                                                    <tr>
-                                                        <td>
-                                                            <a href="#" class="fancybox-button"
-                                                               data-rel="fancybox-button">
-                                                                <img class="img-responsive"
-                                                                     src="{{asset($pages->banner)}}" alt="">
-                                                            </a>
-                                                        </td>
-                                                        <td>{{$pages->page_name}}</td>
-                                                        <td>{{$menus[$pages->parent_id]}}</td>
-                                                        <td>{{$menus[$pages->menu_id]}}</td>
-                                                        <td>{{!empty($pages->page_type) ? $pageTypes[$pages->page_type] : $pages->page_type}}</td>
-                                                        <td>{{$pages->form_status == 'Y' ? 'Yes' : 'N/A'}}</td>
-                                                        <td>{{$pages->sidebar_status == 'Y' ? 'Yes' : 'N/A'}}</td>
-                                                        <td>{{$pages->status == 'Y' ? "show" : "Hide" }}</td>
-                                                        @if($pages->page_type == 'home')
-                                                            <td>
-                                                                <a href="{{route('homePage')}}"
-                                                                   class="btn default btn-sm">
-                                                                    <i class="fa fa-edit"></i> Edit </a>
-                                                            </td>
-                                                        @else
-                                                            <td>
-                                                                <div class="row">
-                                                                    <div class="col-md-4">
-                                                                        <a href="{{ route('pageDetails', ['id' => $pages->page_id]) }}"
-                                                                           class="btn default btn-sm">
-                                                                            <i class="fa fa-edit"></i> Edit </a>
-                                                                    </div>
-                                                                    <div class="col-md-8">
-                                                                        <form action="{{ route('deletePage', ['id' => $pages->page_id]) }}" method="POST">
-                                                                            @csrf
-                                                                            @method('DELETE')
-                                                                            <button type="submit" class="btn default btn-sm" onclick="return confirm('Are you sure you want to delete this page?')"><i class="fa fa-trash"></i> Delete</button>
-                                                                        </form>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                        @endif
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered table-hover" id="sample_latest">
+                                                    <thead>
+                                                    <tr role="row" class="heading">
+                                                        <th width="8%">
+                                                            Banner
+                                                        </th>
+                                                        <th width="10%">
+                                                            Page Name
+                                                        </th>
+                                                        <th width="10%">
+                                                            Parent Menu
+                                                        </th>
+                                                        <th width="15%">
+                                                            Menu Name
+                                                        </th>
+                                                        <th width="15%">
+                                                            Page Type
+                                                        </th>
+                                                        <th width="8%">
+                                                            Form
+                                                        </th>
+                                                        <th width="7%">
+                                                            Sidebar
+                                                        </th>
+                                                        <th width="7%">
+                                                            status
+                                                        </th>
+                                                        <th width="15%">
+                                                            Action
+                                                        </th>
                                                     </tr>
-                                                @endforeach
-                                                </tbody>
-                                            </table>
+                                                    </thead>
+                                                    <tbody>
+                                                    @foreach($pageSettings as $pages)
+                                                        <tr>
+                                                            <td>
+                                                                <a href="#" class="fancybox-button"
+                                                                   data-rel="fancybox-button">
+                                                                    <img class="img-responsive"
+                                                                         src="{{asset($pages->banner)}}" alt="">
+                                                                </a>
+                                                            </td>
+                                                            <td>{{$pages->page_name}}</td>
+                                                            <td>{{$menus[$pages->parent_id]}}</td>
+                                                            <td>{{$menus[$pages->menu_id]}}</td>
+                                                            <td>{{!empty($pages->page_type) ? $pageTypes[$pages->page_type] : $pages->page_type}}</td>
+                                                            <td>{{$pages->form_status == 'Y' ? 'Yes' : 'N/A'}}</td>
+                                                            <td>{{$pages->sidebar_status == 'Y' ? 'Yes' : 'N/A'}}</td>
+                                                            <td>{{$pages->status == 'Y' ? "show" : "Hide" }}</td>
+                                                            @if($pages->page_type == 'home')
+                                                                <td>
+                                                                    <a href="{{route('homePage')}}"
+                                                                       class="btn default btn-sm">
+                                                                        <i class="fa fa-edit"></i> Edit </a>
+                                                                </td>
+                                                            @else
+                                                                <td>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4">
+                                                                            <a href="{{ route('detailsPage', ['id' => $pages->page_id]) }}"
+                                                                               class="btn default btn-sm">
+                                                                                <i class="fa fa-edit"></i> Edit </a>
+                                                                        </div>
+                                                                        <div class="col-md-8">
+                                                                            <form action="{{ route('deletePage', ['id' => $pages->page_id]) }}" method="POST">
+                                                                                @csrf
+                                                                                @method('DELETE')
+                                                                                <button type="submit" class="btn default btn-sm" onclick="return confirm('Are you sure you want to delete this page?')"><i class="fa fa-trash"></i> Delete</button>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            @endif
+                                                        </tr>
+                                                    @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -214,11 +219,17 @@
     <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/select2/select2.min.js"></script>
     <script type="text/javascript"
             src="{{ asset('/') }}/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
     <script src="{{ asset('/') }}/assets/admin/pages/scripts/components-dropdowns.js"></script>
     <script type="text/javascript"
             src="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
     <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/bootstrap-growl/jquery.bootstrap-growl.min.js"></script>
     <script type="text/javascript" src="{{ asset('/') }}/assets/admin/pages/scripts/ui-bootstrap-growl.js"></script>
+    <script src="{{ asset('/') }}/assets/admin/pages/scripts/table-advanced.js"></script>
     @if(Session::has('success'))
         <script type="text/javascript">
             $.bootstrapGrowl('Page info Save successfully', {
@@ -236,6 +247,9 @@
             });
         </script>
     @endif
+@endsection
+@section('documentJquery')
+    TableAdvanced.init();
 @endsection
 
 

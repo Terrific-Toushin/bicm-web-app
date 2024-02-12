@@ -5,6 +5,28 @@ use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
+$allowedOrigins = array(
+    'https://sandbox.sslcommerz.com',
+    'http://localhost:8056/bicm-web-app'
+);
+//var_dump($_SERVER);
+//die();
+if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] !=''){
+    foreach ($allowedOrigins as $allowedOrigin) {
+        if(preg_match('#'.$allowedOrigin.'#', $_SERVER['HTTP_REFERER'])){
+            header('Access-Control-Allow-Origin: '.$_SERVER['HTTP_REFERER']);
+            header('Access-Control-Allow-Credentials: true');
+            header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+            header('Access-Control-Max-Age: 172800');
+            header('Access-Control-Allow-Headers: Origin, Content-Tpe, X-Auth-Token, Authorization, X-Requested-With, Content-Range, Content-Disposition, Content-Description, x-xsrf-token, ip');
+//            echo json_encode(getallheaders());
+//            die();
+            break;
+
+        }
+    }
+}
+
 /*
 |--------------------------------------------------------------------------
 | Check If The Application Is Under Maintenance

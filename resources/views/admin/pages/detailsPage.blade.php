@@ -192,7 +192,7 @@
                                         @foreach($FormGroupList as $idx=>$item)
                                             <li class="list-inline-item">
                                                 <label class="m-checkbox m-checkbox--solid m-checkbox--state-success">
-                                                    <input data-vv-as="Form Group" name="form_group[]" type="checkbox" class="form-control m-input" value="{{ $item->id }}" {{!empty($pageSettings->form_group) && array_search($item->id, json_decode($pageSettings->form_group,true)) !== false ? 'checked' : ''}}>
+                                                    <input data-vv-as="Form Group" name="form_group[]" type="checkbox" class="form-control m-input" value="{{ $item->id }}" {{!empty($pageSettings->form_group) && ($pageSettings->form_group != "null") && array_search($item->id, json_decode($pageSettings->form_group,true)) !== false ? 'checked' : ''}}>
                                                     <span></span> {{$item->name}}
                                                 </label>
                                             </li>

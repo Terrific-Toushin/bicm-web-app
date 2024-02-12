@@ -1,3 +1,6 @@
+a, a:hover{
+    text-decoration: none;
+}
 .navbar .dropdown-menu {
     margin-top: -16px !important;
 }
@@ -183,41 +186,36 @@
 }
 
 #blog_single .social-link {
-    padding-top: 30px;
     position: fixed;
     z-index: 99;
-    left: 5px;
+    left: 0;
+    top: 150px;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
 }
 
 
 #blog_single .social-link a {
-    display: block;
-    margin-bottom: 25px;
-    width: 40px;
-    height: 40px;
-    line-height: 35px;
+    margin-bottom: 5px;
+    width: 33px;
+    height: 33px;
     border-radius: 50%;
     background: #EEEEEE;
     text-align: center;
     transition: all linear .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
 }
 
-#blog_single .social-link a svg {
-    margin: 10px;
-}
-
-#blog_single .social-link a path {
-    fill: #000;
-    transition: all linear .3s;
-}
 
 #blog_single .social-link a:hover {
     background: #4F81BD;
 }
 
-#blog_single .social-link a:hover path {
-    fill: #FFF;
-}
 
 .blog_single-part h4 {
     padding-top: 30px;
@@ -424,6 +422,12 @@
     font-size: 15px;
     line-height: 20px;
 }
+.btn.btn-primary-sm{
+    background: #2687c9;
+    font-weight: 600;
+    line-height: 20px;
+    color: white;
+}
 
 #loginPart{
     min-height: 80vh;
@@ -514,6 +518,24 @@
     display: block;
     font-family: 'Rubik', sans-serif;
 }
+
+.from-group {
+    margin-bottom: 15px !important;
+}
+
+.from-group label.form-label,
+.from-group label {
+    font-weight: 500;
+    display: block;
+    width: 100%;
+}
+.radio label{
+    margin-right: 10px;
+}
+.radio label input {
+    margin-right: 5px !important;
+}
+
 .form-control,
 .form-control:focus {
     padding: 15px;
@@ -523,7 +545,7 @@
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    height: 50px;
+    height: 50px !important;
     font-family: 'Rubik', sans-serif;
 }
 
@@ -702,6 +724,125 @@ ul.userInfoTab.nav-tabs li.active a {
     width: 150px;
     object-fit: cover;
     border-radius: 100%;
+}
+
+form.reachForm {
+    padding: 10px;
+}
+
+form.reachForm .from-group {
+    margin-bottom: 10px;
+}
+.reachForm h1,
+.reachForm h2,
+.reachForm h3,
+.reachForm h4,
+.reachForm h5,
+.reachForm h6{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form.reachForm label{
+    font-weight: 600;
+    font-size: 14px;
+    display: block;
+}
+
+form.reachForm .form-control{
+    margin-bottom: 8px;
+}
+
+form.reachForm .radio{
+    display: flex;
+    align-items: center;
+}
+
+form.reachForm .radio label {
+    margin-right: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+form.reachForm .radio label input[type="radio"]{
+    margin-right: 5px;
+}
+
+.notableProject, .researchPL {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+textarea.form-control,
+textarea.form-control:focus {
+    resize: none;
+    height: 150px;
+}
+
+form.contactForm7 .from-group {
+    margin: 10px 0;
+}
+
+form.contactForm7 .from-group label.form-label {
+    font-weight: 600;
+}
+
+.bicmMap {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.bicmMap iframe {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.contactSidebar{
+    padding: 10px 0;
+}
+
+.contactSidebar div{
+    padding-top: 10px;
+}
+
+.contactSidebar p {
+    font-size: 15px !important;
+    margin-bottom: 10px;
+}
+
+.contactSidebar div h6{
+    font-weight: 500;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.contactSidebar div h6::after {
+    content: '';
+    width: 15%;
+    height: 2px;
+    background: #4F81BD;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+}
+
+.contactSidebar div label {
+    font-weight: 400;
+    line-height: 22px;
+    font-size: 14px;
+}
+
+ul.researchFormUl {
+    list-style: inside;
+    padding: 20px;
+}
+
+ul.researchFormUl li{
+    list-style: decimal-leading-zero;
+    padding-left: 8px;
+    font-weight: 500;
+    line-height: 26px;
+    font-size: 14px;
 }
 /* =============== blog_single-profile-part PART END =============== */
 
@@ -1067,3 +1208,23 @@ ul.userInfoTab.nav-tabs li.active a {
     }
 
 }
+
+
+div#researchOrganization {
+    margin-top: 20px;
+}
+
+.researchPL.row h4,
+.researchPL.row h5 {
+    margin-bottom: 10px;
+}
+
+.notableProject.row .col-lg-6 {
+    float: left;
+}
+
+.notableProject.row h6.col-lg-12 {
+    float: left;
+    margin: 10px 0;
+}
+

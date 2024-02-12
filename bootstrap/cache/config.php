@@ -4,7 +4,7 @@
     'name' => 'BICM',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://localhost',
+    'url' => 'http://localhost:8056/bicm-web-app',
     'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
@@ -239,7 +239,7 @@
   array (
     'paths' => 
     array (
-      0 => 'api/*',
+      0 => '*',
       1 => 'sanctum/csrf-cookie',
     ),
     'allowed_methods' => 
@@ -265,6 +265,8 @@
   ),
   'dashboard_constant' => 
   array (
+    'SYS_THEME_ASSETS_PATH' => 'G:\\xampp\\htdocs\\bicm-web-app\\public\\assets\\',
+    'SYS_THEME_ASSETS_URL' => 'http://localhost:8056/bicm-web-appassets/',
     'PAGE_TYPE' => 
     array (
       'common' => 'Common Page',
@@ -272,6 +274,7 @@
       'master' => 'Masters Program',
       'courses' => 'Courses',
       'event' => 'Event',
+      'list' => 'Item List',
     ),
     'FIELD_TYPE' => 
     array (
@@ -282,7 +285,89 @@
       'TA' => 'textarea',
       'FR' => 'radio',
       'FS' => 'select',
+      'FK' => 'checkbox',
     ),
+    'COURSE_TYPE' => 
+    array (
+      'Featured' => 'Featured Courses',
+      'Certificate' => 'Certificate Course',
+      'Popular' => 'Popular Courses',
+      'Upcoming' => 'Upcoming Courses',
+      'Running' => 'Running Courses',
+      'Completed' => 'Completed courses',
+    ),
+    'FIELD_SHOW_TYPE' => 
+    array (
+      'FT' => 'Text',
+      'FE' => 'Email',
+      'FC' => 'Calender',
+      'FN' => 'Number',
+      'TA' => 'Textarea',
+      'FR' => 'Radio',
+      'FS' => 'Select/Dropdown',
+      'FK' => 'Checkbox',
+    ),
+    'PAYMENT_STATUS' => 
+    array (
+      'd' => 'DUE',
+      'h' => 'Hold',
+      'p' => 'Paid',
+      'f' => 'Failed',
+    ),
+    'USER_TYPE' => 
+    array (
+      'AU' => 'Admin',
+      'MU' => 'Manager',
+      'SU' => 'Supervisor',
+      'EU' => 'Executive',
+    ),
+    'USER_STATUS' => 
+    array (
+      'Y' => 'Active',
+      'N' => 'Inactive',
+    ),
+    'USER_PRIVILEGE' => 
+    array (
+      'DR' => 'Dashboard Report',
+      'UL' => 'User List',
+      'UE' => 'User Edit',
+      'UD' => 'User Delete',
+      'ML' => 'Menu List',
+      'ME' => 'Menu Edit',
+      'MD' => 'Menu Delete',
+      'PL' => 'Page List',
+      'PE' => 'Page Edit',
+      'PD' => 'Page Delete',
+      'SL' => 'Student List',
+      'SE' => 'Student Edit',
+      'SD' => 'Student Delete',
+      'MPL' => 'Master Program List',
+      'MPE' => 'Master Program Edit',
+      'MPD' => 'Master Program Delete',
+      'CL' => 'Course List',
+      'CE' => 'Course Edit',
+      'CD' => 'Course Delete',
+      'EL' => 'Event List',
+      'EE' => 'Event Edit',
+      'ED' => 'Event Delete',
+      'SBL' => 'Side Bar List',
+      'SBE' => 'Side Bar Edit',
+      'SBD' => 'Side Bar Delete',
+      'IL' => 'Item List',
+      'IE' => 'Item Edit',
+      'ID' => 'Item Delete',
+      'FL' => 'Form List',
+      'FE' => 'Form Edit',
+      'FD' => 'Form Delete',
+      '*' => 'ALL',
+    ),
+    'FROM_EMAIL' => '',
+    'TO_EMAIL' => '',
+    'REPLY_TO_EMAIL' => '',
+    'FROM_EMAIL_NAME' => 'Email Sender',
+    'CAMPAIGN_FROM_EMAIL' => '',
+    'CAMPAIGN_TO_EMAIL' => '',
+    'CAMPAIGN_EMAIL_SUBJECT' => 'Email Sender Campaign',
   ),
   'database' => 
   array (
@@ -387,7 +472,7 @@
       array (
         'driver' => 'local',
         'root' => 'G:\\xampp\\htdocs\\bicm-web-app\\storage\\app/public',
-        'url' => 'http://localhost/storage',
+        'url' => 'http://localhost:8056/bicm-web-app/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -752,6 +837,28 @@
     'secure' => NULL,
     'http_only' => true,
     'same_site' => 'lax',
+  ),
+  'sslcommerz' => 
+  array (
+    'apiCredentials' => 
+    array (
+      'store_id' => 'bicm65148a5ba6fe1',
+      'store_password' => 'bicm65148a5ba6fe1@ssl',
+    ),
+    'apiUrl' => 
+    array (
+      'make_payment' => '/gwprocess/v4/api.php',
+      'transaction_status' => '/validator/api/merchantTransIDvalidationAPI.php',
+      'order_validate' => '/validator/api/validationserverAPI.php',
+      'refund_payment' => '/validator/api/merchantTransIDvalidationAPI.php',
+      'refund_status' => '/validator/api/merchantTransIDvalidationAPI.php',
+    ),
+    'apiDomain' => 'https://sandbox.sslcommerz.com',
+    'connect_from_localhost' => true,
+    'success_url' => 'http://localhost:8056/bicm-web-app/success',
+    'failed_url' => 'http://localhost:8056/bicm-web-app/fail',
+    'cancel_url' => 'http://localhost:8056/bicm-web-app/cancel',
+    'ipn_url' => 'http://localhost:8056/bicm-web-app/ipn',
   ),
   'view' => 
   array (

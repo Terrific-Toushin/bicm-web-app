@@ -22,23 +22,7 @@
     <!-- END PAGE LEVEL STYLES -->
 @endsection
 @section('content')
-    @if(session('successmessage'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{session('successmessage')}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
-    @if (count($errors) > 0)
-        <div class = "alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+
     <div class="page-content-wrapper">
         <div class="page-content">
             <div class="page-bar">
@@ -54,15 +38,32 @@
                 </ul>
             </div>
             <!-- END PAGE HEADER-->
+            @if(session('message'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{session('message')}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+            @if (count($errors) > 0)
+                <div class = "alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <!-- BEGIN PAGE CONTENT-->
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-horizontal form-row-seperated">
                         <div class="portlet">
                             <div id="edit-form">
-                                @if(session('successmessage'))
+                                @if(session('message'))
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        {{session('successmessage')}}
+                                        {{session('message')}}
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -149,16 +150,13 @@
                                                                 </td>
                                                                 <td>
                                                                     <select data-vv-as="Type" name="type" v-model="formfield.type"
-                                                                            class="form-control m-input mb-1 small-td" placeholder="Type" @change.prevent="changeTypeField(idx, formfield.type)"
-                                                                    >
+                                                                            class="form-control m-input mb-1 small-td" placeholder="Type">
                                                                         <option value="">---Select---</option>
-                                                                        <option value="FT">Text</option>
-                                                                        <option value="FE">Email</option>
-                                                                        <option value="FC">Calender</option>
-                                                                        <option value="FN">Number</option>
-                                                                        <option value="TA">Textarea</option>
-                                                                        <option value="FR">Radio</option>
-                                                                        <option value="FS">Select/Dropdown</option>
+
+                                                                        @foreach($inputTypes as $key=>$inputType)
+                                                                            <option value="{{$key}}">{{$inputType}}</option>
+                                                                        @endforeach
+
                                                                     </select>
                                                                     <div v-if="formfield.type == 'FS' || formfield.type == 'FR'" class="choice-option-value small-td">
                                                                         <textarea class="form-control" name="options_value" v-model="formfield.options_value"></textarea>
@@ -277,7 +275,8 @@
                         "id": '',
                         "status": '',
                         "formfields": []
-                    }
+                    },
+                    inputTypes : {}
                 };
             },
             mounted() {
@@ -289,7 +288,7 @@
                     axios.get('{{route('detailsFormJson', ['id' => $id])}}').then((res) => {
                         var formfields = [];
                         var name, id, status;
-                        $.each(res.data, function(idx, item){
+                        $.each(res.data.data, function(idx, item){
                             if(idx == 0){
                                 name = item.name;
                                 id = item.id;
@@ -314,6 +313,8 @@
                         this.formgroup.name = name;
                         this.formgroup.id = id;
                         this.formgroup.status = status;
+                        this.inputTypes = res.data.inputTypes;
+                        console.log(this.inputTypes);
                     })
                         .catch(function (error) {
                             console.log(error.response);

@@ -118,14 +118,33 @@ class HomePageController extends Controller
             $homeSettings->home_settings_id = floor(time() - 999999999);
             $homeSettings->banner = isset($imgUrl) ? $imgUrl : '';
         }
+        $popImage = $request->file('popImage');
+        if ($popImage){
+            $popImageName = $popImage->getClientOriginalName();
+            $directory = 'assets/frontend/images/homePage/';
+            $popImage->move('public/'.$directory, $popImageName);
+            $popImgUrl = $directory . $popImageName;
+        }
+//        dump($popImgUrl);
+//        die();
+        if (isset($request->home_settings_id)){
+            if($popImage){
+                if(!empty($homeSettings->popImage) && file_exists($homeSettings->popImage)){
+                    unlink($homeSettings->popImage);
+                }
+                $homeSettings->popImage = $popImgUrl;
+            }
+        }else{
+            $homeSettings->popImage = isset($popImgUrl) ? $popImgUrl : '';
+        }
         $homeSettings->section_name = $request->section_name;
         $homeSettings->tittle = $request->tittle;
         $homeSettings->description = $request->description;
         $homeSettings->status = $request->status;
         if ($homeSettings->save()) {
-            return redirect()->route('homePage')->with('success', 'Settings info Save successfully');
+            return redirect()->route('homePage')->with('message', 'Settings info Save successfully');
         } else
-            return redirect()->back()->with('failed', 'Settings info Save Failed');
+            return redirect()->back()->with('message', 'Settings info Save Failed');
     }
 
     public function storeHomeService(Request $request)
@@ -157,9 +176,9 @@ class HomePageController extends Controller
         $homeService->about = $request->about;
         $homeService->url = $request->url;
         if ($homeService->save()) {
-            return redirect()->route('homePage')->with('success', 'Settings info Save successfully');
+            return redirect()->route('homePage')->with('message', 'Settings info Save successfully');
         } else
-            return redirect()->back()->with('failed', 'Settings info Save Failed');
+            return redirect()->back()->with('message', 'Settings info Save Failed');
     }
 
     public function storeHomeOverview(Request $request)
@@ -191,9 +210,9 @@ class HomePageController extends Controller
         $homeOverview->about = $request->about;
         $homeOverview->url = $request->url;
         if ($homeOverview->save()) {
-            return redirect()->route('homePage')->with('success', 'Settings info Save successfully');
+            return redirect()->route('homePage')->with('message', 'Settings info Save successfully');
         } else
-            return redirect()->back()->with('failed', 'Settings info Save Failed');
+            return redirect()->back()->with('message', 'Settings info Save Failed');
     }
 
     public function storeHomeWhy(Request $request)
@@ -225,9 +244,9 @@ class HomePageController extends Controller
         $homeWhy->about = $request->about;
         $homeWhy->url = $request->url;
         if ($homeWhy->save()) {
-            return redirect()->route('homePage')->with('success', 'Settings info Save successfully');
+            return redirect()->route('homePage')->with('message', 'Settings info Save successfully');
         } else
-            return redirect()->back()->with('failed', 'Settings info Save Failed');
+            return redirect()->back()->with('message', 'Settings info Save Failed');
     }
 
     public function storeHomeProject(Request $request)
@@ -260,8 +279,8 @@ class HomePageController extends Controller
         $homeProject->about = $request->about;
         $homeProject->url = $request->url;
         if ($homeProject->save()) {
-            return redirect()->route('homePage')->with('success', 'Settings info Save successfully');
+            return redirect()->route('homePage')->with('message', 'Settings info Save successfully');
         } else
-            return redirect()->back()->with('failed', 'Settings info Save Failed');
+            return redirect()->back()->with('message', 'Settings info Save Failed');
     }
 }

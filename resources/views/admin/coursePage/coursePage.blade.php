@@ -21,9 +21,9 @@
 @endsection
 @section('content')
 
-    @if(session('successmessage'))
+    @if(session('message'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{session('successmessage')}}
+            {{session('message')}}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -123,7 +123,8 @@
                                                         <td>{{$courses->tittle}}</td>
                                                         <td>{{$courses->schedule}}</td>
                                                         <td>{{$courses->duration}}</td>
-                                                        <td>{{$courses->amount}}</td>
+                                                        <td>{!! $courses->amount !!}
+                                                        </td>
                                                         <td>{{$courses->status == 'Y' ? "show" : "Hide" }}</td>
                                                         <td>
                                                             <a href="{{ route('editCoursesProgram', ['id' => $courses->course_id]) }}" class="btn default btn-sm">

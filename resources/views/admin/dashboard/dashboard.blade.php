@@ -1,5 +1,24 @@
 @extends('admin.master')
-
+<link rel="stylesheet" type="text/css"
+      href="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
+@section('styleSheet')
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/jquery-tags-input/jquery.tagsinput.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/typeahead/typeahead.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-select/bootstrap-select.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/select2/select2.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/jquery-multi-select/css/multi-select.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
+    <!-- END PAGE LEVEL STYLES -->
+@endsection
 @section('content')
     <!-- BEGIN CONTENT -->
     <div class="page-content-wrapper">
@@ -17,65 +36,84 @@
                 </ul>
             </div>
             <!-- END PAGE HEADER-->
+{{--            @dump($studentCounts)--}}
             <!-- BEGIN PAGE CONTENT-->
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 margin-bottom-10">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-bottom-10">
                     <div class="dashboard-stat blue-madison">
                         <div class="visual">
                             <i class="fa fa-briefcase fa-icon-medium"></i>
                         </div>
                         <div class="details">
                             <div class="number">
-                                $168,492.54
+                                {{$users->total}}
                             </div>
                             <div class="desc">
-                                Lifetime Sales
+                                Total User
                             </div>
                         </div>
-                        <a class="more" href="javascript:;">
+                        <a class="more" href="{{route('userList')}}">
                             View more <i class="m-icon-swapright m-icon-white"></i>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="dashboard-stat red-intense">
                         <div class="visual">
                             <i class="fa fa-shopping-cart"></i>
                         </div>
                         <div class="details">
                             <div class="number">
-                                1,127,390
+                                {{$users->admins_count}}
                             </div>
                             <div class="desc">
-                                Total Orders
+                                Total Admin
                             </div>
                         </div>
-                        <a class="more" href="javascript:;">
+                        <a class="more" href="{{route('userList')}}">
                             View more <i class="m-icon-swapright m-icon-white"></i>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="dashboard-stat blue-madison">
+                        <div class="visual">
+                            <i class="fa fa-comments"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                {{$users->supervisors_count}}
+                            </div>
+                            <div class="desc">
+                                Total Supervisor
+                            </div>
+                        </div>
+                        <a class="more" href="{{route('userList')}}">
+                            View more <i class="m-icon-swapright m-icon-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="dashboard-stat green-haze">
                         <div class="visual">
                             <i class="fa fa-group fa-icon-medium"></i>
                         </div>
                         <div class="details">
                             <div class="number">
-                                $670.54
+                                {{$users->manager_count}}
                             </div>
                             <div class="desc">
-                                Average Orders
+                                Total Manager
                             </div>
                         </div>
-                        <a class="more" href="javascript:;">
+                        <a class="more" href="{{route('userList')}}">
                             View more <i class="m-icon-swapright m-icon-white"></i>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <!-- Begin: life time stats -->
                     <div class="portlet box blue-steel">
                         <div class="portlet-title">
@@ -96,608 +134,266 @@
                                 <ul class="nav nav-tabs">
                                     <li class="active">
                                         <a href="#overview_1" data-toggle="tab">
-                                            Top Selling </a>
+                                            All Courses</a>
                                     </li>
                                     <li>
                                         <a href="#overview_2" data-toggle="tab">
-                                            Most Viewed </a>
+                                            MAFCM</a>
                                     </li>
                                     <li>
                                         <a href="#overview_3" data-toggle="tab">
-                                            New Customers </a>
+                                            PGDCM </a>
                                     </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-                                            Orders <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li>
-                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">
-                                                    Latest 10 Orders </a>
-                                            </li>
-                                            <li>
-                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">
-                                                    Pending Orders </a>
-                                            </li>
-                                            <li>
-                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">
-                                                    Completed Orders </a>
-                                            </li>
-                                            <li>
-                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">
-                                                    Rejected Orders </a>
-                                            </li>
-                                        </ul>
+                                    <li>
+                                        <a href="#overview_4" data-toggle="tab">
+                                            Certificate Course </a>
                                     </li>
+
+{{--                                    <li class="dropdown">--}}
+{{--                                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">--}}
+{{--                                            Orders <i class="fa fa-angle-down"></i>--}}
+{{--                                        </a>--}}
+{{--                                        <ul class="dropdown-menu" role="menu">--}}
+{{--                                            <li>--}}
+{{--                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">--}}
+{{--                                                    Latest 10 Orders </a>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">--}}
+{{--                                                    Pending Orders </a>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">--}}
+{{--                                                    Completed Orders </a>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">--}}
+{{--                                                    Rejected Orders </a>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="overview_1">
+                                        <div class="btn-group pull-right" style="position: absolute;left: 200px;z-index: 999;">
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li>
+                                                    <a href="{{ route('allCourseDownload.csv', ['type' => 'all']) }}">
+                                                        Export to CSV </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                         <div class="table-responsive">
-                                            <table class="table table-striped table-hover table-bordered">
+                                            <table  class="table table-striped table-bordered table-hover" id="sample_latest">
                                                 <thead>
-                                                <tr>
-                                                    <th>
-                                                        Product Name
-                                                    </th>
-                                                    <th>
-                                                        Price
-                                                    </th>
-                                                    <th>
-                                                        Sold
-                                                    </th>
-                                                    <th>
-                                                    </th>
-                                                </tr>
+                                                    <tr>
+                                                        <th>
+                                                            SL.
+                                                        </th>
+                                                        <th>
+                                                            Student Name
+                                                        </th>
+                                                        <th>
+                                                            Course Type
+                                                        </th>
+                                                        <th>
+                                                            Course Name
+                                                        </th>
+                                                        <th>
+                                                            Amount
+                                                        </th>
+                                                        <th>
+                                                            Applied
+                                                        </th>
+                                                        <th>
+                                                            Status
+                                                        </th>
+                                                    </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Apple iPhone 4s - 16GB - Black </a>
-                                                    </td>
-                                                    <td>
-                                                        $625.50
-                                                    </td>
-                                                    <td>
-                                                        809
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Samsung Galaxy S III SGH-I747 - 16GB </a>
-                                                    </td>
-                                                    <td>
-                                                        $915.50
-                                                    </td>
-                                                    <td>
-                                                        6709
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Motorola Droid 4 XT894 - 16GB - Black </a>
-                                                    </td>
-                                                    <td>
-                                                        $878.50
-                                                    </td>
-                                                    <td>
-                                                        784
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Regatta Luca 3 in 1 Jacket </a>
-                                                    </td>
-                                                    <td>
-                                                        $25.50
-                                                    </td>
-                                                    <td>
-                                                        1245
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Samsung Galaxy Note 3 </a>
-                                                    </td>
-                                                    <td>
-                                                        $925.50
-                                                    </td>
-                                                    <td>
-                                                        21245
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Inoval Digital Pen </a>
-                                                    </td>
-                                                    <td>
-                                                        $125.50
-                                                    </td>
-                                                    <td>
-                                                        1245
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            BICM - Responsive Admin + Frontend Theme </a>
-                                                    </td>
-                                                    <td>
-                                                        $20.00
-                                                    </td>
-                                                    <td>
-                                                        11190
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
+                                                @foreach($studentCourses as $key=>$studentCourse)
+                                                    <tr>
+                                                        <td>{{$key + 1}}</td>
+                                                        <td>{{$studentCourse->first_name}}</td>
+                                                        <td>{{$studentCourse->page_name}}</td>
+                                                        <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->tittle : ""}}</td>
+                                                        <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->amount : "0"}}</td>
+                                                        <td>{{$studentCourse->created_at}}</td>
+                                                        <td>{{isset($paymentStatus[$studentCourse->paid_status]) ? $paymentStatus[$studentCourse->paid_status] : $studentCourse->paid_status}} </td>
+{{--                                                        <td><a href="javascript:;" class="btn default btn-xs green-stripe">--}}
+{{--                                                                View </a></td>--}}
+                                                    </tr>
+                                                @endforeach
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="overview_2">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped table-hover table-bordered">
-                                                <thead>
-                                                <tr>
-                                                    <th>
-                                                        Product Name
-                                                    </th>
-                                                    <th>
-                                                        Price
-                                                    </th>
-                                                    <th>
-                                                        Views
-                                                    </th>
-                                                    <th>
-                                                    </th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            BICM - Responsive Admin + Frontend Theme </a>
-                                                    </td>
-                                                    <td>
-                                                        $20.00
-                                                    </td>
-                                                    <td>
-                                                        11190
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Regatta Luca 3 in 1 Jacket </a>
-                                                    </td>
-                                                    <td>
-                                                        $25.50
-                                                    </td>
-                                                    <td>
-                                                        1245
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Apple iPhone 4s - 16GB - Black </a>
-                                                    </td>
-                                                    <td>
-                                                        $625.50
-                                                    </td>
-                                                    <td>
-                                                        809
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Samsung Galaxy S III SGH-I747 - 16GB </a>
-                                                    </td>
-                                                    <td>
-                                                        $915.50
-                                                    </td>
-                                                    <td>
-                                                        6709
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Motorola Droid 4 XT894 - 16GB - Black </a>
-                                                    </td>
-                                                    <td>
-                                                        $878.50
-                                                    </td>
-                                                    <td>
-                                                        784
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Samsung Galaxy Note 3 </a>
-                                                    </td>
-                                                    <td>
-                                                        $925.50
-                                                    </td>
-                                                    <td>
-                                                        21245
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Inoval Digital Pen </a>
-                                                    </td>
-                                                    <td>
-                                                        $125.50
-                                                    </td>
-                                                    <td>
-                                                        1245
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
+                                        <div class="btn-group pull-right" style="position: absolute;left: 200px;z-index: 998;">
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li>
+                                                    <a href="{{ route('allCourseDownload.csv', ['type' => 'master']) }}">
+                                                        Export to CSV </a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                    </div>
-                                    <div class="tab-pane" id="overview_3">
                                         <div class="table-responsive">
-                                            <table class="table table-striped table-hover table-bordered">
+                                            <table  class="table table-striped table-bordered table-hover" id="sample_Master">
                                                 <thead>
                                                 <tr>
                                                     <th>
-                                                        Customer Name
+                                                        SL.
                                                     </th>
                                                     <th>
-                                                        Total Orders
+                                                        Student Name
                                                     </th>
                                                     <th>
-                                                        Total Amount
-                                                    </th>
-                                                    <th>
-                                                    </th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            David Wilson </a>
-                                                    </td>
-                                                    <td>
-                                                        3
-                                                    </td>
-                                                    <td>
-                                                        $625.50
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Amanda Nilson </a>
-                                                    </td>
-                                                    <td>
-                                                        4
-                                                    </td>
-                                                    <td>
-                                                        $12625.50
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Jhon Doe </a>
-                                                    </td>
-                                                    <td>
-                                                        2
-                                                    </td>
-                                                    <td>
-                                                        $125.00
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Bill Chang </a>
-                                                    </td>
-                                                    <td>
-                                                        45
-                                                    </td>
-                                                    <td>
-                                                        $12,125.70
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Paul Strong </a>
-                                                    </td>
-                                                    <td>
-                                                        1
-                                                    </td>
-                                                    <td>
-                                                        $890.85
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Jane Hilson </a>
-                                                    </td>
-                                                    <td>
-                                                        5
-                                                    </td>
-                                                    <td>
-                                                        $239.85
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Patrick Walker </a>
-                                                    </td>
-                                                    <td>
-                                                        2
-                                                    </td>
-                                                    <td>
-                                                        $1239.85
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="overview_4">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped table-hover table-bordered">
-                                                <thead>
-                                                <tr>
-                                                    <th>
-                                                        Customer Name
-                                                    </th>
-                                                    <th>
-                                                        Date
+                                                        Course Name
                                                     </th>
                                                     <th>
                                                         Amount
                                                     </th>
                                                     <th>
-                                                        Status
+                                                        Applied
                                                     </th>
                                                     <th>
+                                                        Status
                                                     </th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
+                                                @php $serialMaster = 1 @endphp
+                                                @foreach($studentCourses as $key=>$studentCourse)
+                                                    @if($studentCourse->page_name == "Master's Program")
+                                                        <tr>
+                                                            <td>{{$serialMaster}}</td>
+                                                            <td>{{$studentCourse->first_name}}</td>
+                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->tittle : ""}}</td>
+                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->amount : "0"}}</td>
+                                                            <td>{{$studentCourse->created_at}}</td>
+                                                            <td>{{isset($paymentStatus[$studentCourse->paid_status]) ? $paymentStatus[$studentCourse->paid_status] : $studentCourse->paid_status}} </td>
+                                                            {{--                                                        <td><a href="javascript:;" class="btn default btn-xs green-stripe">--}}
+                                                            {{--                                                                View </a></td>--}}
+                                                        </tr>
+                                                        @php $serialMaster++ @endphp
+                                                    @endif
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="overview_3">
+                                        <div class="btn-group pull-right" style="position: absolute;left: 200px;z-index: 997;">
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li>
+                                                    <a href="{{ route('allCourseDownload.csv', ['type' => 'diploma']) }}">
+                                                        Export to CSV </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table  class="table table-striped table-bordered table-hover" id="sample_Diploma">
+                                                <thead>
                                                 <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            David Wilson </a>
-                                                    </td>
-                                                    <td>
-                                                        3 Jan, 2013
-                                                    </td>
-                                                    <td>
-                                                        $625.50
-                                                    </td>
-                                                    <td>
-													<span class="label label-sm label-warning">
-													Pending </span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
+                                                    <th>
+                                                        SL.
+                                                    </th>
+                                                    <th>
+                                                        Student Name
+                                                    </th>
+                                                    <th>
+                                                        Course Name
+                                                    </th>
+                                                    <th>
+                                                        Amount
+                                                    </th>
+                                                    <th>
+                                                        Applied
+                                                    </th>
+                                                    <th>
+                                                        Status
+                                                    </th>
                                                 </tr>
+                                                </thead>
+                                                <tbody>
+                                                @php $serialdiploma = 1 @endphp
+                                                @foreach($studentCourses as $key=>$studentCourse)
+                                                    @if($studentCourse->page_name == "diploma")
+                                                        <tr>
+                                                            <td>{{$serialdiploma}}</td>
+                                                            <td>{{$studentCourse->first_name}}</td>
+                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->tittle : ""}}</td>
+                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->amount : "0"}}</td>
+                                                            <td>{{$studentCourse->created_at}}</td>
+                                                            <td>{{isset($paymentStatus[$studentCourse->paid_status]) ? $paymentStatus[$studentCourse->paid_status] : $studentCourse->paid_status}} </td>
+                                                            {{--                                                        <td><a href="javascript:;" class="btn default btn-xs green-stripe">--}}
+                                                            {{--                                                                View </a></td>--}}
+                                                        </tr>
+                                                        @php $serialCourse++ @endphp
+                                                    @endif
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="overview_4">
+                                        <div class="btn-group pull-right" style="position: absolute;left: 200px;z-index: 996;">
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li>
+                                                    <a href="{{ route('allCourseDownload.csv', ['type' => 'certificate']) }}">
+                                                        Export to CSV </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table  class="table table-striped table-bordered table-hover" id="sample_Certificate">
+                                                <thead>
                                                 <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Amanda Nilson </a>
-                                                    </td>
-                                                    <td>
-                                                        13 Feb, 2013
-                                                    </td>
-                                                    <td>
-                                                        $12625.50
-                                                    </td>
-                                                    <td>
-													<span class="label label-sm label-warning">
-													Pending </span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
+                                                    <th>
+                                                        SL.
+                                                    </th>
+                                                    <th>
+                                                        Student Name
+                                                    </th>
+                                                    <th>
+                                                        Course Name
+                                                    </th>
+                                                    <th>
+                                                        Amount
+                                                    </th>
+                                                    <th>
+                                                        Applied
+                                                    </th>
+                                                    <th>
+                                                        Status
+                                                    </th>
                                                 </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Jhon Doe </a>
-                                                    </td>
-                                                    <td>
-                                                        20 Mar, 2013
-                                                    </td>
-                                                    <td>
-                                                        $125.00
-                                                    </td>
-                                                    <td>
-													<span class="label label-sm label-success">
-													Success </span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Bill Chang </a>
-                                                    </td>
-                                                    <td>
-                                                        29 May, 2013
-                                                    </td>
-                                                    <td>
-                                                        $12,125.70
-                                                    </td>
-                                                    <td>
-													<span class="label label-sm label-info">
-													In Process </span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Paul Strong </a>
-                                                    </td>
-                                                    <td>
-                                                        1 Jun, 2013
-                                                    </td>
-                                                    <td>
-                                                        $890.85
-                                                    </td>
-                                                    <td>
-													<span class="label label-sm label-success">
-													Success </span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Jane Hilson </a>
-                                                    </td>
-                                                    <td>
-                                                        5 Aug, 2013
-                                                    </td>
-                                                    <td>
-                                                        $239.85
-                                                    </td>
-                                                    <td>
-													<span class="label label-sm label-danger">
-													Canceled </span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;">
-                                                            Patrick Walker </a>
-                                                    </td>
-                                                    <td>
-                                                        6 Aug, 2013
-                                                    </td>
-                                                    <td>
-                                                        $1239.85
-                                                    </td>
-                                                    <td>
-													<span class="label label-sm label-success">
-													Success </span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:;" class="btn default btn-xs green-stripe">
-                                                            View </a>
-                                                    </td>
-                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @php $serialCourse = 1 @endphp
+                                                @foreach($studentCourses as $key=>$studentCourse)
+                                                    @if($studentCourse->page_name == "Certificate Course")
+                                                        <tr>
+                                                            <td>{{$serialCourse}}</td>
+                                                            <td>{{$studentCourse->first_name}}</td>
+                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->tittle : ""}}</td>
+                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->amount : "0"}}</td>
+                                                            <td>{{$studentCourse->created_at}}</td>
+                                                            <td>{{isset($paymentStatus[$studentCourse->paid_status]) ? $paymentStatus[$studentCourse->paid_status] : $studentCourse->paid_status}} </td>
+                                                            {{--                                                        <td><a href="javascript:;" class="btn default btn-xs green-stripe">--}}
+                                                            {{--                                                                View </a></td>--}}
+                                                        </tr>
+                                                        @php $serialCourse++ @endphp
+                                                    @endif
+                                                @endforeach
                                                 </tbody>
                                             </table>
                                         </div>
@@ -708,12 +404,12 @@
                     </div>
                     <!-- End: life time stats -->
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <!-- Begin: life time stats -->
                     <div class="portlet box red-sunglo">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-bar-chart-o"></i>Revenue
+                                <i class="fa fa-bar-chart-o"></i>Register last 30 days
                             </div>
                             <div class="tools">
                                 <a href="javascript:;" class="reload">
@@ -722,12 +418,12 @@
                             <ul class="nav nav-tabs" style="margin-right: 10px">
                                 <li>
                                     <a href="#portlet_tab2" data-toggle="tab" id="statistics_amounts_tab">
-                                        Amounts </a>
+                                        Students </a>
                                 </li>
-                                <li class="active">
-                                    <a href="#portlet_tab1" data-toggle="tab">
-                                        Orders </a>
-                                </li>
+{{--                                <li class="active">--}}
+{{--                                    <a href="#portlet_tab1" data-toggle="tab">--}}
+{{--                                        Orders </a>--}}
+{{--                                </li>--}}
                             </ul>
                         </div>
                         <div class="portlet-body">
@@ -736,35 +432,35 @@
                                     <div id="statistics_1" class="chart">
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="portlet_tab2">
-                                    <div id="statistics_2" class="chart">
-                                    </div>
-                                </div>
+{{--                                <div class="tab-pane" id="portlet_tab2">--}}
+{{--                                    <div id="statistics_2" class="chart">--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                             </div>
-                            <div class="well no-margin no-border">
-                                <div class="row">
-                                    <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
-										<span class="label label-success">
-										Revenue: </span>
-                                        <h3>$1,234,112.20</h3>
-                                    </div>
-                                    <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
-										<span class="label label-info">
-										Tax: </span>
-                                        <h3>$134,90.10</h3>
-                                    </div>
-                                    <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
-										<span class="label label-danger">
-										Shipment: </span>
-                                        <h3>$1,134,90.10</h3>
-                                    </div>
-                                    <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
-										<span class="label label-warning">
-										Orders: </span>
-                                        <h3>235090</h3>
-                                    </div>
-                                </div>
-                            </div>
+{{--                            <div class="well no-margin no-border">--}}
+{{--                                <div class="row">--}}
+{{--                                    <div class="col-md-3 col-sm-3 col-xs-6 text-stat">--}}
+{{--										<span class="label label-success">--}}
+{{--										Revenue: </span>--}}
+{{--                                        <h3>$1,234,112.20</h3>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-3 col-sm-3 col-xs-6 text-stat">--}}
+{{--										<span class="label label-info">--}}
+{{--										Tax: </span>--}}
+{{--                                        <h3>$134,90.10</h3>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-3 col-sm-3 col-xs-6 text-stat">--}}
+{{--										<span class="label label-danger">--}}
+{{--										Shipment: </span>--}}
+{{--                                        <h3>$1,134,90.10</h3>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-3 col-sm-3 col-xs-6 text-stat">--}}
+{{--										<span class="label label-warning">--}}
+{{--										Orders: </span>--}}
+{{--                                        <h3>235090</h3>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                     <!-- End: life time stats -->
@@ -1426,8 +1122,154 @@
         </div>
     </div>
     <!-- END QUICK SIDEBAR -->
-@endsection
+    <script>
+        var initChart1 = function () {
 
+            var data = <?php echo $studentGraphResult ?>;
+            {{--[["2023-09-14",1],["2023-09-24",2]]--}}
+            // var data = [
+            //     ['14-09-2023', 4],
+            //     ['15-09-2023', 8],
+            // ];
+
+            var plot_statistics = $.plot(
+                $("#statistics_1"),
+                [
+                    {
+                        data:data,
+                        lines: {
+                            fill: 0.6,
+                            lineWidth: 0.1
+                        },
+                        color: ['#f89f9f']
+                    },
+                    {
+                        data: data,
+                        points: {
+                            show: true,
+                            fill: true,
+                            radius: 5,
+                            fillColor: "#f89f9f",
+                            lineWidth: 3
+                        },
+                        color: '#fff',
+                        shadowSize: 0
+                    }
+                ],
+                {
+
+                    xaxis: {
+                        tickLength: 0,
+                        tickDecimals: 0,
+                        mode: "categories",
+                        min: 0,
+                        font: {
+                            lineHeight: 15,
+                            style: "normal",
+                            variant: "small-caps",
+                            color: "#6F7B8A"
+                        }
+                    },
+                    yaxis: {
+                        ticks: 10,
+                        tickDecimals: 0,
+                        tickColor: "#f0f0f0",
+                        font: {
+                            lineHeight: 25,
+                            style: "normal",
+                            variant: "small-caps",
+                            color: "#6F7B8A"
+                        }
+                    },
+                    grid: {
+                        backgroundColor: {
+                            colors: ["#fff", "#fff"]
+                        },
+                        borderWidth: 1,
+                        borderColor: "#f0f0f0",
+                        margin: 0,
+                        minBorderMargin: 0,
+                        labelMargin: 20,
+                        hoverable: true,
+                        clickable: true,
+                        mouseActiveRadius: 6
+                    },
+                    legend: {
+                        show: false
+                    }
+                }
+            );
+
+            var previousPoint = null;
+
+            $("#statistics_1").bind("plothover", function (event, pos, item) {
+                $("#x").text(pos.x.toFixed(2));
+                $("#y").text(pos.y.toFixed(2));
+                if (item) {
+                    if (previousPoint != item.dataIndex) {
+                        previousPoint = item.dataIndex;
+
+                        $("#tooltip").remove();
+                        var x = item.datapoint[0].toFixed(2),
+                            y = item.datapoint[1].toFixed(2);
+
+                        showTooltip(item.pageX, item.pageY, item.datapoint[0], item.datapoint[1]);
+                    }
+                } else {
+                    $("#tooltip").remove();
+                    previousPoint = null;
+                }
+            });
+
+        }
+    </script>
+@endsection
+@section('customJs')
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/fuelux/js/spinner.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/fuelux/js/spinner.min.js"></script>
+    <script type="text/javascript"
+            src="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+    <script type="text/javascript"
+            src="{{ asset('/') }}/assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
+    <script type="text/javascript"
+            src="{{ asset('/') }}/assets/global/plugins/jquery.input-ip-address-control-1.0.min.js"></script>
+    <script src="{{ asset('/') }}/assets/global/plugins/bootstrap-pwstrength/pwstrength-bootstrap.min.js"
+            type="text/javascript"></script>
+    <script src="{{ asset('/') }}/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"
+            type="text/javascript"></script>
+    <script src="{{ asset('/') }}/assets/global/plugins/jquery-tags-input/jquery.tagsinput.min.js"
+            type="text/javascript"></script>
+    <script src="{{ asset('/') }}/assets/global/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"
+            type="text/javascript"></script>
+    <script src="{{ asset('/') }}/assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js"
+            type="text/javascript"></script>
+    <script src="{{ asset('/') }}/assets/global/plugins/typeahead/handlebars.min.js" type="text/javascript"></script>
+    <script src="{{ asset('/') }}/assets/global/plugins/typeahead/typeahead.bundle.min.js"
+            type="text/javascript"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/ckeditor/ckeditor.js"></script>
+    <script src="{{ asset('/') }}/assets/global/plugins/jquery-tags-input/jquery.tagsinput.min.js"
+            type="text/javascript"></script>
+    <script src="{{ asset('/') }}/assets/global/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+    <script src="{{ asset('/') }}/assets/global/plugins/bootstrap-growl/jquery.bootstrap-growl.min.js" type="text/javascript"></script>
+    <script src="{{ asset('/') }}/assets/admin/pages/scripts/components-form-tools.js"></script>
+    <script type="text/javascript"
+            src="{{ asset('/') }}/assets/global/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/select2/select2.min.js"></script>
+
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+
+    <script type="text/javascript"
+            src="{{ asset('/') }}/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js"></script>
+    <script src="{{ asset('/') }}/assets/admin/pages/scripts/components-dropdowns.js"></script>
+    <script type="text/javascript"
+            src="{{ asset('/') }}/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+    <script src="{{ asset('/') }}/assets/admin/pages/scripts/table-advanced.js"></script>
+@endsection
 @section('documentJquery')
     EcommerceIndex.init();
+    TableAdvanced.init();
 @endsection

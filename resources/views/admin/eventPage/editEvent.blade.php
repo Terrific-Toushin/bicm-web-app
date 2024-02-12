@@ -109,6 +109,35 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <label class="col-md-2 control-label">Month: <span class="required"> * </span>
+                                            </label>
+                                            <div class="col-md-10">
+                                                <select class="form-control input-medium select2me"
+                                                        data-placeholder="Month..." name="month">
+                                                    <option value=""></option>
+                                                    <option value="January" {{$event->month == 'January' ? 'selected' : ''}}>January</option>
+                                                    <option value="February" {{$event->month == 'February' ? 'selected' : ''}}>February</option>
+                                                    <option value="March" {{$event->month == 'March' ? 'selected' : ''}}>March</option>
+                                                    <option value="April" {{$event->month == 'April' ? 'selected' : ''}}>April</option>
+                                                    <option value="May" {{$event->month == 'May' ? 'selected' : ''}}>May</option>
+                                                    <option value="June" {{$event->month == 'June' ? 'selected' : ''}}>June</option>
+                                                    <option value="July" {{$event->month == 'July' ? 'selected' : ''}}>July</option>
+                                                    <option value="August" {{$event->month == 'August' ? 'selected' : ''}}>August</option>
+                                                    <option value="September" {{$event->month == 'September' ? 'selected' : ''}}>September</option>
+                                                    <option value="October" {{$event->month == 'October' ? 'selected' : ''}}>October</option>
+                                                    <option value="November" {{$event->month == 'November' ? 'selected' : ''}}>November </option>
+                                                    <option value="December" {{$event->month == 'December' ? 'selected' : ''}}>December</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Year: <span class="required"> * </span>
+                                            </label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" name="year" max="4" value="{{$event->year}}" placeholder="Event year 4 digit">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <label class="col-md-2 control-label">Duration: <span class="required">
                                                         * </span>
                                             </label>
@@ -118,9 +147,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Fee: <span class="required">
-                                                        * </span>
-                                            </label>
+                                            <label class="col-md-2 control-label">Fee: </label>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" name="amount"  value="{{$event->amount}}"
                                                        placeholder="Amount" autocomplete="off">
