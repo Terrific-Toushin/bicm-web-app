@@ -151,7 +151,8 @@
                 </div>
             </div>
             <!-- END PAGE CONTENT-->
-            @if(!empty($userInfo) && Auth::user()->id == $userInfo->id)
+{{--            @if(!empty($userInfo) && Auth::user()->id == $userInfo->id)--}}
+            @if(!empty($userInfo))
                 <div class="portlet box red">
                     <div class="portlet-title">
                         <div class="caption">

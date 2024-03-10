@@ -17,8 +17,14 @@ class CheckPrivilege
     public function handle(Request $request, Closure $next, $privileges)
     {
         $privileges = explode("|",$privileges);
-        if($request->session()->exists('loginUser')){
-            $userPrivileges = explode(",",$request->session()->get('loginUser.privileges'));
+        if($request->session()->exists('loginUserPrivileges')){
+            $currentUser = $request->session()->get('loginUserPrivileges');
+            $currentUser = str_replace(['[', ']','"'], '', $currentUser);
+            $userPrivileges = explode(",",$currentUser);
+//            dump($currentUser);
+//            dump($userPrivileges);
+//            dump(in_array("*",$userPrivileges));
+//            die();
             if(in_array("*",$userPrivileges)){
                 return $next($request);
 
@@ -31,6 +37,6 @@ class CheckPrivilege
                 }
             }
         }
-        return redirect('/');
+        return redirect()->back();
     }
 }

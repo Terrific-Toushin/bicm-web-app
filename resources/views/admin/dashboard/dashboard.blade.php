@@ -148,6 +148,10 @@
                                         <a href="#overview_4" data-toggle="tab">
                                             Certificate Course </a>
                                     </li>
+                                    <li>
+                                        <a href="#overview_5" data-toggle="tab">
+                                            Certification Program </a>
+                                    </li>
 
 {{--                                    <li class="dropdown">--}}
 {{--                                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">--}}
@@ -324,7 +328,7 @@
                                                 <tbody>
                                                 @php $serialdiploma = 1 @endphp
                                                 @foreach($studentCourses as $key=>$studentCourse)
-                                                    @if($studentCourse->page_name == "diploma")
+                                                    @if($studentCourse->page_name == "Post Graduate Diploma")
                                                         <tr>
                                                             <td>{{$serialdiploma}}</td>
                                                             <td>{{$studentCourse->first_name}}</td>
@@ -381,6 +385,62 @@
                                                 @php $serialCourse = 1 @endphp
                                                 @foreach($studentCourses as $key=>$studentCourse)
                                                     @if($studentCourse->page_name == "Certificate Course")
+                                                        <tr>
+                                                            <td>{{$serialCourse}}</td>
+                                                            <td>{{$studentCourse->first_name}}</td>
+                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->tittle : ""}}</td>
+                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->amount : "0"}}</td>
+                                                            <td>{{$studentCourse->created_at}}</td>
+                                                            <td>{{isset($paymentStatus[$studentCourse->paid_status]) ? $paymentStatus[$studentCourse->paid_status] : $studentCourse->paid_status}} </td>
+                                                            {{--                                                        <td><a href="javascript:;" class="btn default btn-xs green-stripe">--}}
+                                                            {{--                                                                View </a></td>--}}
+                                                        </tr>
+                                                        @php $serialCourse++ @endphp
+                                                    @endif
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="overview_5">
+                                        <div class="btn-group pull-right" style="position: absolute;left: 200px;z-index: 996;">
+                                            <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li>
+                                                    <a href="{{ route('allCourseDownload.csv', ['type' => 'certification']) }}">
+                                                        Export to CSV </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table  class="table table-striped table-bordered table-hover" id="sample_Certification">
+                                                <thead>
+                                                <tr>
+                                                    <th>
+                                                        SL.
+                                                    </th>
+                                                    <th>
+                                                        Student Name
+                                                    </th>
+                                                    <th>
+                                                        Course Name
+                                                    </th>
+                                                    <th>
+                                                        Amount
+                                                    </th>
+                                                    <th>
+                                                        Applied
+                                                    </th>
+                                                    <th>
+                                                        Status
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @php $serialCourse = 1 @endphp
+                                                @foreach($studentCourses as $key=>$studentCourse)
+                                                    @if($studentCourse->page_name == "Certification Program")
                                                         <tr>
                                                             <td>{{$serialCourse}}</td>
                                                             <td>{{$studentCourse->first_name}}</td>
