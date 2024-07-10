@@ -37,6 +37,6 @@ class CheckPrivilege
                 }
             }
         }
-        return redirect()->back();
+        return redirect('/');
     }
 }

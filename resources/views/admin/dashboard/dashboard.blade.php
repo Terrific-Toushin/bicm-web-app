@@ -113,85 +113,91 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
-                    <!-- Begin: life time stats -->
-                    <div class="portlet box blue-steel">
-                        <div class="portlet-title">
-                            <div class="caption">
-                                <i class="fa fa-thumb-tack"></i>Overview
+                @php
+                    $loginUserPrivileges = session('loginUserPrivileges');
+                    $currentUser = str_replace(['[', ']','"'], '', $loginUserPrivileges);
+                    $userPrivileges = explode(",",$currentUser);
+                @endphp
+                @if(in_array("*",$userPrivileges) || in_array("DR",$userPrivileges))
+                    <div class="col-md-12">
+                        <!-- Begin: life time stats -->
+                        <div class="portlet box blue-steel">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-thumb-tack"></i>Overview
+                                </div>
+                                <div class="tools">
+                                    <a href="javascript:;" class="collapse">
+                                    </a>
+                                    <a href="javascript:;" class="reload">
+                                    </a>
+                                    <a href="javascript:;" class="remove">
+                                    </a>
+                                </div>
                             </div>
-                            <div class="tools">
-                                <a href="javascript:;" class="collapse">
-                                </a>
-                                <a href="javascript:;" class="reload">
-                                </a>
-                                <a href="javascript:;" class="remove">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portlet-body">
-                            <div class="tabbable-line">
-                                <ul class="nav nav-tabs">
-                                    <li class="active">
-                                        <a href="#overview_1" data-toggle="tab">
-                                            All Courses</a>
-                                    </li>
-                                    <li>
-                                        <a href="#overview_2" data-toggle="tab">
-                                            MAFCM</a>
-                                    </li>
-                                    <li>
-                                        <a href="#overview_3" data-toggle="tab">
-                                            PGDCM </a>
-                                    </li>
-                                    <li>
-                                        <a href="#overview_4" data-toggle="tab">
-                                            Certificate Course </a>
-                                    </li>
-                                    <li>
-                                        <a href="#overview_5" data-toggle="tab">
-                                            Certification Program </a>
-                                    </li>
+                            <div class="portlet-body">
+                                <div class="tabbable-line">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active">
+                                            <a href="#overview_1" data-toggle="tab">
+                                                All Courses</a>
+                                        </li>
+                                        <li>
+                                            <a href="#overview_2" data-toggle="tab">
+                                                MAFCM</a>
+                                        </li>
+                                        <li>
+                                            <a href="#overview_3" data-toggle="tab">
+                                                PGDCM </a>
+                                        </li>
+                                        <li>
+                                            <a href="#overview_4" data-toggle="tab">
+                                                Certificate Course </a>
+                                        </li>
+                                        <li>
+                                            <a href="#overview_5" data-toggle="tab">
+                                                Certification Program </a>
+                                        </li>
 
-{{--                                    <li class="dropdown">--}}
-{{--                                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">--}}
-{{--                                            Orders <i class="fa fa-angle-down"></i>--}}
-{{--                                        </a>--}}
-{{--                                        <ul class="dropdown-menu" role="menu">--}}
-{{--                                            <li>--}}
-{{--                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">--}}
-{{--                                                    Latest 10 Orders </a>--}}
-{{--                                            </li>--}}
-{{--                                            <li>--}}
-{{--                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">--}}
-{{--                                                    Pending Orders </a>--}}
-{{--                                            </li>--}}
-{{--                                            <li>--}}
-{{--                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">--}}
-{{--                                                    Completed Orders </a>--}}
-{{--                                            </li>--}}
-{{--                                            <li>--}}
-{{--                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">--}}
-{{--                                                    Rejected Orders </a>--}}
-{{--                                            </li>--}}
-{{--                                        </ul>--}}
-{{--                                    </li>--}}
-                                </ul>
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="overview_1">
-                                        <div class="btn-group pull-right" style="position: absolute;left: 200px;z-index: 999;">
-                                            <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
-                                            </button>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="{{ route('allCourseDownload.csv', ['type' => 'all']) }}">
-                                                        Export to CSV </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="table-responsive">
-                                            <table  class="table table-striped table-bordered table-hover" id="sample_latest">
-                                                <thead>
+                                        {{--                                    <li class="dropdown">--}}
+                                        {{--                                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">--}}
+                                        {{--                                            Orders <i class="fa fa-angle-down"></i>--}}
+                                        {{--                                        </a>--}}
+                                        {{--                                        <ul class="dropdown-menu" role="menu">--}}
+                                        {{--                                            <li>--}}
+                                        {{--                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">--}}
+                                        {{--                                                    Latest 10 Orders </a>--}}
+                                        {{--                                            </li>--}}
+                                        {{--                                            <li>--}}
+                                        {{--                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">--}}
+                                        {{--                                                    Pending Orders </a>--}}
+                                        {{--                                            </li>--}}
+                                        {{--                                            <li>--}}
+                                        {{--                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">--}}
+                                        {{--                                                    Completed Orders </a>--}}
+                                        {{--                                            </li>--}}
+                                        {{--                                            <li>--}}
+                                        {{--                                                <a href="#overview_4" tabindex="-1" data-toggle="tab">--}}
+                                        {{--                                                    Rejected Orders </a>--}}
+                                        {{--                                            </li>--}}
+                                        {{--                                        </ul>--}}
+                                        {{--                                    </li>--}}
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="overview_1">
+                                            <div class="btn-group pull-right" style="position: absolute;left: 200px;z-index: 999;">
+                                                <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li>
+                                                        <a href="{{ route('allCourseDownload.csv', ['type' => 'all']) }}">
+                                                            Export to CSV </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table  class="table table-striped table-bordered table-hover" id="sample_latest">
+                                                    <thead>
                                                     <tr>
                                                         <th>
                                                             SL.
@@ -215,255 +221,256 @@
                                                             Status
                                                         </th>
                                                     </tr>
-                                                </thead>
-                                                <tbody>
-                                                @foreach($studentCourses as $key=>$studentCourse)
+                                                    </thead>
+                                                    <tbody>
+                                                    @foreach($studentCourses as $key=>$studentCourse)
+                                                        <tr>
+                                                            <td>{{$key + 1}}</td>
+                                                            <td>{{$studentCourse->first_name}}</td>
+                                                            <td>{{$studentCourse->page_name}}</td>
+                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->tittle : ""}}</td>
+                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->amount : "0"}}</td>
+                                                            <td>{{$studentCourse->created_at}}</td>
+                                                            <td>{{isset($paymentStatus[$studentCourse->paid_status]) ? $paymentStatus[$studentCourse->paid_status] : $studentCourse->paid_status}} </td>
+                                                            {{--                                                        <td><a href="javascript:;" class="btn default btn-xs green-stripe">--}}
+                                                            {{--                                                                View </a></td>--}}
+                                                        </tr>
+                                                    @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="overview_2">
+                                            <div class="btn-group pull-right" style="position: absolute;left: 200px;z-index: 998;">
+                                                <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li>
+                                                        <a href="{{ route('allCourseDownload.csv', ['type' => 'master']) }}">
+                                                            Export to CSV </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table  class="table table-striped table-bordered table-hover" id="sample_Master">
+                                                    <thead>
                                                     <tr>
-                                                        <td>{{$key + 1}}</td>
-                                                        <td>{{$studentCourse->first_name}}</td>
-                                                        <td>{{$studentCourse->page_name}}</td>
-                                                        <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->tittle : ""}}</td>
-                                                        <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->amount : "0"}}</td>
-                                                        <td>{{$studentCourse->created_at}}</td>
-                                                        <td>{{isset($paymentStatus[$studentCourse->paid_status]) ? $paymentStatus[$studentCourse->paid_status] : $studentCourse->paid_status}} </td>
-{{--                                                        <td><a href="javascript:;" class="btn default btn-xs green-stripe">--}}
-{{--                                                                View </a></td>--}}
+                                                        <th>
+                                                            SL.
+                                                        </th>
+                                                        <th>
+                                                            Student Name
+                                                        </th>
+                                                        <th>
+                                                            Course Name
+                                                        </th>
+                                                        <th>
+                                                            Amount
+                                                        </th>
+                                                        <th>
+                                                            Applied
+                                                        </th>
+                                                        <th>
+                                                            Status
+                                                        </th>
                                                     </tr>
-                                                @endforeach
-                                                </tbody>
-                                            </table>
+                                                    </thead>
+                                                    <tbody>
+                                                    @php $serialMaster = 1 @endphp
+                                                    @foreach($studentCourses as $key=>$studentCourse)
+                                                        @if($studentCourse->page_name == "Master's Program")
+                                                            <tr>
+                                                                <td>{{$serialMaster}}</td>
+                                                                <td>{{$studentCourse->first_name}}</td>
+                                                                <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->tittle : ""}}</td>
+                                                                <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->amount : "0"}}</td>
+                                                                <td>{{$studentCourse->created_at}}</td>
+                                                                <td>{{isset($paymentStatus[$studentCourse->paid_status]) ? $paymentStatus[$studentCourse->paid_status] : $studentCourse->paid_status}} </td>
+                                                                {{--                                                        <td><a href="javascript:;" class="btn default btn-xs green-stripe">--}}
+                                                                {{--                                                                View </a></td>--}}
+                                                            </tr>
+                                                            @php $serialMaster++ @endphp
+                                                        @endif
+                                                    @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="tab-pane" id="overview_2">
-                                        <div class="btn-group pull-right" style="position: absolute;left: 200px;z-index: 998;">
-                                            <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
-                                            </button>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="{{ route('allCourseDownload.csv', ['type' => 'master']) }}">
-                                                        Export to CSV </a>
-                                                </li>
-                                            </ul>
+                                        <div class="tab-pane" id="overview_3">
+                                            <div class="btn-group pull-right" style="position: absolute;left: 200px;z-index: 997;">
+                                                <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li>
+                                                        <a href="{{ route('allCourseDownload.csv', ['type' => 'diploma']) }}">
+                                                            Export to CSV </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table  class="table table-striped table-bordered table-hover" id="sample_Diploma">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>
+                                                            SL.
+                                                        </th>
+                                                        <th>
+                                                            Student Name
+                                                        </th>
+                                                        <th>
+                                                            Course Name
+                                                        </th>
+                                                        <th>
+                                                            Amount
+                                                        </th>
+                                                        <th>
+                                                            Applied
+                                                        </th>
+                                                        <th>
+                                                            Status
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    @php $serialdiploma = 1 @endphp
+                                                    @foreach($studentCourses as $key=>$studentCourse)
+                                                        @if($studentCourse->page_name == "Post Graduate Diploma")
+                                                            <tr>
+                                                                <td>{{$serialdiploma}}</td>
+                                                                <td>{{$studentCourse->first_name}}</td>
+                                                                <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->tittle : ""}}</td>
+                                                                <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->amount : "0"}}</td>
+                                                                <td>{{$studentCourse->created_at}}</td>
+                                                                <td>{{isset($paymentStatus[$studentCourse->paid_status]) ? $paymentStatus[$studentCourse->paid_status] : $studentCourse->paid_status}} </td>
+                                                                {{--                                                        <td><a href="javascript:;" class="btn default btn-xs green-stripe">--}}
+                                                                {{--                                                                View </a></td>--}}
+                                                            </tr>
+                                                            @php $serialCourse++ @endphp
+                                                        @endif
+                                                    @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
-                                        <div class="table-responsive">
-                                            <table  class="table table-striped table-bordered table-hover" id="sample_Master">
-                                                <thead>
-                                                <tr>
-                                                    <th>
-                                                        SL.
-                                                    </th>
-                                                    <th>
-                                                        Student Name
-                                                    </th>
-                                                    <th>
-                                                        Course Name
-                                                    </th>
-                                                    <th>
-                                                        Amount
-                                                    </th>
-                                                    <th>
-                                                        Applied
-                                                    </th>
-                                                    <th>
-                                                        Status
-                                                    </th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                @php $serialMaster = 1 @endphp
-                                                @foreach($studentCourses as $key=>$studentCourse)
-                                                    @if($studentCourse->page_name == "Master's Program")
-                                                        <tr>
-                                                            <td>{{$serialMaster}}</td>
-                                                            <td>{{$studentCourse->first_name}}</td>
-                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->tittle : ""}}</td>
-                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->amount : "0"}}</td>
-                                                            <td>{{$studentCourse->created_at}}</td>
-                                                            <td>{{isset($paymentStatus[$studentCourse->paid_status]) ? $paymentStatus[$studentCourse->paid_status] : $studentCourse->paid_status}} </td>
-                                                            {{--                                                        <td><a href="javascript:;" class="btn default btn-xs green-stripe">--}}
-                                                            {{--                                                                View </a></td>--}}
-                                                        </tr>
-                                                        @php $serialMaster++ @endphp
-                                                    @endif
-                                                @endforeach
-                                                </tbody>
-                                            </table>
+                                        <div class="tab-pane" id="overview_4">
+                                            <div class="btn-group pull-right" style="position: absolute;left: 200px;z-index: 996;">
+                                                <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li>
+                                                        <a href="{{ route('allCourseDownload.csv', ['type' => 'certificate']) }}">
+                                                            Export to CSV </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table  class="table table-striped table-bordered table-hover" id="sample_Certificate">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>
+                                                            SL.
+                                                        </th>
+                                                        <th>
+                                                            Student Name
+                                                        </th>
+                                                        <th>
+                                                            Course Name
+                                                        </th>
+                                                        <th>
+                                                            Amount
+                                                        </th>
+                                                        <th>
+                                                            Applied
+                                                        </th>
+                                                        <th>
+                                                            Status
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    @php $serialCourse = 1 @endphp
+                                                    @foreach($studentCourses as $key=>$studentCourse)
+                                                        @if($studentCourse->page_name == "Certificate Course")
+                                                            <tr>
+                                                                <td>{{$serialCourse}}</td>
+                                                                <td>{{$studentCourse->first_name}}</td>
+                                                                <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->tittle : ""}}</td>
+                                                                <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->amount : "0"}}</td>
+                                                                <td>{{$studentCourse->created_at}}</td>
+                                                                <td>{{isset($paymentStatus[$studentCourse->paid_status]) ? $paymentStatus[$studentCourse->paid_status] : $studentCourse->paid_status}} </td>
+                                                                {{--                                                        <td><a href="javascript:;" class="btn default btn-xs green-stripe">--}}
+                                                                {{--                                                                View </a></td>--}}
+                                                            </tr>
+                                                            @php $serialCourse++ @endphp
+                                                        @endif
+                                                    @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="tab-pane" id="overview_3">
-                                        <div class="btn-group pull-right" style="position: absolute;left: 200px;z-index: 997;">
-                                            <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
-                                            </button>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="{{ route('allCourseDownload.csv', ['type' => 'diploma']) }}">
-                                                        Export to CSV </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="table-responsive">
-                                            <table  class="table table-striped table-bordered table-hover" id="sample_Diploma">
-                                                <thead>
-                                                <tr>
-                                                    <th>
-                                                        SL.
-                                                    </th>
-                                                    <th>
-                                                        Student Name
-                                                    </th>
-                                                    <th>
-                                                        Course Name
-                                                    </th>
-                                                    <th>
-                                                        Amount
-                                                    </th>
-                                                    <th>
-                                                        Applied
-                                                    </th>
-                                                    <th>
-                                                        Status
-                                                    </th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                @php $serialdiploma = 1 @endphp
-                                                @foreach($studentCourses as $key=>$studentCourse)
-                                                    @if($studentCourse->page_name == "Post Graduate Diploma")
-                                                        <tr>
-                                                            <td>{{$serialdiploma}}</td>
-                                                            <td>{{$studentCourse->first_name}}</td>
-                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->tittle : ""}}</td>
-                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->amount : "0"}}</td>
-                                                            <td>{{$studentCourse->created_at}}</td>
-                                                            <td>{{isset($paymentStatus[$studentCourse->paid_status]) ? $paymentStatus[$studentCourse->paid_status] : $studentCourse->paid_status}} </td>
-                                                            {{--                                                        <td><a href="javascript:;" class="btn default btn-xs green-stripe">--}}
-                                                            {{--                                                                View </a></td>--}}
-                                                        </tr>
-                                                        @php $serialCourse++ @endphp
-                                                    @endif
-                                                @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="overview_4">
-                                        <div class="btn-group pull-right" style="position: absolute;left: 200px;z-index: 996;">
-                                            <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
-                                            </button>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="{{ route('allCourseDownload.csv', ['type' => 'certificate']) }}">
-                                                        Export to CSV </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="table-responsive">
-                                            <table  class="table table-striped table-bordered table-hover" id="sample_Certificate">
-                                                <thead>
-                                                <tr>
-                                                    <th>
-                                                        SL.
-                                                    </th>
-                                                    <th>
-                                                        Student Name
-                                                    </th>
-                                                    <th>
-                                                        Course Name
-                                                    </th>
-                                                    <th>
-                                                        Amount
-                                                    </th>
-                                                    <th>
-                                                        Applied
-                                                    </th>
-                                                    <th>
-                                                        Status
-                                                    </th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                @php $serialCourse = 1 @endphp
-                                                @foreach($studentCourses as $key=>$studentCourse)
-                                                    @if($studentCourse->page_name == "Certificate Course")
-                                                        <tr>
-                                                            <td>{{$serialCourse}}</td>
-                                                            <td>{{$studentCourse->first_name}}</td>
-                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->tittle : ""}}</td>
-                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->amount : "0"}}</td>
-                                                            <td>{{$studentCourse->created_at}}</td>
-                                                            <td>{{isset($paymentStatus[$studentCourse->paid_status]) ? $paymentStatus[$studentCourse->paid_status] : $studentCourse->paid_status}} </td>
-                                                            {{--                                                        <td><a href="javascript:;" class="btn default btn-xs green-stripe">--}}
-                                                            {{--                                                                View </a></td>--}}
-                                                        </tr>
-                                                        @php $serialCourse++ @endphp
-                                                    @endif
-                                                @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="overview_5">
-                                        <div class="btn-group pull-right" style="position: absolute;left: 200px;z-index: 996;">
-                                            <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
-                                            </button>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="{{ route('allCourseDownload.csv', ['type' => 'certification']) }}">
-                                                        Export to CSV </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="table-responsive">
-                                            <table  class="table table-striped table-bordered table-hover" id="sample_Certification">
-                                                <thead>
-                                                <tr>
-                                                    <th>
-                                                        SL.
-                                                    </th>
-                                                    <th>
-                                                        Student Name
-                                                    </th>
-                                                    <th>
-                                                        Course Name
-                                                    </th>
-                                                    <th>
-                                                        Amount
-                                                    </th>
-                                                    <th>
-                                                        Applied
-                                                    </th>
-                                                    <th>
-                                                        Status
-                                                    </th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                @php $serialCourse = 1 @endphp
-                                                @foreach($studentCourses as $key=>$studentCourse)
-                                                    @if($studentCourse->page_name == "Certification Program")
-                                                        <tr>
-                                                            <td>{{$serialCourse}}</td>
-                                                            <td>{{$studentCourse->first_name}}</td>
-                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->tittle : ""}}</td>
-                                                            <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->amount : "0"}}</td>
-                                                            <td>{{$studentCourse->created_at}}</td>
-                                                            <td>{{isset($paymentStatus[$studentCourse->paid_status]) ? $paymentStatus[$studentCourse->paid_status] : $studentCourse->paid_status}} </td>
-                                                            {{--                                                        <td><a href="javascript:;" class="btn default btn-xs green-stripe">--}}
-                                                            {{--                                                                View </a></td>--}}
-                                                        </tr>
-                                                        @php $serialCourse++ @endphp
-                                                    @endif
-                                                @endforeach
-                                                </tbody>
-                                            </table>
+                                        <div class="tab-pane" id="overview_5">
+                                            <div class="btn-group pull-right" style="position: absolute;left: 200px;z-index: 996;">
+                                                <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li>
+                                                        <a href="{{ route('allCourseDownload.csv', ['type' => 'certification']) }}">
+                                                            Export to CSV </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table  class="table table-striped table-bordered table-hover" id="sample_Certification">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>
+                                                            SL.
+                                                        </th>
+                                                        <th>
+                                                            Student Name
+                                                        </th>
+                                                        <th>
+                                                            Course Name
+                                                        </th>
+                                                        <th>
+                                                            Amount
+                                                        </th>
+                                                        <th>
+                                                            Applied
+                                                        </th>
+                                                        <th>
+                                                            Status
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    @php $serialCourse = 1 @endphp
+                                                    @foreach($studentCourses as $key=>$studentCourse)
+                                                        @if($studentCourse->page_name == "Certification Program")
+                                                            <tr>
+                                                                <td>{{$serialCourse}}</td>
+                                                                <td>{{$studentCourse->first_name}}</td>
+                                                                <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->tittle : ""}}</td>
+                                                                <td>{{!empty($studentPrograms) && isset($studentPrograms[$studentCourse->program_id]) ? $studentPrograms[$studentCourse->program_id]->amount : "0"}}</td>
+                                                                <td>{{$studentCourse->created_at}}</td>
+                                                                <td>{{isset($paymentStatus[$studentCourse->paid_status]) ? $paymentStatus[$studentCourse->paid_status] : $studentCourse->paid_status}} </td>
+                                                                {{--                                                        <td><a href="javascript:;" class="btn default btn-xs green-stripe">--}}
+                                                                {{--                                                                View </a></td>--}}
+                                                            </tr>
+                                                            @php $serialCourse++ @endphp
+                                                        @endif
+                                                    @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- End: life time stats -->
                     </div>
-                    <!-- End: life time stats -->
-                </div>
+                @endif
                 <div class="col-md-12">
                     <!-- Begin: life time stats -->
                     <div class="portlet box red-sunglo">

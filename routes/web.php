@@ -87,7 +87,7 @@ Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //SSLCOMMERZ END
 
 Route::group(['middleware' => 'auth'],function (){
-    Route::get('/admin-dashboard', [AdminDashboardController::class, 'index'])->name('adminDashboard')->middleware('checkprivilege:DR');
+    Route::get('/admin-dashboard', [AdminDashboardController::class, 'index'])->name('adminDashboard');
     Route::get('/all-course-download-csv/{type}', [AdminDashboardController::class, 'allCourseDownload'])->name('allCourseDownload.csv');
 
 //    home page route
